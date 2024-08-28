@@ -1,0 +1,24 @@
+/* index.css */
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #64B5F6; /* Light Blue */
+  --secondary-color: #F44336; /* Red */
+  --background-color: #f0f0f0; /* Light Gray */
+  --text-color: #333; /* Dark Gray */
+  --border-color: #ddd; /* Generic border color */
+  --border-radius: 4px; /* Standard border radius */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Common box shadow */
+}
+
+/* Global styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

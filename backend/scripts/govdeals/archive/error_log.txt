@@ -1,0 +1,4 @@
+2024-05-15 23:18:43,423:ERROR:Error: '1049 (42000): Unknown database 'auctions_closed''
+2024-05-25 11:22:21,058:ERROR:Error: '1411 (HY000): Incorrect datetime value: '2024-05-28 20:00:00' for function str_to_date'
+2024-05-25 11:25:30,887:ERROR:Error: '1411 (HY000): Incorrect datetime value: '2024-05-28 20:00:00' for function str_to_date'
+2024-05-25 11:26:59,850:ERROR:Error: '1411 (HY000): Incorrect datetime value: '2024-05-28 20:00:00' for function str_to_date'

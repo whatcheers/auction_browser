@@ -1,0 +1,53 @@
+<?php
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$servername = "localhost";
+$username = "whatcheer";
+$password = "meatwad";
+$dbname = "auctions";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    echo json_encode(['error' => 'Database connection failed: ' . $conn->connect_error]);
+    exit; // Exit the script after sending the error message
+}
+
+// SQL query to select all items from the heartland table, excluding the favorite column
+$sql = "SELECT lot_number, item_name, location, url, DATE_FORMAT(time_left, '%m/%d/%Y %h:%i %p') as time_left, latitude, longitude FROM heartland";
+
+$result = $conn->query($sql);
+
+if (!$result) {
+    echo json_encode(['error' => 'Error executing query: ' . $conn->error]);
+    $conn->close();
+    exit; // Exit the script after sending the error message
+}
+
+$locations = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $locations[] = [
+            'lot_number' => $row['lot_number'], // Include lot_number in the output
+            'item_name' => $row['item_name'],
+            'location' => $row['location'],
+            'url' => $row['url'],
+            'time_left' => $row['time_left'], // Formatted in MM/DD/YYYY HH:MM AM/PM
+            'latitude' => (float)$row['latitude'],
+            'longitude' => (float)$row['longitude'],
+        ];
+    }
+    echo json_encode($locations);
+} else {
+    echo json_encode(['error' => 'No locations found']);
+}
+
+$conn->close();
+?>
+

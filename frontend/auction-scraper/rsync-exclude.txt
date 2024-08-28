@@ -1,0 +1,12 @@
+*.log
+*.bak
+*.tmp
+*.so
+*.html
+big-AGI/
+phpmyadmin/
+venv/
+AI/
+node_modules/
+/lib/
+.git/

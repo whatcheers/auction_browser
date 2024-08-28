@@ -1,0 +1,35 @@
+cat > .gitignore << EOL
+# Virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Node modules
+node_modules/
+
+# Log files
+*.log
+*.env
+# JSON files
+*.json
+
+# HTML files
+*.html
+
+# Specific directories
+backend/scripts/equiptmentfacts/user_data_dir/
+backend/scripts/wisconsonsurplus/archive/
+backend/scripts/publicsurplus/archive/
+backend/scripts/equiptmentfacts/
+
+
+# IDE specific files (optional, uncomment if needed)
+# .vscode/
+# .idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+EOL

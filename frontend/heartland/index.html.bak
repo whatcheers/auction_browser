@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Auctions - Heartland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            position: relative; /* Added */
+            font-size: 24px;
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+    table {
+        background-color: #ffffff;
+        border-collapse: collapse; /* Ensure borders between rows collapse */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        width: 100%;
+        margin-top: 20px; /* Add some space between table and header */
+        overflow: hidden; /* Ensures the border-radius applies properly */
+    }
+    table thead {
+        background-color: #007bff;
+        color: #ffffff;
+    }
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .favorite-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: transform 0.2s; /* Smooth transform on hover */
+    }
+    .favorite-btn:focus {
+        outline: none;
+    }
+    .favorite-btn:hover .fas {
+        transform: scale(1.25); /* Scale icon on hover */
+    }
+    .fas {
+        color: black; /* Default color, can be overridden by JS */
+        font-size: 20px; /* Adjust size of icons */
+        transition: color 0.2s, transform 0.2s; /* Smooth transition for color and transform */
+    }
+    .fas.fa-star {
+        color: #ffc107; /* Star color */
+    }
+        #aiSummaryLink {
+            color: white;
+            text-decoration: underline;
+            position: absolute;
+            right: 10px;
+            top: 75%;
+            transform: translateY(-50%);
+            font-family: 'Nunito', sans-serif; /* Ensure it uses the same font */
+            font-size: 16px; /* Adjusted to match your typical content size; modify as needed */
+        }
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation-name: fadeIn; /* Animation for the background */
+    animation-duration: 0.4s;
+}
+
+.modal-content {
+    position: fixed;
+    bottom: 0; /* Keeps it at the bottom, consider changing if centering is needed */
+    background-color: #fefefe;
+    width: 90%; /* More responsive width */
+    max-width: 600px; /* Max width to prevent it from being too wide on larger screens */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal centering */
+    padding: 20px;
+    border-radius: 10px 10px 0 0; /* Rounded corners on the top */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    overflow-y: auto; /* Allows scrolling within the modal */
+    max-height: 90vh; /* Prevents the modal from being taller than the viewport */
+}
+
+/* Add Animation */
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div class="header">
+    Heartland Auctions
+    <span id="closingDateDisplay" style="float: left; margin-left: 20px; background-color: #007bff; color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">Closing Date: --/--/--</span>
+    <button id="downloadBtn" style="float: right; margin-right: 20px; background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 16px;">Download JSON</button>
+
+    <a href="#" id="aiSummaryLink" style="color: white; text-decoration: underline; position: absolute; right: 10px; top: 75%; transform: translateY(-50%);">AI Summary</a>
+</div>
+
+<div class="container">
+    <div class="table-container">
+        <table id="heartlandTable" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Lot Number</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Initialize the DataTable
+    var table = $('#heartlandTable').DataTable({
+        paging: true,
+        pageLength: 10,
+        lengthChange: true,
+        searching: true,
+        info: true,
+        order: [],
+        columnDefs: [
+            { targets: 0, title: "Lot Number", data: "lot_number" },
+            { targets: 1, title: "Item Name", data: "item_name" },
+            { targets: 2, title: "Category", data: "category" },
+            {
+                targets: 3,
+                title: "Favorite",
+                data: null,
+                render: function(data, type, row) {
+                    var starColor = row.favorite === "Y" ? "#ffc107" : "black";
+                    return `<button class="favorite-btn" data-lot-number="${row.lot_number}" style="border: none; background: none; cursor: pointer;">
+                                <i class="fas fa-star" style="color: ${starColor};"></i>
+                            </button>`;
+                }
+            }
+        ]
+    });
+
+    // Load data into the DataTable
+    function loadData() {
+        $.ajax({
+            url: 'heartland-import-all.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                table.clear().rows.add(data).draw();
+                if (data && data.length > 0 && data[0].time_left) {
+                    var closingDate = data[0].time_left;
+                    $('#closingDateDisplay').text('Closing Date: ' + closingDate);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error loading data: ", error);
+            }
+        });
+    }
+    loadData();
+
+    // Download JSON button functionality
+    $('#downloadBtn').on('click', function() {
+        var jsonFileUrl = './scripts/all_items.json';
+        var downloadLink = document.createElement('a');
+        downloadLink.href = jsonFileUrl;
+        downloadLink.setAttribute('download', 'all_items.json');
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    });
+
+    // Favorite button functionality
+    $('#heartlandTable tbody').on('click', '.favorite-btn', function() {
+        var lotNumber = $(this).data('lot-number');
+        var isFavorite = $(this).find('i').css('color') === 'rgb(255, 193, 7)' ? 'N' : 'Y';
+        $.ajax({
+            url: 'save_star.php',
+            type: 'POST',
+            data: { lot_number: lotNumber, favorite: isFavorite },
+            success: function(response) {
+                if(isFavorite === 'Y') {
+                    $(`button[data-lot-number="${lotNumber}"] i`).css('color', '#ffc107');
+                } else {
+                    $(`button[data-lot-number="${lotNumber}"] i`).css('color', 'black');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error saving favorite status: ", error);
+            }
+        });
+    });
+
+    // Modal functionality
+    // Append Modal HTML to body
+    $('body').append(`
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modalText">Loading...</p>
+            </div>
+        </div>
+    `);
+
+// Corrected: Open the modal when AI Summary link is clicked
+$('#aiSummaryLink').on('click', function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    $.ajax({
+        url: 'response.html', // Adjust the path as needed
+        success: function(data) {
+            $('#modalText').text(data);
+        },
+        error: function() {
+            $('#modalText').text('Failed to load content.');
+        }
+    });
+    $('#myModal').css('display', 'block');
+});
+    // Close the modal when the user clicks on <span> (x)
+    $(document).on('click', '.close', function() {
+        $('#myModal').css('display', 'none');
+    });
+
+    // Close the modal when the user clicks outside of it
+    $(window).on('click', function(event) {
+        if ($(event.target).is('.modal')) {
+            $('#myModal').css('display', 'none');
+        }
+    });
+});
+</script>
+</body>
+</html>
