@@ -29,7 +29,7 @@ import LastRunStatus from './components/LastRunStatus';
 import SearchBox from './components/SearchBox';
 import DataLoadingProgress from './components/DataLoadingProgress';
 
-const apiUrl = process.env.REACT_APP_API_URL || 'http://hashbrowns:3002';
+const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
 const App = () => {
   const currentDate = new Date().toISOString().split('T')[0];
@@ -137,7 +137,7 @@ const App = () => {
       if (selectedEndpoint === 'all_tables') {
         url = `${apiUrl}/api/get-auction-data?tableName=all_tables&startDate=${startDate}&endDate=${endDate}`;
       } else if (selectedEndpoint.includes('php')) {
-        url = `http://hashbrowns/bin/get_auction_data.php`;
+        url = `https://hashbrowns/bin/get_auction_data.php`;
       } else {
         url = `${apiUrl}/api/get-auction-data?tableName=${selectedEndpoint}&startDate=${startDate}&endDate=${endDate}`;
       }
@@ -284,7 +284,7 @@ const App = () => {
       if (selectedEndpoint === 'all_tables') {
         url = `${apiUrl}/api/search-auction-data?tableName=all_tables&${params.toString()}`;
       } else if (selectedEndpoint === 'ending_today') {
-        url = `http://hashbrowns/bin/get_auction_data.php?todayOnly=true&${params.toString()}`;
+        url = `https://hashbrowns/bin/get_auction_data.php?todayOnly=true&${params.toString()}`;
       } else {
         url = `${apiUrl}/api/search-auction-data?tableName=${selectedEndpoint}&${params.toString()}`;
       }
