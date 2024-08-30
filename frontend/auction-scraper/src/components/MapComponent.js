@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import 'ol/ol.css';
 import { Map, View } from 'ol';
 import TileLayer from 'ol/layer/Tile';
@@ -14,7 +14,7 @@ import PopupContent from './PopupContent';
 import { getCategoryFromUrl, generateSvgIcon } from './utils';
 import { containsCoordinate } from 'ol/extent';
 
-const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger }) => {
+const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger, darkMode }) => {
   const mapRef = useRef(null);
   const mapInstance = useRef(null);
   const vectorSourceRef = useRef(null);
@@ -25,6 +25,10 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
   const [referenceElement, setReferenceElement] = useState(null);
   const [detailedData, setDetailedData] = useState({});
   const [extent, setExtent] = useState(null);
+  const [popupState, setPopupState] = useState({
+    position: { x: 0, y: 0 },
+    size: { width: 300, height: 400 }
+  });
 
   const { styles, attributes } = usePopper(referenceElement, popperElementRef.current, {
     placement: 'top',
@@ -172,6 +176,10 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
     }
   }, [updateTrigger, createFeatureStyle]);
 
+  const handlePopupChange = useCallback((newState) => {
+    setPopupState(newState);
+  }, []);
+
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
       <div ref={mapRef} style={{ width: '100%', height: '100%' }} />
@@ -190,6 +198,9 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
             onFavorite={handleFavoriteClick}
             onRowClick={handleRowClick}
             selectedRows={selectedRows}
+            popupState={popupState}
+            onPopupChange={handlePopupChange}
+            darkMode={darkMode}  // Pass darkMode to PopupContent
           />
         </div>
       )}

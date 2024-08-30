@@ -336,7 +336,7 @@ const App = () => {
         setError('Failed to load favorites: ' + err.message);
       }
     }
-  }, [apiUrl, categorizeItems]);
+  }, [categorizeItems]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -435,7 +435,7 @@ const App = () => {
                 selectedRows={selectedRows}
                 handleFavorite={handleFavorite}
                 updateTrigger={updateTrigger}
-                darkMode={darkMode}
+                darkMode={darkMode}  // Pass darkMode to MapComponent
               />
             </Paper>
             {showCategories && (
