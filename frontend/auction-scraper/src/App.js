@@ -47,6 +47,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingStatus, setLoadingStatus] = useState('');
+  const [mapData, setMapData] = useState([]);
 
   const lightTheme = createTheme({
     palette: {
@@ -159,6 +160,7 @@ const App = () => {
       console.log('Data loaded:', jsonData);
       if (Array.isArray(jsonData)) {
         rawDataRef.current = jsonData;
+        setMapData(jsonData);  // Ensure mapData is updated
         setError(null);
       } else if (jsonData.error) {
         throw new Error(jsonData.error);
@@ -419,7 +421,7 @@ const App = () => {
               }}
             >
               <MapComponent
-                data={rawDataRef.current}
+                data={mapData}  // Pass the updated mapData
                 selectedEndpoint={selectedEndpoint}
                 onClusterClick={handleClusterClick}
                 onRowSelect={handleRowSelect}

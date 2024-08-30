@@ -1,5 +1,8 @@
 const { getDbConnection } = require('../utils/db');
 const { logError } = require('../utils/logger');
+const NodeCache = require('node-cache');
+
+const cache = new NodeCache({ stdTTL: 300, checkperiod: 320 });
 
 const tableNames = {
   backes: 'backes',
@@ -31,6 +34,7 @@ async function updateFavorite(req, res) {
     connection = await getDbConnection();
     const [results] = await connection.execute(sql, params);
     if (results.affectedRows > 0) {
+      cache.del('favorites'); // Clear the favorites cache
       res.json({ success: true });
     } else {
       res.json({ success: false, error: "No matching record found to update" });
@@ -44,6 +48,12 @@ async function updateFavorite(req, res) {
 }
 
 async function getFavorites(req, res) {
+  const cacheKey = 'favorites';
+  const cachedFavorites = cache.get(cacheKey);
+  if (cachedFavorites) {
+    return res.json(cachedFavorites);
+  }
+
   const tables = Object.values(tableNames);
   let allFavorites = [];
 
@@ -68,6 +78,7 @@ async function getFavorites(req, res) {
       table_name: item.original_table,
     }));
 
+    cache.set(cacheKey, processedFavorites);
     res.json(processedFavorites);
   } catch (error) {
     await logError('Error fetching favorites', error);

@@ -12,6 +12,7 @@ import { Style, Icon } from 'ol/style';
 import { usePopper } from 'react-popper';
 import PopupContent from './PopupContent';
 import { getCategoryFromUrl, generateSvgIcon } from './utils';
+import { containsCoordinate } from 'ol/extent';
 
 const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger }) => {
   const mapRef = useRef(null);
@@ -23,6 +24,7 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
   const [popupFeatures, setPopupFeatures] = useState([]);
   const [referenceElement, setReferenceElement] = useState(null);
   const [detailedData, setDetailedData] = useState({});
+  const [extent, setExtent] = useState(null);
 
   const { styles, attributes } = usePopper(referenceElement, popperElementRef.current, {
     placement: 'top',
@@ -47,31 +49,52 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
   }, []);
 
   const handleFavoriteClick = useCallback((item) => {
-    console.log('MapComponent: Toggling favorite status for item:', item);
     handleFavorite(item);
   }, [handleFavorite]);
 
   const handleRowClick = useCallback((item) => {
-    console.log('MapComponent: Row clicked:', item);
     onRowSelect(item.url);
     onClusterClick([item]);
   }, [onRowSelect, onClusterClick]);
 
   const updateMapFeatures = useCallback(() => {
-    if (!vectorSourceRef.current || !Array.isArray(data)) return;
+    if (!vectorSourceRef.current || !Array.isArray(data) || !extent) return;
 
     vectorSourceRef.current.clear();
-    data.forEach(item => {
+    const features = data.reduce((acc, item) => {
       if (item.latitude && item.longitude) {
-        const feature = new Feature({
-          geometry: new Point(fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)])),
-          itemData: item,
-        });
-        feature.setStyle(createFeatureStyle(feature));
-        vectorSourceRef.current.addFeature(feature);
+        const coordinates = fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)]);
+        if (containsCoordinate(extent, coordinates)) {
+          const feature = new Feature({
+            geometry: new Point(coordinates),
+            itemData: item,
+          });
+          feature.setStyle(createFeatureStyle(feature));
+          acc.push(feature);
+        }
       }
+      return acc;
+    }, []);
+
+    vectorSourceRef.current.addFeatures(features);
+  }, [data, createFeatureStyle, extent]);
+
+  const clusterStyle = useCallback((feature) => {
+    const size = feature.get('features').length;
+    const featureCategories = feature.get('features').map(f => getCategoryFromUrl(f.get('itemData').url));
+    return new Style({
+      image: new Icon({
+        src: generateSvgIcon('cluster', size, featureCategories),
+        imgSize: [50, 50],
+      }),
     });
-  }, [data, createFeatureStyle]);
+  }, []);
+
+  const updateExtent = useCallback(() => {
+    if (mapInstance.current) {
+      setExtent(mapInstance.current.getView().calculateExtent(mapInstance.current.getSize()));
+    }
+  }, []);
 
   useEffect(() => {
     if (!mapInstance.current) {
@@ -98,16 +121,7 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
 
       vectorLayerRef.current = new VectorLayer({
         source: clusterSource,
-        style: feature => {
-          const size = feature.get('features').length;
-          const featureCategories = feature.get('features').map(f => getCategoryFromUrl(f.get('itemData').url));
-          return new Style({
-            image: new Icon({
-              src: generateSvgIcon('cluster', size, featureCategories),
-              imgSize: [50, 50],
-            }),
-          });
-        },
+        style: clusterStyle,
       });
 
       mapInstance.current.addLayer(vectorLayerRef.current);
@@ -116,7 +130,6 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
         mapInstance.current.forEachFeatureAtPixel(event.pixel, async (feature) => {
           const features = feature.get('features');
           if (features && features.length > 0) {
-            console.log('MapComponent: Features clicked:', features);
             setPopupFeatures(features);
             setReferenceElement(event.coordinate);
             setPopupVisible(true);
@@ -129,11 +142,20 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
           }
         });
       });
+
+      mapInstance.current.on('moveend', updateExtent);
+      updateExtent();
     }
 
     updateMapFeatures();
     mapInstance.current.updateSize();
-  }, [updateMapFeatures, onClusterClick]);
+
+    return () => {
+      if (mapInstance.current) {
+        mapInstance.current.un('moveend', updateExtent);
+      }
+    };
+  }, [updateMapFeatures, onClusterClick, clusterStyle, updateExtent]);
 
   useEffect(() => {
     updateMapFeatures();

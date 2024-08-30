@@ -1,6 +1,8 @@
 const { getDbConnection } = require('../utils/db');
-const { logError } = require('../utils/logger');
+const { logError, logInfo } = require('../utils/logger');
 const axios = require('axios');
+const NodeCache = require('node-cache');
+const cache = new NodeCache({ stdTTL: 300, checkperiod: 320 });
 
 const tableNames = {
   backes: 'backes',
@@ -28,6 +30,15 @@ async function getAuctionData(req, res) {
   } else if (!startDate || !endDate) {
     return res.status(400).json({ error: 'StartDate and EndDate parameters are required' });
   }
+
+  const cacheKey = `auction_data_${tableName}_${startDate}_${endDate}`;
+  logInfo(`Checking cache for key: ${cacheKey}`);
+  const cachedData = cache.get(cacheKey);
+  if (cachedData) {
+    logInfo(`Cache hit for key: ${cacheKey}`);
+    return res.json(cachedData);
+  }
+  logInfo(`Cache miss for key: ${cacheKey}`);
 
   let connection;
   try {
@@ -59,18 +70,20 @@ async function getAuctionData(req, res) {
     }
 
     if (data.length === 0) {
+      logInfo(`No data found for ${tableName} between ${startDate} and ${endDate}`);
       return res.status(404).json({ error: 'No data found for the specified date range' });
     }
 
+    logInfo(`Caching data for key: ${cacheKey}`);
+    cache.set(cacheKey, data);
+    logInfo(`Data cached successfully for key: ${cacheKey}`);
     res.json(data);
   } catch (error) {
     await logError('Error fetching auction data', error);
     console.error('Error fetching auction data:', error);
     res.status(500).json({ error: 'Failed to fetch auction data', details: error.message });
   } finally {
-    if (connection) {
-      await connection.end();
-    }
+    if (connection) await connection.end();
   }
 }
 
