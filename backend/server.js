@@ -21,6 +21,6 @@ app.use(loggingMiddleware);
 
 app.use('/api', auctionRoutes);
 app.use('/api', favoriteRoutes);
-app.use('/bin', lastRunStatusRoutes);  // Note the '/bin' prefix to match the original URL
+app.use('/api', lastRunStatusRoutes);  // Updated to match the original URL
 
 module.exports = app;

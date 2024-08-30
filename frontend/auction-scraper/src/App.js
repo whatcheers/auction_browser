@@ -315,26 +315,33 @@ const App = () => {
     }
   }, [selectedEndpoint, startDate, endDate, loadDefaultData]);
 
-  const loadFavoritesData = useCallback(async () => {
+  const loadFavoritesData = useCallback(async (signal) => {
     console.log('Loading favorites data');
     try {
-      const response = await fetch(`${apiUrl}/api/favorites`);
+      const response = await fetch(`${apiUrl}/api/favorites`, { signal });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const favoritesData = await response.json();
       console.log('Favorites data loaded:', favoritesData);
       rawDataRef.current = favoritesData;
+      setMapData(favoritesData);
       categorizeItems(favoritesData);
       setUpdateTrigger(prev => prev + 1);
     } catch (err) {
-      console.error('Failed to fetch favorites data:', err.message);
-      setError('Failed to load favorites: ' + err.message);
+      if (err.name === 'AbortError') {
+        console.log('Fetch aborted');
+      } else {
+        console.error('Failed to fetch favorites data:', err.message);
+        setError('Failed to load favorites: ' + err.message);
+      }
     }
-  }, [categorizeItems]);
+  }, [apiUrl, categorizeItems]);
 
   useEffect(() => {
-    loadFavoritesData();
+    const controller = new AbortController();
+    loadFavoritesData(controller.signal);
+    return () => controller.abort();
   }, [loadFavoritesData]);
 
   useEffect(() => {

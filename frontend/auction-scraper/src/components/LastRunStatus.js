@@ -1,47 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, CircularProgress } from '@mui/material';
 
-const LastRunStatus = ({ apiUrl }) => {
+const API_URL = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
+
+const LastRunStatus = () => {
   const [status, setStatus] = useState(null);
   const [timestamp, setTimestamp] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+
     const fetchStatus = async () => {
       try {
-        const response = await fetch(`${apiUrl}/bin/last-run-status`, {
-          credentials: 'include'
+        const response = await fetch(`${API_URL}/api/last-run-status`, {
+          credentials: 'include',
+          signal: controller.signal
         });
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setStatus(data.status);
-        setTimestamp(data.timestamp);
+        if (isMounted) {
+          setStatus(data.status);
+          setTimestamp(data.timestamp);
+          setError('');
+        }
       } catch (err) {
-        console.error('Error fetching last run status:', err);
-        setError(err.message);
+        if (err.name !== 'AbortError' && isMounted) {
+          console.error('Error fetching last run status:', err);
+          setError('Failed to fetch status');
+          setStatus('Unknown');
+          setTimestamp(null);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     fetchStatus();
-  }, [apiUrl]);
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    };
+  }, []);
 
   if (loading) {
     return <CircularProgress size={24} />;
   }
 
-  if (error) {
-    return <Typography variant="body2" color="error">{`Error: ${error}`}</Typography>;
-  }
-
   return (
     <Box>
-      <Typography variant="body2">{`Last Run Status: ${status}`}</Typography>
-      <Typography variant="body2">{`Timestamp: ${new Date(timestamp).toLocaleString()}`}</Typography>
+      <Typography variant="body2" color={error ? 'error' : 'inherit'}>
+        {error ? `Error: ${error}` : `Last Run Status: ${status || 'Unknown'}`}
+      </Typography>
+      <Typography variant="body2">
+        {timestamp ? `Timestamp: ${new Date(timestamp).toLocaleString()}` : 'Timestamp: Unknown'}
+      </Typography>
     </Box>
   );
 };
