@@ -1,5 +1,4 @@
-import React, { useRef, memo } from 'react';
-import Draggable from 'react-draggable';
+import React, { useRef, memo, useCallback } from 'react';
 import { Paper, Typography, IconButton, Tooltip } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import InfoIcon from '@mui/icons-material/Info';
@@ -46,8 +45,43 @@ const PopupItem = memo(({ item, isSelected, onFavorite, onRowClick }) => {
   );
 });
 
-const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selectedRows = [] }) => {
-  const dragHandleRef = useRef(null);
+const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selectedRows = [], popupState, onPopupChange }) => {
+  const { position, size } = popupState;
+  const isDragging = useRef(false);
+  const isResizing = useRef(false);
+
+  const handleMouseDown = useCallback((e) => {
+    if (e.target.classList.contains('resize-handle')) {
+      isResizing.current = true;
+    } else {
+      isDragging.current = true;
+    }
+  }, []);
+
+  const handleMouseMove = useCallback((e) => {
+    if (isDragging.current) {
+      onPopupChange({
+        position: {
+          x: position.x + e.movementX,
+          y: position.y + e.movementY
+        },
+        size
+      });
+    } else if (isResizing.current) {
+      onPopupChange({
+        position,
+        size: {
+          width: Math.max(200, size.width + e.movementX),
+          height: Math.max(200, size.height + e.movementY)
+        }
+      });
+    }
+  }, [position, size, onPopupChange]);
+
+  const handleMouseUp = useCallback(() => {
+    isDragging.current = false;
+    isResizing.current = false;
+  }, []);
 
   console.log('PopupContent: Received new props', { 
     featuresCount: features.length, 
@@ -55,37 +89,42 @@ const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selected
   });
 
   return (
-    <Draggable handle=".handle" nodeRef={dragHandleRef}>
-      <Paper
-        ref={dragHandleRef}
-        sx={{
-          p: 2,
-          backgroundColor: '#f5f5f5',
-          borderRadius: '8px',
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          minWidth: '300px',
-          maxHeight: '400px',
-          overflowY: 'auto',
-          position: 'relative',
-        }}
-        className="handle"
-      >
+    <Paper
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+      sx={{
+        p: 2,
+        backgroundColor: '#f5f5f5',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        position: 'absolute',
+        left: position.x,
+        top: position.y,
+        width: size.width,
+        height: size.height,
+        overflow: 'hidden',
+        cursor: 'move',
+      }}
+    >
+      <div style={{ height: '100%', overflowY: 'auto' }}>
         <Typography variant="h6" gutterBottom>
           Details
         </Typography>
         {features.map((f) => {
-  const item = f.get ? f.get('itemData') : f.itemData || f; // Support both Feature and plain object
-  const isSelected = selectedRows.includes(item.url);
-  return (
-    <PopupItem
-      key={item.id || item.url}
-      item={item}
-      isSelected={isSelected}
-      onFavorite={onFavorite}
-      onRowClick={onRowClick}
-    />
-  );
-})}
+          const item = f.get ? f.get('itemData') : f.itemData || f;
+          const isSelected = selectedRows.includes(item.url);
+          return (
+            <PopupItem
+              key={item.id || item.url}
+              item={item}
+              isSelected={isSelected}
+              onFavorite={onFavorite}
+              onRowClick={onRowClick}
+            />
+          );
+        })}
         <div>
           <Tooltip title="More Info">
             <IconButton>
@@ -93,14 +132,25 @@ const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selected
             </IconButton>
           </Tooltip>
         </div>
-        <IconButton
-          sx={{ position: 'absolute', top: 8, right: 8 }}
-          onClick={onClose}
-        >
-          <CloseIcon />
-        </IconButton>
-      </Paper>
-    </Draggable>
+      </div>
+      <IconButton
+        sx={{ position: 'absolute', top: 8, right: 8 }}
+        onClick={onClose}
+      >
+        <CloseIcon />
+      </IconButton>
+      <div
+        className="resize-handle"
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: 20,
+          height: 20,
+          cursor: 'se-resize',
+        }}
+      />
+    </Paper>
   );
 });
 
