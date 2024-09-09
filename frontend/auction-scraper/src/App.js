@@ -299,12 +299,14 @@ const App = () => {
       if (response.ok) {
         console.log('Search results loaded:', result);
         rawDataRef.current = result;
+        setMapData(result);  // Update mapData with the search results
         setError(null);
         setUpdateTrigger((prev) => prev + 1);
       } else {
         if (response.status === 404 && result.error) {
           setError(result.error);
           rawDataRef.current = [];
+          setMapData([]);  // Clear mapData if no results found
         } else {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -315,10 +317,12 @@ const App = () => {
     }
   }, [selectedEndpoint, startDate, endDate, loadDefaultData]);
 
-  const loadFavoritesData = useCallback(async (signal) => {
+  const loadFavoritesData = useCallback(async () => {
     console.log('Loading favorites data');
+    setIsLoading(true);
+    setLoadingStatus('Loading favorites...');
     try {
-      const response = await fetch(`${apiUrl}/api/favorites`, { signal });
+      const response = await fetch(`${apiUrl}/api/favorites`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -328,21 +332,16 @@ const App = () => {
       setMapData(favoritesData);
       categorizeItems(favoritesData);
       setUpdateTrigger(prev => prev + 1);
+      setLoadingStatus('Favorites loaded successfully');
     } catch (err) {
-      if (err.name === 'AbortError') {
-        console.log('Fetch aborted');
-      } else {
-        console.error('Failed to fetch favorites data:', err.message);
-        setError('Failed to load favorites: ' + err.message);
-      }
+      console.error('Failed to fetch favorites data:', err.message);
+      setError('Failed to load favorites: ' + err.message);
+      setLoadingStatus('Error loading favorites');
+    } finally {
+      setIsLoading(false);
     }
-  }, [categorizeItems]);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    loadFavoritesData(controller.signal);
-    return () => controller.abort();
-  }, [loadFavoritesData]);
+    
+  }, [apiUrl, categorizeItems]);
 
   useEffect(() => {
     console.log('Current state:', { selectedEndpoint, startDate, endDate });

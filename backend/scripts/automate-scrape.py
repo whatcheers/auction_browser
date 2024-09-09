@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import sys
 import subprocess
@@ -56,13 +57,38 @@ print_colored(f"Current Chicago time: {current_time}", 'yellow')
 # Change to the scripts directory
 os.chdir(os.path.dirname(__file__))
 
+# Dynamically find the config file relative to the script's location
+script_dir = os.path.dirname(os.path.abspath(__file__))
+config_file = os.path.join(script_dir, 'db.cfg')
+
+print_colored(f"Attempting to read config file: {config_file}", 'yellow')
+
 # Load MySQL connection details from config file
 config = configparser.ConfigParser()
-config.read('db.cfg')
-host = config.get('mysql', 'host')
-user = config.get('mysql', 'user')
-password = config.get('mysql', 'password')
-print_colored(f"Using MySQL connection details: host={host}, user={user}", 'green')
+
+if not os.path.exists(config_file):
+    print_colored(f"Config file not found: {config_file}", 'red')
+    save_status("failed", f"Config file not found: {config_file}")
+    exit(1)
+
+config.read(config_file)
+
+print_colored(f"Sections in config file: {config.sections()}", 'yellow')
+
+if 'mysql' not in config.sections():
+    print_colored("'mysql' section not found in the config file", 'red')
+    save_status("failed", "'mysql' section not found in the config file")
+    exit(1)
+
+try:
+    host = config.get('mysql', 'host')
+    user = config.get('mysql', 'user')
+    password = config.get('mysql', 'password')
+    print_colored(f"Using MySQL connection details: host={host}, user={user}", 'green')
+except configparser.NoOptionError as e:
+    print_colored(f"Missing option in config file: {str(e)}", 'red')
+    save_status("failed", f"Missing option in config file: {str(e)}")
+    exit(1)
 
 # Use sys.executable for the currently running Python interpreter in the virtual environment
 venv_python = sys.executable

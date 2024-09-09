@@ -62,10 +62,31 @@ async function scrapeAuctionHouse(page, auctionHouse, log) {
   });
 
   safeLog(log, `Scraped ${auctionInfo.upcomingAuctions.length} upcoming auctions`);
+
+  // Load previously scraped data
+  let previousData = [];
+  try {
+    const data = await fs.readFile('previous_auctions.json', 'utf8');
+    previousData = JSON.parse(data);
+  } catch (error) {
+    safeLog(log, "No previous data found or error reading file.");
+  }
+
+  // Check if the auction has been scraped before and if the closing dates/times have changed
+  const updatedAuctions = auctionInfo.upcomingAuctions.filter(auction => {
+    const previousAuction = previousData.find(prev => prev.url === auction.url);
+    if (previousAuction) {
+      return previousAuction.date !== auction.date;
+    }
+    return true;
+  });
+
+  safeLog(log, `Found ${updatedAuctions.length} auctions to update`);
+
   return {
     ...auctionHouse,
-    hasUpcomingAuctions: auctionInfo.hasUpcomingAuctions,
-    upcomingAuctions: auctionInfo.upcomingAuctions,
+    hasUpcomingAuctions: updatedAuctions.length > 0,
+    upcomingAuctions: updatedAuctions,
     currentUrl: auctionInfo.currentUrl
   };
 }
@@ -326,6 +347,10 @@ async function scrapeAuctionLots(page, auctionUrl, companyName, auctionLocation,
   const jsonData = JSON.stringify(updatedAuctionHouseData, null, 2);
   await fs.writeFile('iowa_auction_houses.json', jsonData);
   safeLog(log, "Data successfully written to iowa_auction_houses.json");
+
+  // Save the current data for future reference
+  await fs.writeFile('previous_auctions.json', jsonData);
+  safeLog(log, "Previous auction data updated.");
 
   // Print summary of scraping results
   safeLog(log, "\n--- Scraping Summary ---");

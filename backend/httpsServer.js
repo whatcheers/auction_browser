@@ -12,8 +12,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.use('/api', require('./routes/lastRunStatusRoutes'));
-
 const httpsOptions = {
   key: privateKey,
   cert: certificate,
