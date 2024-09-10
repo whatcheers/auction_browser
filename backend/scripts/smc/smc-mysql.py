@@ -14,14 +14,36 @@ db_config = {
     "raise_on_warnings": True
 }
 
+# Initialize statistics
+stats = {
+    "items_added": 0,
+    "items_updated": 0,
+    "items_skipped": 0,
+    "items_removed": 0,
+    "errors": 0
+}
+
+def update_statistics():
+    try:
+        with open('smc_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
+
 def connect_to_database(config):
     print("Attempting to connect to the database...")
     try:
         cnx = mysql.connector.connect(**config)
-        print("Successfully connected to the database.")
+        print(f"{Fore.GREEN}Successfully connected to the database.{Style.RESET_ALL}")
         return cnx
     except mysql.connector.Error as err:
-        print(f"Database connection failed: {err}")
+        print(f"{Fore.RED}Database connection failed: {err}{Style.RESET_ALL}")
+        stats["errors"] += 1
     return None
 
 def ensure_table_exists(cnx):
@@ -47,7 +69,7 @@ def ensure_table_exists(cnx):
         )
         """
         cursor.execute(create_table_query)
-        print("Table 'smc' created successfully.")
+        print(f"{Fore.GREEN}Table 'smc' created successfully.{Style.RESET_ALL}")
     else:
         print("Table 'smc' already exists.")
     cursor.close()
@@ -60,10 +82,12 @@ def clean_up_expired_auctions(cnx):
     print(f"Current datetime for deletion: {current_datetime}")
     try:
         cursor.execute(delete_query, (current_datetime,))
-        print(f"Deleted {cursor.rowcount} expired auctions.")
+        stats["items_removed"] = cursor.rowcount
+        print(f"{Fore.GREEN}Deleted {cursor.rowcount} expired auctions.{Style.RESET_ALL}")
         cnx.commit()
     except mysql.connector.Error as err:
-        print(f"Error cleaning up expired auctions: {err}")
+        print(f"{Fore.RED}Error cleaning up expired auctions: {err}{Style.RESET_ALL}")
+        stats["errors"] += 1
     finally:
         cursor.close()
 
@@ -107,14 +131,20 @@ def insert_data(cnx, data):
         )
         try:
             cursor.execute(insert_query, values)
+            if cursor.rowcount > 0:
+                if cursor.lastrowid:
+                    stats["items_added"] += 1
+                else:
+                    stats["items_updated"] += 1
+            else:
+                stats["items_skipped"] += 1
         except mysql.connector.Error as err:
             print(f"{Fore.RED}Failed to insert or update item {item.get('item_name', '')}: {err}{Style.RESET_ALL}")
+            stats["errors"] += 1
         progress_bar.update(1)
     progress_bar.close()
     cnx.commit()
     cursor.close()
-
-
 
 if __name__ == "__main__":
     print("Script execution started.")
@@ -130,6 +160,18 @@ if __name__ == "__main__":
             insert_data(cnx, all_items)  # Pass the list of items directly to the insert function
             cnx.close()
         else:
-            print("Failed to connect to the database.")
+            print(f"{Fore.RED}Failed to connect to the database.{Style.RESET_ALL}")
+            stats["errors"] += 1
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"{Fore.RED}An error occurred: {e}{Style.RESET_ALL}")
+        stats["errors"] += 1
+
+    # Save statistics
+    update_statistics()
+
+    print(f"\n{Fore.BLUE}SMC MySQL Statistics:{Style.RESET_ALL}")
+    print(f"Items added: {stats['items_added']}")
+    print(f"Items updated: {stats['items_updated']}")
+    print(f"Items skipped: {stats['items_skipped']}")
+    print(f"Items removed: {stats['items_removed']}")
+    print(f"Errors: {stats['errors']}")

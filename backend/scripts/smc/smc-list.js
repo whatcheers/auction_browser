@@ -35,6 +35,32 @@ function hasNewAuctions(previousAuctions, currentAuctions) {
 
 async function main() {
   let browser;
+  const stats = {
+    auctions_scraped: 0,
+    new_auctions_found: 0,
+    errors: 0,
+    items_added: 0,
+    items_updated: 0,
+    items_removed: 0,
+    items_skipped: 0,
+    addresses_processed: 0,
+    addresses_updated: 0,
+    addresses_skipped: 0
+  };
+
+  async function updateStatistics() {
+    try {
+      const data = await fs.promises.readFile('smc_statistics.json', 'utf8');
+      const existingStats = JSON.parse(data);
+      for (const key in stats) {
+        existingStats[key] = (existingStats[key] || 0) + stats[key];
+      }
+      await fs.promises.writeFile('smc_statistics.json', JSON.stringify(existingStats, null, 2));
+    } catch (error) {
+      await fs.promises.writeFile('smc_statistics.json', JSON.stringify(stats, null, 2));
+    }
+  }
+
   try {
     console.log('Starting the scraping process...');
     browser = await puppeteer.launch({ headless: true });
@@ -67,9 +93,11 @@ async function main() {
 
     if (!auctionData || auctionData.length === 0) {
       console.log('No auction data found on the page. The page structure might have changed.');
+      stats.errors++;
       return;
     }
 
+    stats.auctions_scraped = auctionData.length;
     console.log(`Found ${auctionData.length} auctions`);
 
     // Load previous auction data
@@ -95,6 +123,7 @@ async function main() {
       };
     });
 
+    stats.new_auctions_found = results.length - previousAuctions.length;
     console.log('Scraping completed.');
 
     // Save results to a JSON file
@@ -104,11 +133,16 @@ async function main() {
   } catch (error) {
     console.error('An error occurred during scraping:', error);
     console.error('Stack trace:', error.stack);
+    stats.errors++;
   } finally {
     if (browser) {
       await browser.close();
       console.log('Browser closed.');
     }
+
+    // Save statistics
+    await updateStatistics();
+    console.log('Statistics saved to smc_statistics.json');
   }
 }
 

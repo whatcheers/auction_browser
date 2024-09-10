@@ -162,21 +162,72 @@ def scrape_auctions_parallel(search_params, max_pages=None):
         for page_number in page_numbers:
             url = create_search_url(page_number, search_params)
             print(f"{Colors.OKBLUE}[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Submitting task for page: {page_number}{Colors.ENDC}")
-            future = executor.submit(scrape_page, url, search_params)
-            futures.append(future)
+            futures.append(executor.submit(scrape_page, url, search_params))
 
         for future in concurrent.futures.as_completed(futures):
             try:
-                current_page_data = future.result()
-                if current_page_data:
-                    all_auction_data.extend(current_page_data)
-                    print(f"{Colors.OKGREEN}[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Completed page{Colors.ENDC}")
+                data = future.result()
+                if data:
+                    all_auction_data.extend(data)
                 else:
                     print(f"{Colors.WARNING}[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No data found on page.{Colors.ENDC}")
             except Exception as exc:
                 print(f"{Colors.FAIL}[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Page generated an exception: {exc}{Colors.ENDC}")
 
     return all_auction_data
+
+def main(search_params):
+    print(f"{Colors.HEADER}Initializing WebDriver...{Colors.ENDC}")
+    driver = initialize_webdriver()
+    print(f"{Colors.OKGREEN}WebDriver initialized.{Colors.ENDC}")
+
+    try:
+        auction_data = scrape_auctions_parallel(search_params, max_pages=10)
+        print(f"{Colors.OKGREEN}Scraping completed successfully.{Colors.ENDC}")
+        print(f"{Colors.OKBLUE}Total auctions scraped: {len(auction_data)}{Colors.ENDC}")
+
+        if not auction_data:
+            print(f"{Colors.WARNING}No auctions found. Exiting with code 1.{Colors.ENDC}")
+            sys.exit(1)
+    finally:
+        print(f"{Colors.FAIL}Closing the WebDriver...{Colors.ENDC}")
+        driver.quit()
+        print(f"{Colors.OKGREEN}WebDriver closed.{Colors.ENDC}")
+
+    # Save to JSON
+    current_datetime = datetime.now().strftime("%Y-%m-%d-%H%M%S")
+    archive_dir = "./archive"
+    if not os.path.exists(archive_dir):
+        os.makedirs(archive_dir)
+
+    json_filename = os.path.join(archive_dir, f"consolidated-{current_datetime}.json")
+    with open(json_filename, 'w', encoding='utf-8') as json_file:
+        json.dump(auction_data, json_file, indent=4)
+
+    print(f"{Colors.OKBLUE}Data has been written to {json_filename}{Colors.ENDC}")
+
+    # Save statistics
+    stats = {
+        "auctions_scraped": 0,
+        "items_added": 0,
+        "items_updated": 0,
+        "items_removed": 0,
+        "items_skipped": 0,
+        "errors": 0,
+        "addresses_processed": 0,
+        "addresses_updated": 0,
+        "addresses_skipped": 0
+    }
+    stats["auctions_scraped"] = len(auction_data)
+    with open('publicsurplus_newitems_statistics.json', 'w') as f:
+        json.dump(stats, f)
+
+if __name__ == "__main__":
+    search_params = {
+        'miles_location': '200',
+        'zip_code': '52403'
+    }
+    main(search_params)
 
 def main(search_params):
     print(f"{Colors.HEADER}Initializing WebDriver...{Colors.ENDC}")

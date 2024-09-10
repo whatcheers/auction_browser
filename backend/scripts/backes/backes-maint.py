@@ -1,4 +1,5 @@
 import mysql.connector
+import json
 
 # Database connection details
 host = "localhost"
@@ -24,6 +25,9 @@ sql = "DELETE FROM {} WHERE time_left < NOW()".format(table)
 # Execute the query
 cursor.execute(sql)
 
+# Get the number of rows deleted
+items_removed = cursor.rowcount
+
 # Commit the changes
 db.commit()
 
@@ -31,4 +35,14 @@ db.commit()
 cursor.close()
 db.close()
 
-print("Expired rows deleted from the {} table.".format(table))
+print(f"Expired rows deleted from the {table} table: {items_removed}")
+
+# Save statistics
+with open('backes_statistics.json', 'r+') as f:
+    stats = json.load(f)
+    stats['items_removed'] = items_removed
+    f.seek(0)
+    json.dump(stats, f)
+    f.truncate()
+
+print(f"Updated statistics: {items_removed} items removed")

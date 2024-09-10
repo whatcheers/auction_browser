@@ -2,6 +2,7 @@ import pymysql
 from geopy.geocoders import Nominatim
 import logging
 import re
+import json
 
 class Colors:
     HEADER = '\033[95m'
@@ -127,10 +128,24 @@ addresses = cursor.fetchall()
 
 cached_locations = {}  # Dictionary to store previously geocoded locations
 
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
 for address_tuple in addresses:
     address = address_tuple[0]
     if address_tuple[1] is not None and address_tuple[2] is not None:
         logging.debug(f"Skipping address {address} as latitude and longitude are already present.")
+        stats["addresses_skipped"] += 1
         continue
 
     latitude, longitude = geocode_address(address, cached_locations)
@@ -140,11 +155,19 @@ for address_tuple in addresses:
         cursor.execute(update_query, (latitude, longitude, address))
         connection.commit()
         logging.info(f"Updated Latitude={latitude}, Longitude={longitude} for address {address}")
+        stats["addresses_updated"] += 1
     else:
         logging.warning(f"Geocoding failed for address {address}. Latitude and Longitude not updated.")
+        stats["addresses_skipped"] += 1
+
+    stats["addresses_processed"] += 1
 
 print("Geocoding and updating completed for auctions.publicsurplus table.")
 
 cursor.close()
 connection.close()
 logging.info("Connection to database closed.")
+
+# Save statistics
+with open('publicsurplus_latlong_statistics.json', 'w') as f:
+    json.dump(stats, f)

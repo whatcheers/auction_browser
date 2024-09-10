@@ -4,6 +4,7 @@ import logging
 import re
 from tqdm import tqdm
 from colorama import init, Fore, Style
+import json
 
 # Initialize colorama
 init()
@@ -76,6 +77,30 @@ def geocode_address(address):
         geocode_cache[address] = (None, None)
         return None, None
 
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
+def update_statistics():
+    try:
+        with open('proxibid_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('proxibid_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('proxibid_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
+
 cursor.execute("SHOW TABLES LIKE 'proxibid';")
 tables = cursor.fetchall()
 
@@ -104,15 +129,21 @@ with tqdm(total=total_addresses, desc="Geocoding progress", unit="address", ncol
                 update_query = f"UPDATE `auctions`.`proxibid` SET latitude=%s, longitude=%s WHERE location=%s"
                 cursor.execute(update_query, (geocoded_lat, geocoded_lon, address))
                 connection.commit()
-                updated_addresses += 1
+                stats["items_updated"] += 1
+                stats["addresses_updated"] += 1
             else:
-                skipped_addresses += 1
+                stats["items_skipped"] += 1
+                stats["addresses_skipped"] += 1
+            stats["addresses_processed"] += 1
             pbar.update(1)
 
 logging.info(f"{Fore.GREEN}Geocoding process completed.{Style.RESET_ALL}")
-logging.info(f"{Fore.BLUE}Total addresses: {total_addresses}{Style.RESET_ALL}")
-logging.info(f"{Fore.GREEN}Updated addresses: {updated_addresses}{Style.RESET_ALL}")
-logging.info(f"{Fore.YELLOW}Skipped addresses: {skipped_addresses}{Style.RESET_ALL}")
+logging.info(f"{Fore.BLUE}Total addresses processed: {stats['addresses_processed']}{Style.RESET_ALL}")
+logging.info(f"{Fore.GREEN}Addresses updated: {stats['addresses_updated']}{Style.RESET_ALL}")
+logging.info(f"{Fore.YELLOW}Addresses skipped: {stats['addresses_skipped']}{Style.RESET_ALL}")
 
 cursor.close()
 connection.close()
+
+# Save statistics
+update_statistics()

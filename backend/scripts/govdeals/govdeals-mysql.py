@@ -22,6 +22,11 @@ config = {
 cnx = mysql.connector.connect(**config)
 cursor = cnx.cursor()
 
+# Add these lines near the beginning of the script, after the imports
+items_added = 0
+items_updated = 0
+error_items_count = 0
+
 # Check if the 'govdeals' table exists, if not, create it
 cursor.execute("SHOW TABLES LIKE 'govdeals'")
 table_exists = cursor.fetchone()
@@ -85,8 +90,26 @@ for item in tqdm(items, desc="Inserting items", unit="item"):
         time_left_mysql_format = convert_time_left_to_mysql_datetime(time_left)
 
         data_item = (item_name, location, current_bid_float, lot_number, time_left_mysql_format, url)
-        cursor.execute(add_item, data_item)
-        inserted_items_count += 1
+        
+        # Check if the item already exists
+        check_query = "SELECT * FROM govdeals WHERE lot_number = %s"
+        cursor.execute(check_query, (lot_number,))
+        existing_item = cursor.fetchone()
+
+        if existing_item:
+            # Update existing item
+            update_query = """
+            UPDATE govdeals 
+            SET item_name = %s, location = %s, current_bid = %s, time_left = %s, url = %s 
+            WHERE lot_number = %s
+            """
+            cursor.execute(update_query, (item_name, location, current_bid_float, time_left_mysql_format, url, lot_number))
+            items_updated += 1
+        else:
+            # Insert new item
+            cursor.execute(add_item, data_item)
+            items_added += 1
+
     except Exception as e:
         error_message = str(e)
         if "1287: 'VALUES function' is deprecated" not in error_message:
@@ -100,5 +123,14 @@ cnx.commit()
 cursor.close()
 cnx.close()
 
-print(f"{Fore.GREEN}{inserted_items_count} items inserted successfully.")
+print(f"{Fore.GREEN}{items_added} items inserted successfully.")
+print(f"{Fore.BLUE}{items_updated} items updated successfully.")
 print(f"{Fore.YELLOW}{error_items_count} items encountered errors.{Style.RESET_ALL}")
+
+# Save statistics
+with open('govdeals_statistics.json', 'w') as f:
+    json.dump({
+        "items_added": items_added,
+        "items_updated": items_updated,
+        "items_errored": error_items_count
+    }, f)

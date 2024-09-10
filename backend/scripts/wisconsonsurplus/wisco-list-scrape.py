@@ -17,6 +17,31 @@ class colors:
     FAIL = '\033[91m'
     ENDC = '\033[0m'
 
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
+def update_statistics():
+    try:
+        with open('wisco_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('wisco_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('wisco_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
+
 print(f"{colors.HEADER}Starting the script...{colors.ENDC}")
 
 # Setup Chrome options
@@ -80,8 +105,12 @@ try:
         }
 
         auctions_data.append(auction_data)
+    
+    stats["auctions_scraped"] = len(auctions_data)
+    print(f"{colors.OKGREEN}Successfully scraped {stats['auctions_scraped']} auctions.{colors.ENDC}")
 except Exception as e:
     print(f"{colors.FAIL}Error during extraction: {e}{colors.ENDC}")
+    stats["errors"] += 1
 finally:
     # Don't forget to close the driver after your scraping job is done
     driver.quit()
@@ -91,3 +120,10 @@ finally:
         json.dump(auctions_data, f, indent=4)
 
     print(f"{colors.OKGREEN}Auction data saved to auctions_data.json{colors.ENDC}")
+
+    # Save statistics
+    update_statistics()
+    print(f"{colors.OKGREEN}Statistics saved to wisco_statistics.json{colors.ENDC}")
+    print(f"{colors.HEADER}Wisconsin Surplus List Scraping Statistics:{colors.ENDC}")
+    print(f"Auctions scraped: {stats['auctions_scraped']}")
+    print(f"Errors: {stats['errors']}")

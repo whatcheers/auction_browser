@@ -12,6 +12,19 @@ import logging
 init()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
 def extract_auction_number(html):
     soup = BeautifulSoup(html, 'html.parser')
     auction_number_elem = soup.find('div', class_='p-1 auction-item-cardcolor').find('span', class_='font-weight-600 mr-2 text-body')
@@ -83,15 +96,20 @@ def process_html_file(html_file_path):
 
         logging.info(f"{Fore.GREEN}Data written to {json_filename}{Style.RESET_ALL}")
 
+        stats["auctions_scraped"] += 1
+        stats["items_added"] += len(output_list)
+
         # Call wisco-scrape-mysql.py script with the --file argument
         try:
             subprocess.run(["python3", "wisco-scrape-mysql.py", "--file", json_filename], check=True)
             delete_html_file(html_file_path)
         except subprocess.CalledProcessError as e:
             logging.error(f"{Fore.RED}Error calling wisco-scrape-mysql.py: {e}{Style.RESET_ALL}")
+            stats["errors"] += 1
 
     except (json.JSONDecodeError, OSError) as e:
         logging.error(f"Error processing HTML file {html_file_path}: {e}")
+        stats["errors"] += 1
 
 def delete_html_file(file_path):
     try:
@@ -99,6 +117,40 @@ def delete_html_file(file_path):
         logging.info(f"Deleted HTML file: {file_path}")
     except OSError as e:
         logging.error(f"Error deleting file {file_path}: {e.strerror}")
+        stats["errors"] += 1
+
+def process_html_file(html_file_path):
+    try:
+        with open(html_file_path, 'r', encoding='utf-8') as file:
+            html_content = file.read()
+
+        auction_number = extract_auction_number(html_content)
+        soup = BeautifulSoup(html_content, 'html.parser')
+        listings = soup.find_all('div', class_='row pb-3 mt-2 border-bottom border auction-item-cardcolor')
+
+        output_list = []
+        for listing in listings:
+            listing_info = extract_listing_info(str(listing), auction_number)
+            output_list.append(listing_info)
+            stats["items_scraped"] += 1
+
+        json_filename = f'auction_{auction_number}.json'
+        with open(json_filename, 'w', encoding='utf-8') as json_file:
+            json.dump(output_list, json_file, ensure_ascii=False, indent=2)
+
+        logging.info(f"Processed {html_file_path} and saved to {json_filename}")
+        stats["auctions_processed"] += 1
+
+    except Exception as e:
+        logging.error(f"Error processing {html_file_path}: {str(e)}")
+        stats["errors"] += 1
+
+    try:
+        os.remove(html_file_path)
+        logging.info(f"Deleted HTML file: {html_file_path}")
+    except OSError as e:
+        logging.error(f"Error deleting file {html_file_path}: {e.strerror}")
+        stats["errors"] += 1
 
 def process_all_html_files(directory):
     for filename in os.listdir(directory):
@@ -117,6 +169,25 @@ def main():
         process_html_file(args.file)
     else:
         logging.error("Either --file or --file-all must be specified.")
+        stats["errors"] += 1
+
+    # Save statistics
+    with open('wisco_extract_statistics.json', 'w') as f:
+        json.dump(stats, f)
+
+    logging.info(f"{Fore.BLUE}Wisconsin Surplus Extract Statistics:{Style.RESET_ALL}")
+    logging.info(f"Auctions scraped: {stats['auctions_scraped']}")
+    logging.info(f"Items added: {stats['items_added']}")
+    logging.info(f"Items updated: {stats['items_updated']}")
+    logging.info(f"Items removed: {stats['items_removed']}")
+    logging.info(f"Items skipped: {stats['items_skipped']}")
+    logging.info(f"Errors: {stats['errors']}")
+    logging.info(f"Addresses processed: {stats['addresses_processed']}")
+    logging.info(f"Addresses updated: {stats['addresses_updated']}")
+    logging.info(f"Addresses skipped: {stats['addresses_skipped']}")
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()

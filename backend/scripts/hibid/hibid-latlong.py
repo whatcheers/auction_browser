@@ -4,6 +4,7 @@ import logging
 import re
 from tqdm import tqdm
 from colorama import init, Fore, Style
+import json  # Add this import
 
 # Initialize colorama
 init()
@@ -76,6 +77,12 @@ def geocode_address(address):
         geocode_cache[address] = (None, None)
         return None, None
 
+stats = {
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
 cursor.execute("SHOW TABLES LIKE 'hibid';")
 tables = cursor.fetchall()
 
@@ -104,15 +111,26 @@ with tqdm(total=total_addresses, desc="Geocoding progress", unit="address", ncol
                 update_query = f"UPDATE `auctions`.`hibid` SET latitude=%s, longitude=%s WHERE location=%s"
                 cursor.execute(update_query, (geocoded_lat, geocoded_lon, address))
                 connection.commit()
-                updated_addresses += 1
+                stats["addresses_updated"] += 1
             else:
-                skipped_addresses += 1
+                stats["addresses_skipped"] += 1
+            stats["addresses_processed"] += 1
             pbar.update(1)
 
 logging.info(f"{Fore.GREEN}Geocoding process completed.{Style.RESET_ALL}")
-logging.info(f"{Fore.BLUE}Total addresses: {total_addresses}{Style.RESET_ALL}")
-logging.info(f"{Fore.GREEN}Updated addresses: {updated_addresses}{Style.RESET_ALL}")
-logging.info(f"{Fore.YELLOW}Skipped addresses: {skipped_addresses}{Style.RESET_ALL}")
+logging.info(f"{Fore.BLUE}Total addresses processed: {stats['addresses_processed']}{Style.RESET_ALL}")
+logging.info(f"{Fore.GREEN}Addresses updated: {stats['addresses_updated']}{Style.RESET_ALL}")
+logging.info(f"{Fore.YELLOW}Addresses skipped: {stats['addresses_skipped']}{Style.RESET_ALL}")
 
 cursor.close()
 connection.close()
+
+# Save statistics
+with open('hibid_statistics.json', 'r+') as f:
+    stats_file = json.load(f)
+    stats_file['addresses_processed'] = stats["addresses_processed"]
+    stats_file['addresses_updated'] = stats["addresses_updated"]
+    stats_file['addresses_skipped'] = stats["addresses_skipped"]
+    f.seek(0)
+    json.dump(stats_file, f)
+    f.truncate()

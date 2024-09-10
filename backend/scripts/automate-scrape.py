@@ -38,7 +38,7 @@ def print_colored(message, color):
         'reset': '\033[0m'
     }
     print(f"{colors[color]}{message}{colors['reset']}")
-    log_event(logging.INFO if color == 'green' else logging.ERROR if color == 'red' else logging.WARNING, message)
+    log_event(logging.INFO if color == 'green' else logging.ERROR if color == 'red' else logging.ERROR, message)
 
 # Function to save last run status
 def save_status(status, details=""):
@@ -112,22 +112,66 @@ directories_scripts = {
     "publicsurplus": ["publicsurplus-scrape.py"],
     "smc": ["smc-scrape.py"],
     "wisconsonsurplus": ["wisco-scrape.py"],
-    "proxibid": ["proxibid-scrape.py"]  # Add Proxibid to the dictionary
+    "proxibid": ["proxibid-scrape.py"]
 }
 
-# Iterate over each directory and script, execute them using the virtual environment's Python
+# Dictionary to store statistics for each script
+script_statistics = {}
+
+# Add this function after the existing functions
+def aggregate_scraper_statistics(script_name):
+    stats_file = f"{script_name.replace('-scrape.py', '')}_statistics.json"
+    if os.path.exists(stats_file):
+        with open(stats_file, 'r') as f:
+            stats = json.load(f)
+            return {
+                "auctions_scraped": stats.get("auctions_scraped", 0),
+                "items_added": stats.get("items_added", 0),
+                "items_updated": stats.get("items_updated", 0),
+                "items_removed": stats.get("items_removed", 0),
+                "items_skipped": stats.get("items_skipped", 0),
+                "errors": stats.get("errors", 0)
+            }
+    return {}
+
+# Replace the existing script execution loop with this:
 for directory, scripts in directories_scripts.items():
     os.chdir(os.path.join(os.path.dirname(__file__), directory))
     for script in scripts:
         try:
-            subprocess.run([venv_python, script], check=True)
+            result = subprocess.run([venv_python, script], check=True, capture_output=True, text=True)
             print_colored(f"Successfully ran {script} in {directory}", 'green')
+            
+            # Aggregate statistics
+            stats = aggregate_scraper_statistics(script)
+            script_statistics[script] = stats
         except subprocess.CalledProcessError as e:
             print_colored(f"An error occurred while running {script} in {directory}. Stopping the orchestrator.", 'red')
             save_status("failed", str(e))
             exit(1)
 
-# Return to the original scripts directory in case more operations need to be performed
-os.chdir(os.path.dirname(__file__))
-print_colored("All scripts executed successfully.", 'green')
-save_status("success")
+# After the loop, add this code to print overall statistics
+print_colored("\nOverall Scraping Statistics:", 'green')
+overall_stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0
+}
+
+for script, stats in script_statistics.items():
+    print_colored(f"\n{script} Statistics:", 'yellow')
+    for key, value in stats.items():
+        print(f"{key.replace('_', ' ').title()}: {value}")
+        if key in overall_stats:
+            overall_stats[key] += value
+
+print_colored("\nAggregate Statistics:", 'green')
+for key, value in overall_stats.items():
+    print(f"{key.replace('_', ' ').title()}: {value}")
+
+# Save the overall statistics
+with open('overall_statistics.json', 'w') as f:
+    json.dump(overall_stats, f, indent=2)

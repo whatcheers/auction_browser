@@ -1,68 +1,78 @@
 import os
 import subprocess
 import sys
+import json
 
-def run_script():
-    # Get the absolute path of the current script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-   
-    # Construct the absolute path to smc-list.js
-    smc_list_path = os.path.join(script_dir, "smc-list.js")
-   
-    # Run smc-list.js using Node.js
-    process = subprocess.Popen(["node", smc_list_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    for line in process.stdout:
-        sys.stdout.write(line)
-        # Check if the script outputs "No new auctions found. Exiting..." and exit early
-        if "No new auctions found. Exiting..." in line:
-            print("No new auctions found. Skipping further processing.")
-            process.kill()
-            sys.exit(0)
-    for line in process.stderr:
-        sys.stderr.write(line)
-    process.wait()
-       
-    # Check the exit code
-    if process.returncode != 0:
-        print("Error running smc-list.js")
-        sys.exit(1)
-
-def run_additional_scripts():
-    # Get the absolute path of the current script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-   
-    # Construct the absolute paths to the additional scripts
-    smc_extract_path = os.path.join(script_dir, "smc-extract.py")
-    smc_mysql_path = os.path.join(script_dir, "smc-mysql.py")
-    smc_latlong_path = os.path.join(script_dir, "smc-latlong.py")
-   
-    # Run smc-extract.py using Python
-    print("Running smc-extract.py...")
-    result = subprocess.run(["python3", smc_extract_path], capture_output=True, text=True)
+def run_script(script_name):
+    print(f"Running {script_name}...")
+    result = subprocess.run(["python3", script_name], capture_output=True, text=True)
     sys.stdout.write(result.stdout)
     sys.stderr.write(result.stderr)
-    if result.returncode != 0:
-        print(f"Error running smc-extract.py: {result.stderr}")
-        sys.exit(1)
+    return result.returncode == 0
 
-    # Run smc-mysql.py using Python
-    print("Running smc-mysql.py...")
-    result = subprocess.run(["python3", smc_mysql_path], capture_output=True, text=True)
+def run_node_script(script_name):
+    print(f"Running {script_name}...")
+    result = subprocess.run(["node", script_name], capture_output=True, text=True)
     sys.stdout.write(result.stdout)
     sys.stderr.write(result.stderr)
-    if result.returncode != 0:
-        print(f"Error running smc-mysql.py: {result.stderr}")
-        sys.exit(1)
-   
-    # Run smc-latlong.py using Python
-    print("Running smc-latlong.py...")
-    result = subprocess.run(["python3", smc_latlong_path], capture_output=True, text=True)
-    sys.stdout.write(result.stdout)
-    sys.stderr.write(result.stderr)
-    if result.returncode != 0:
-        print(f"Error running smc-latlong.py: {result.stderr}")
-        sys.exit(1)
+    return result.returncode == 0, "No new auctions found" in result.stdout
+
+def aggregate_statistics():
+    stats = {
+        "auctions_scraped": 0,
+        "items_added": 0,
+        "items_updated": 0,
+        "items_removed": 0,
+        "items_skipped": 0,
+        "errors": 0
+    }
+
+    stats_files = [
+        'smc_list_statistics.json',
+        'smc_extract_statistics.json',
+        'smc_mysql_statistics.json',
+        'smc_latlong_statistics.json'
+    ]
+
+    for file in stats_files:
+        if os.path.exists(file):
+            with open(file, 'r') as f:
+                file_stats = json.load(f)
+                for key in stats:
+                    if key in file_stats:
+                        stats[key] += file_stats[key]
+
+    return stats
 
 if __name__ == '__main__':
-    run_script()
-    run_additional_scripts()
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+
+    scripts = [
+        ("smc-list.js", run_node_script),
+        ("smc-extract.py", run_script),
+        ("smc-mysql.py", run_script),
+        ("smc-latlong.py", run_script)
+    ]
+
+    for script, run_func in scripts:
+        if script.endswith('.js'):
+            success, no_new_auctions = run_func(script)
+            if no_new_auctions:
+                print("No new auctions found. Skipping further processing.")
+                sys.exit(0)
+        else:
+            success = run_func(script)
+        
+        if not success:
+            print(f"Error running {script}")
+            sys.exit(1)
+
+    # Aggregate and print statistics
+    stats = aggregate_statistics()
+    print("\nSMC Scraping Statistics:")
+    for key, value in stats.items():
+        print(f"{key.replace('_', ' ').title()}: {value}")
+
+    # Output statistics in the format expected by the orchestrator
+    print(json.dumps({"smc-scrape.py": stats}))

@@ -1,5 +1,6 @@
 import mysql.connector
 from termcolor import colored
+import json
 import logging
 
 # Setup logger for error logging
@@ -29,11 +30,20 @@ try:
     cursor.execute(delete_expired_records)
 
     # Get the count of deleted records
-    deleted_records_count = cursor.rowcount
-    print(colored(f"{deleted_records_count} expired records have been deleted from the govdeals table.", "green"))
+    items_removed = cursor.rowcount
+    print(colored(f"{items_removed} expired records have been deleted from the govdeals table.", "green"))
 
-    # Commit the changes to the database
-    cnx.commit()
+    # Update statistics
+    try:
+        with open('../govdeals_statistics.json', 'r+') as f:
+            stats = json.load(f)
+            stats['items_removed'] = items_removed
+            f.seek(0)
+            json.dump(stats, f)
+            f.truncate()
+    except FileNotFoundError:
+        with open('../govdeals_statistics.json', 'w') as f:
+            json.dump({'items_removed': items_removed}, f)
 
 except mysql.connector.Error as err:
     logging.error(f"Error: '{err}'")

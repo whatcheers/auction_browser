@@ -29,16 +29,17 @@ def create_table_if_not_exists(connection):
     try:
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS gsa (
-id INT AUTO_INCREMENT PRIMARY KEY,
-  item_name VARCHAR(255) NULL,
-  location VARCHAR(255) NULL,
-  current_bid DECIMAL(10,2) NULL,
-  lot_number VARCHAR(50) UNIQUE NULL,
-  time_left DATETIME NULL,
-  url VARCHAR(255) NULL,
-  favorite CHAR(1) NULL,
-  latitude DECIMAL(11,8) NULL,
-  longitude DECIMAL(12,8) NULL            )
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                item_name VARCHAR(255) NULL,
+                location VARCHAR(255) NULL,
+                current_bid DECIMAL(10,2) NULL,
+                lot_number VARCHAR(50) UNIQUE NULL,
+                time_left DATETIME NULL,
+                url VARCHAR(255) NULL,
+                favorite CHAR(1) NULL,
+                latitude DECIMAL(11,8) NULL,
+                longitude DECIMAL(12,8) NULL
+            )
         """)
         logging.info("Table 'gsa' created successfully.")
     except Error as err:
@@ -48,6 +49,9 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 
 def insert_items(connection, items):
     cursor = connection.cursor(buffered=True)
+    items_added = 0
+    items_updated = 0
+    items_skipped = 0
     
     # Query to check if the item exists and get the current bid
     check_query = """
@@ -78,7 +82,7 @@ def insert_items(connection, items):
             time_left = parse_time_left(item['time_left'])
             
             # Determine if we should update the existing record
-            if existing is None or item.get('current_bid', 0) > existing[0]:
+            if existing is None:
                 cursor.execute(insert_query, (
                     item.get('item_name', ''),
                     item.get('location', ''),
@@ -90,15 +94,31 @@ def insert_items(connection, items):
                     item.get('longitude', None),
                     item.get('favorite', None)
                 ))
+                items_added += 1
+            elif item.get('current_bid', 0) > existing[0]:
+                cursor.execute(insert_query, (
+                    item.get('item_name', ''),
+                    item.get('location', ''),
+                    item.get('current_bid', 0),
+                    item.get('lot_number', ''),
+                    time_left,
+                    item.get('url', ''),
+                    item.get('latitude', None),
+                    item.get('longitude', None),
+                    existing[1]  # Keep the existing favorite status
+                ))
+                items_updated += 1
             else:
+                items_skipped += 1
                 logging.info(f"Skipped inserting/updating item {item.get('item_name', '')} with lot number {item.get('lot_number', '')} due to not having a higher bid.")
                 
         except Error as err:
             logging.error(f"Error inserting/updating item: {err}")
     
     connection.commit()
-    logging.info("All items processed for insertion/update into the gsa table.")
+    logging.info(f"Items added: {items_added}, updated: {items_updated}, skipped: {items_skipped}")
     cursor.close()
+    return items_added, items_updated, items_skipped
 
 def main(json_file_path):
     config = {
@@ -121,11 +141,25 @@ def main(json_file_path):
         items = json.load(file)
 
     # Insert items into the database
-    insert_items(connection, items)
+    items_added, items_updated, items_skipped = insert_items(connection, items)
 
     # Close the database connection
     connection.close()
     logging.info("Database connection closed.")
+
+    # Save statistics
+    with open('gsa_statistics.json', 'w') as f:
+        json.dump({
+            "auctions_scraped": 1,  # Assuming one auction is scraped per run
+            "items_added": items_added,
+            "items_updated": items_updated,
+            "items_removed": 0,
+            "items_skipped": items_skipped,
+            "errors": 0,
+            "addresses_processed": 0,
+            "addresses_updated": 0,
+            "addresses_skipped": 0
+        }, f)
 
 if __name__ == "__main__":
     json_file_path = 'auctionDetails.json'

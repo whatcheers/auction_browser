@@ -3,6 +3,7 @@ from geopy.geocoders import Nominatim
 import logging
 from colorama import init, Fore, Style
 from tqdm import tqdm
+import json
 
 # Initialize colorama
 init()
@@ -24,6 +25,31 @@ cursor = connection.cursor()
 user_agent = "whatcheers/AI-github"
 geolocator = Nominatim(user_agent=user_agent)
 
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
+def update_statistics():
+    try:
+        with open('smc_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
+
 # Function to check and add latitude, longitude columns if necessary
 def check_and_add_columns(table_name):
     columns_to_add = ['latitude', 'longitude']
@@ -43,6 +69,7 @@ def geocode_address(address):
     # Return default coordinates if the address is empty
     if not address:
         logging.warning(f"{Fore.YELLOW}Empty address encountered. Using default coordinates.{Style.RESET_ALL}")
+        stats["addresses_skipped"] += 1
         return default_latitude, default_longitude
 
     # Existing geocoding logic...
@@ -65,8 +92,10 @@ def geocode_address(address):
                     return latitude, longitude
         except Exception as e:
             logging.error(f"{Fore.RED}Geocoding attempt failed for address '{attempt}': {e}{Style.RESET_ALL}")
+            stats["errors"] += 1
 
     logging.warning(f"{Fore.YELLOW}All geocoding attempts failed for address: '{address}'. Using default coordinates.{Style.RESET_ALL}")
+    stats["addresses_skipped"] += 1
     return default_latitude, default_longitude
 
 # Process only the 'smc' table
@@ -78,28 +107,21 @@ check_and_add_columns(table_name)
 cursor.execute(f"SELECT `location` FROM {table_name} WHERE `location` IS NOT NULL AND (latitude IS NULL OR longitude IS NULL)")
 addresses = cursor.fetchall()
 
-last_address = None
-last_coordinates = None
 total_addresses = len(addresses)
-success_count = 0
-cached_count = 0
+logging.info(f"{Fore.BLUE}Total addresses to process: {total_addresses}{Style.RESET_ALL}")
 
 # Create a progress bar
 progress_bar = tqdm(total=total_addresses, unit='address', desc='Geocoding Progress')
 
 for address, in addresses:
-    if address == last_address:
-        latitude, longitude = last_coordinates
-        cached_count += 1
-    else:
-        latitude, longitude = geocode_address(address)
-        last_address = address
-        last_coordinates = (latitude, longitude)
-        success_count += 1
-
+    latitude, longitude = geocode_address(address)
+    
     update_query = f"UPDATE {table_name} SET latitude=%s, longitude=%s WHERE `location`=%s"
     cursor.execute(update_query, (latitude, longitude, address))
     connection.commit()
+
+    stats["addresses_processed"] += 1
+    stats["addresses_updated"] += 1
 
     # Update the progress bar
     progress_bar.update(1)
@@ -108,11 +130,16 @@ for address, in addresses:
 progress_bar.close()
 
 logging.info(f"{Fore.GREEN}Geocoding and updating completed for table '{table_name}' in 'auctions' database.{Style.RESET_ALL}")
-logging.info(f"{Fore.BLUE}Summary:{Style.RESET_ALL}")
-logging.info(f"{Fore.CYAN}Total addresses: {total_addresses}{Style.RESET_ALL}")
-logging.info(f"{Fore.CYAN}Successfully geocoded: {success_count}{Style.RESET_ALL}")
-logging.info(f"{Fore.CYAN}Cached coordinates used: {cached_count}{Style.RESET_ALL}")
 
 cursor.close()
 connection.close()
 logging.info(f"{Fore.MAGENTA}Connection to database closed.{Style.RESET_ALL}")
+
+# Save statistics
+update_statistics()
+
+logging.info(f"{Fore.BLUE}Summary:{Style.RESET_ALL}")
+logging.info(f"{Fore.CYAN}Total addresses processed: {stats['addresses_processed']}{Style.RESET_ALL}")
+logging.info(f"{Fore.CYAN}Addresses updated: {stats['addresses_updated']}{Style.RESET_ALL}")
+logging.info(f"{Fore.CYAN}Addresses skipped: {stats['addresses_skipped']}{Style.RESET_ALL}")
+logging.info(f"{Fore.CYAN}Errors encountered: {stats['errors']}{Style.RESET_ALL}")

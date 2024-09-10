@@ -1,6 +1,7 @@
 import os
 import pymysql
 from colorama import Fore, Style
+import json  # Ensure this import is present
 
 # Database connection parameters
 db_config = {
@@ -43,6 +44,11 @@ JOIN (
 ) b ON a.id > b.id AND a.title = b.title AND a.start_date = b.start_date AND a.end_date = b.end_date AND a.company = b.company AND a.location = b.location AND a.url = b.url;
 """
 
+stats = {
+    "items_removed": 0,
+    "duplicates_removed": 0
+}
+
 try:
     # Connect to the 'auctions' database
     conn = pymysql.connect(**db_config)
@@ -65,12 +71,14 @@ try:
     # Delete old data from the 'hibid_upcoming_auctions' table
     cursor.execute(delete_old_data_sql)
     conn.commit()
-    print(f"{Fore.GREEN}Deleted {cursor.rowcount} expired auctions from the table.{Style.RESET_ALL}")
+    stats["items_removed"] = cursor.rowcount
+    print(f"{Fore.GREEN}Deleted {stats['items_removed']} expired auctions from the table.{Style.RESET_ALL}")
 
     # Delete duplicate rows from the 'hibid_upcoming_auctions' table
     cursor.execute(delete_duplicates_sql)
     conn.commit()
-    print(f"{Fore.GREEN}Deleted {cursor.rowcount} duplicate rows from the table.{Style.RESET_ALL}")
+    stats["duplicates_removed"] = cursor.rowcount
+    print(f"{Fore.GREEN}Deleted {stats['duplicates_removed']} duplicate rows from the table.{Style.RESET_ALL}")
 
 except pymysql.MySQLError as e:
     print(f"{Fore.RED}Error: {e}{Style.RESET_ALL}")
@@ -82,3 +90,15 @@ finally:
     if 'conn' in locals():
         conn.close()
     print(f"{Fore.CYAN}Database connections closed.{Style.RESET_ALL}")
+
+print(f"{Fore.RED}Items removed: {stats['items_removed']}{Style.RESET_ALL}")
+print(f"{Fore.YELLOW}Duplicates removed: {stats['duplicates_removed']}{Style.RESET_ALL}")
+
+# Save statistics
+with open('hibid_statistics.json', 'r+') as f:
+    stats_file = json.load(f)
+    stats_file['items_removed'] = stats["items_removed"]
+    stats_file['items_skipped'] += stats["duplicates_removed"]
+    f.seek(0)
+    json.dump(stats_file, f)
+    f.truncate()

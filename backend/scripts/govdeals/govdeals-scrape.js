@@ -1,14 +1,17 @@
 const puppeteer = require('../../node_modules/puppeteer');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process'); // Include child_process to run Python script
+const { exec } = require('child_process');
 
 const baseUrl = 'https://www.govdeals.com/search/filters';
 const queryParams = '?zipcode=52403&miles=250&showMap=0&source=location-search&pn=';
-const pageSize = 120; // This is assumed from your URL, adjust if necessary
+const pageSize = 120;
 
-// Additional utility functions for date and subprocess execution
-const { format } = require('date-fns'); // Make sure to install date-fns or replace with another date formatter
+const stats = {
+    auctions_scraped: 0,
+    items_updated: 0,
+    errors: 0
+};
 
 async function hasNextPage(page) {
     // Check if the "Next Page" button exists

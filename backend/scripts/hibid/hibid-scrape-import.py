@@ -1,128 +1,104 @@
-import json
-import mysql.connector
 import os
-from datetime import datetime
-from bs4 import BeautifulSoup
-import requests
+import pymysql
 from colorama import Fore, Style
-import glob
-import subprocess
+import json  # Add this import
 
-def convert_time_left(time_left):
-    if time_left is None or time_left == 'N/A':
-        return None
-    if '.' in time_left:
-        time_left = time_left.split('.')[0]
-    return time_left
-
-def handle_bid_price(price):
-    return float(price) if price != 'N/A' else 0.00
-
-config = {
+# Database connection parameters
+db_config = {
+    'host': 'localhost',
     'user': 'whatcheer',
     'password': 'meatwad',
-    'host': 'localhost',
-    'database': 'auctions',
-    'raise_on_warnings': True,
+    'db': 'auctions',
+    'charset': 'utf8mb4'
 }
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-create_table = """
-CREATE TABLE IF NOT EXISTS auctions.hibid (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  lot_number VARCHAR(255) NOT NULL,
-  number_of_bids VARCHAR(255) NULL,
-  time_left DATETIME NULL,
-  url VARCHAR(255) UNIQUE,
-  item_name VARCHAR(255) NULL,
-  current_bid_price DECIMAL(10,2) NULL,
-  location_link VARCHAR(255) NULL,
-  location VARCHAR(255) NULL,
-  favorite CHAR(1) DEFAULT 'N',
-  latitude DECIMAL(11,8) NULL,
-  longitude DECIMAL(12,8) NULL
+# SQL Queries
+check_table_sql = """SHOW TABLES LIKE 'hibid_upcoming_auctions';"""
+create_table_sql = """
+CREATE TABLE IF NOT EXISTS hibid_upcoming_auctions (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    start_date DATE,
+    end_date DATE,
+    company VARCHAR(255),
+    location VARCHAR(255),
+    url VARCHAR(255),
+    PRIMARY KEY (id)
 );
 """
-
-add_item = """
-    INSERT INTO auctions.hibid
-    (lot_number, number_of_bids, time_left, url, item_name, current_bid_price, location_link, location, favorite, latitude, longitude)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, 'N', NULL, NULL)
-    AS new
-    ON DUPLICATE KEY UPDATE
-    number_of_bids = new.number_of_bids,
-    time_left = new.time_left,
-    item_name = new.item_name,
-    current_bid_price = new.current_bid_price,
-    location_link = new.location_link,
-    location = new.location
+insert_data_sql = """INSERT INTO hibid_upcoming_auctions (title, start_date, end_date, company, location, url)
+SELECT title, start_date, end_date, company, location, url
+FROM hibid_upcoming_auctions
+WHERE end_date >= CURDATE();
+"""
+delete_old_data_sql = """DELETE FROM hibid_upcoming_auctions
+WHERE end_date < CURDATE();
+"""
+delete_duplicates_sql = """
+DELETE a FROM hibid_upcoming_auctions a
+JOIN (
+    SELECT MIN(id) as id, title, start_date, end_date, company, location, url
+    FROM hibid_upcoming_auctions
+    GROUP BY title, start_date, end_date, company, location, url
+    HAVING COUNT(*) > 1
+) b ON a.id > b.id AND a.title = b.title AND a.start_date = b.start_date AND a.end_date = b.end_date AND a.company = b.company AND a.location = b.location AND a.url = b.url;
 """
 
-successful_items = 0
-duplicate_items = 0
-skipped_items = []
+stats = {
+    "items_removed": 0,
+    "duplicates_removed": 0
+}
 
 try:
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
-except mysql.connector.Error as err:
-    print(f"{Fore.RED}Error connecting to the database: {err}{Style.RESET_ALL}")
-    exit(1)
+    # Connect to the 'auctions' database
+    conn = pymysql.connect(**db_config)
+    cursor = conn.cursor()
 
-auction_url = "https://hibid.com/catalog/562468/online-only-jewelry-auction"
-
-try:
-    cursor.execute("SHOW TABLES IN auctions LIKE 'hibid'")
+    # Create the 'hibid_upcoming_auctions' table if it doesn't exist
+    cursor.execute(check_table_sql)
     if not cursor.fetchone():
-        cursor.execute(create_table)
-        print(f"{Fore.GREEN}Table 'auctions.hibid' created.{Style.RESET_ALL}")
-except mysql.connector.Error as err:
-    print(f"{Fore.RED}Error checking or creating the 'auctions.hibid' table: {err}{Style.RESET_ALL}")
-    cursor.close()
-    cnx.close()
-    exit(1)
+        cursor.execute(create_table_sql)
+        conn.commit()
+        print(f"{Fore.GREEN}Table 'hibid_upcoming_auctions' created successfully.{Style.RESET_ALL}")
+    else:
+        print(f"{Fore.GREEN}Table 'hibid_upcoming_auctions' already exists.{Style.RESET_ALL}")
 
-json_files = glob.glob(os.path.join(script_dir, 'scrape-*_parsed.json'))
-if json_files:
-    latest_file = max(json_files, key=os.path.getctime)
-    with open(latest_file) as json_file:
-        items = json.load(json_file)
+    # Insert new data into the 'hibid_upcoming_auctions' table
+    cursor.execute(insert_data_sql)
+    conn.commit()
+    print(f"{Fore.GREEN}Inserted {cursor.rowcount} new rows into the table.{Style.RESET_ALL}")
 
-        for item in items:
-            try:
-                lot_number = item.get('lot_number')
-                item_name = item.get('item_name')
-                location = item.get('location')
-                url = item.get('url')
-                number_of_bids = item.get('number_of_bids', 'N/A')
-                time_left = convert_time_left(item.get('time_left', 'N/A'))
-                current_bid_price = handle_bid_price(item.get('current_bid_price', 'N/A'))
-                location_link = item.get('location_link')
+    # Delete old data from the 'hibid_upcoming_auctions' table
+    cursor.execute(delete_old_data_sql)
+    conn.commit()
+    stats["items_removed"] = cursor.rowcount
+    print(f"{Fore.GREEN}Deleted {stats['items_removed']} expired auctions from the table.{Style.RESET_ALL}")
 
-                data_item = (lot_number, number_of_bids, time_left, url, item_name, current_bid_price, location_link, location)
-                cursor.execute(add_item, data_item)
-                successful_items += 1
-            except mysql.connector.Error as err:
-                print(f"{Fore.RED}Error inserting item: {item}. Error: {err}{Style.RESET_ALL}")
-                skipped_items.append(item)
-            except Exception as e:
-                print(f"{Fore.RED}Unexpected error: {e}{Style.RESET_ALL}")
-                skipped_items.append(item)
+    # Delete duplicate rows from the 'hibid_upcoming_auctions' table
+    cursor.execute(delete_duplicates_sql)
+    conn.commit()
+    stats["duplicates_removed"] = cursor.rowcount
+    print(f"{Fore.GREEN}Deleted {stats['duplicates_removed']} duplicate rows from the table.{Style.RESET_ALL}")
 
-        cnx.commit()
+except pymysql.MySQLError as e:
+    print(f"{Fore.RED}Error: {e}{Style.RESET_ALL}")
 
-cursor.close()
-cnx.close()
+finally:
+    # Close connections and cursors
+    if 'cursor' in locals():
+        cursor.close()
+    if 'conn' in locals():
+        conn.close()
+    print(f"{Fore.CYAN}Database connections closed.{Style.RESET_ALL}")
 
-print(f"{Fore.GREEN}Successful insertions: {successful_items}{Style.RESET_ALL}")
-print(f"{Fore.YELLOW}Duplicate items: {duplicate_items}{Style.RESET_ALL}")
-print(f"{Fore.RED}Skipped items: {len(skipped_items)}{Style.RESET_ALL}")
+print(f"{Fore.RED}Items removed: {stats['items_removed']}{Style.RESET_ALL}")
+print(f"{Fore.YELLOW}Duplicates removed: {stats['duplicates_removed']}{Style.RESET_ALL}")
 
-try:
-    subprocess.run(["python3", "hibid-latlong.py"], check=True)
-    print(f"{Fore.GREEN}hibid-latlong.py script executed successfully.{Style.RESET_ALL}")
-except FileNotFoundError:
-    print(f"{Fore.RED}hibid-latlong.py script not found. Please check the file path.{Style.RESET_ALL}")
-except subprocess.CalledProcessError as e:
-    print(f"{Fore.RED}Error occurred while running hibid-latlong.py: {e}{Style.RESET_ALL}")
+# Save statistics
+with open('hibid_statistics.json', 'r+') as f:
+    stats_file = json.load(f)
+    stats_file['items_removed'] = stats["items_removed"]
+    stats_file['items_skipped'] += stats["duplicates_removed"]
+    f.seek(0)
+    json.dump(stats_file, f)
+    f.truncate()

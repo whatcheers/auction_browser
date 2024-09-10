@@ -1,12 +1,15 @@
+# bidspotter-maint.py
+
 import mysql.connector
 import json
+from datetime import datetime
 
 # Database connection details
 host = "localhost"
 user = "whatcheer"
 password = "meatwad"
 database = "auctions"
-table = "gsa"
+table = "bidspotter"
 
 # Connect to the database
 db = mysql.connector.connect(
@@ -20,7 +23,7 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 
 # SQL query to delete expired rows
-sql = "DELETE FROM {} WHERE time_left < NOW()".format(table)
+sql = f"DELETE FROM {table} WHERE time_left < NOW()"
 
 # Execute the query
 cursor.execute(sql)
@@ -35,18 +38,18 @@ db.commit()
 cursor.close()
 db.close()
 
-print(f"{items_removed} expired rows deleted from the {table} table.")
+print(f"Expired rows deleted from the {table} table: {items_removed}")
 
-# Update statistics
+# Save statistics
 try:
-    with open('gsa_statistics.json', 'r+') as f:
+    with open('bidspotter_statistics.json', 'r+') as f:
         stats = json.load(f)
         stats['items_removed'] = items_removed
         f.seek(0)
         json.dump(stats, f)
         f.truncate()
 except FileNotFoundError:
-    with open('gsa_statistics.json', 'w') as f:
+    with open('bidspotter_statistics.json', 'w') as f:
         json.dump({
             "auctions_scraped": 1,  # Assuming one auction is scraped per run
             "items_added": 0,
@@ -58,3 +61,6 @@ except FileNotFoundError:
             "addresses_updated": 0,
             "addresses_skipped": 0
         }, f)
+
+print(f"Updated statistics: {items_removed} items removed")
+

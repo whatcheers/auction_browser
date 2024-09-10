@@ -29,8 +29,12 @@ def check_and_add_columns(cursor, table_name, columns):
         cursor.execute(f"SHOW COLUMNS FROM {table_name} LIKE '{column}'")
         column_exists = cursor.fetchone()
         if not column_exists:
-            cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {column} DECIMAL(10,8)")
+            cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN {column} DECIMAL(11,8)")
             print(f"{Fore.GREEN}Added '{column}' column to the '{table_name}' table.{Style.RESET_ALL}")
+        else:
+            # Modify existing columns to ensure they can hold the full range of values
+            cursor.execute(f"ALTER TABLE {table_name} MODIFY COLUMN {column} DECIMAL(11,8)")
+            print(f"{Fore.GREEN}Modified '{column}' column in the '{table_name}' table to DECIMAL(11,8).{Style.RESET_ALL}")
 
 # Establish connection to the MySQL database
 connection = establish_db_connection(db_config)

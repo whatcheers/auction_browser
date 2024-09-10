@@ -114,41 +114,53 @@ else:
     print(f"{Colors.WARNING}No JSON files found in the './archive/' directory.{Colors.ENDC}")
     items = []  # Set items to an empty list if no JSON files are found
 
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
 # Process items
 total_records = len(items)
-records_imported = 0
-records_skipped = 0
-records_errored = 0
-
 for item in items:
     try:
         item['location'] = clean_location(item['location'])
         cursor.execute("SELECT COUNT(*) FROM publicsurplus WHERE lot_number = %s", (item['lot_number'],))
         count = cursor.fetchone()[0]
         if count > 0:
-            records_skipped += 1
+            stats["items_skipped"] += 1
             print(f"{Colors.WARNING}Skipped duplicate item with lot_number: {item['lot_number']}{Colors.ENDC}")
             continue
 
         time_left = datetime.strptime(item['time_left'], '%m/%d/%Y %H:%M')
         cursor.execute("INSERT INTO publicsurplus (item_name, location, current_bid, lot_number, time_left, url, latitude, longitude) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
                        (item['item_name'], item['location'], item['current_bid'], item['lot_number'], time_left, item['url'], item.get('latitude', None), item.get('longitude', None)))
-        records_imported += 1
+        stats["items_added"] += 1
         print(f"{Colors.OKGREEN}Processed item: {item['item_name']} with ID: {cursor.lastrowid}{Colors.ENDC}")
     except KeyError as e:
-        records_errored += 1
+        stats["errors"] += 1
         print(f"{Colors.FAIL}Skipped item due to missing key: {e.args[0]}{Colors.ENDC}")
     except Exception as e:
-        records_errored += 1
+        stats["errors"] += 1
         print(f"{Colors.FAIL}Error processing item with ID: {item.get('id', 'Unknown')}. Error: {e}{Colors.ENDC}")
-
 
 cnx.commit()
 cursor.close()
 cnx.close()
 
+# Save statistics
+with open('publicsurplus_mysql_statistics.json', 'w') as f:
+    json.dump(stats, f)
+
 print(f"{Colors.HEADER}Import Summary:{Colors.ENDC}")
 print(f"Total Records: {total_records}")
-print(f"Records Imported: {records_imported}")
-print(f"Records Skipped: {records_skipped}")
-print(f"Records Errored: {records_errored}")
+print(f"Records Imported: {stats['items_added']}")
+print(f"Records Skipped: {stats['items_skipped']}")
+print(f"Records Errored: {stats['errors']}")

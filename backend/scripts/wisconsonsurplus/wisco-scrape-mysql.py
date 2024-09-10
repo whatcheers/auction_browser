@@ -5,17 +5,31 @@ import mysql.connector
 from mysql.connector import Error
 from datetime import datetime
 import os
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init()
 
 # Setup logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Initialize statistics
+stats = {
+    "items_added": 0,
+    "items_updated": 0,
+    "items_skipped": 0,
+    "items_removed": 0,
+    "errors": 0
+}
 
 def connect_to_mysql(config):
     try:
         connection = mysql.connector.connect(**config)
-        logging.info("MySQL Database connection successful")
+        logging.info(f"{Fore.GREEN}MySQL Database connection successful{Style.RESET_ALL}")
         return connection
     except Error as err:
-        logging.error(f"Database connection error: {err}")
+        logging.error(f"{Fore.RED}Database connection error: {err}{Style.RESET_ALL}")
+        stats["errors"] += 1
         return None
 
 def ensure_table_exists(connection):
@@ -43,9 +57,9 @@ def ensure_table_exists(connection):
         )
         """
         cursor.execute(create_table_query)
-        logging.info(f"Table '{table_name}' created.")
+        logging.info(f"{Fore.GREEN}Table '{table_name}' created.{Style.RESET_ALL}")
     else:
-        logging.info(f"Table '{table_name}' already exists.")
+        logging.info(f"{Fore.YELLOW}Table '{table_name}' already exists.{Style.RESET_ALL}")
 
     cursor.close()
     return table_name
@@ -73,8 +87,9 @@ def insert_item(connection, table_name, item):
         None # Set the default value for the 'favorite' column to NULL
     ))
     connection.commit()
-    logging.debug(f"Inserted item: {item['Item Title']}")
+    logging.debug(f"{Fore.GREEN}Inserted item: {item['Item Title']}{Style.RESET_ALL}")
     cursor.close()
+    stats["items_added"] += 1
 
 def main():
     parser = argparse.ArgumentParser(description='Import auction items into MySQL.')
@@ -91,7 +106,7 @@ def main():
 
     connection = connect_to_mysql(config)
     if not connection:
-        logging.error("Exiting due to database connection failure.")
+        logging.error(f"{Fore.RED}Exiting due to database connection failure.{Style.RESET_ALL}")
         return
 
     table_name = ensure_table_exists(connection)
@@ -110,10 +125,22 @@ def main():
             for item in items:
                 insert_item(connection, table_name, item)
     else:
-        logging.error("Either --file or --directory argument is required.")
+        logging.error(f"{Fore.RED}Either --file or --directory argument is required.{Style.RESET_ALL}")
+        stats["errors"] += 1
 
     connection.close()
-    logging.info("Data import completed.")
+    logging.info(f"{Fore.GREEN}Data import completed.{Style.RESET_ALL}")
+
+    # Save statistics
+    with open('wisco_mysql_statistics.json', 'w') as f:
+        json.dump(stats, f)
+
+    logging.info(f"{Fore.BLUE}Wisconsin Surplus MySQL Statistics:{Style.RESET_ALL}")
+    logging.info(f"Items added: {stats['items_added']}")
+    logging.info(f"Items updated: {stats['items_updated']}")
+    logging.info(f"Items skipped: {stats['items_skipped']}")
+    logging.info(f"Items removed: {stats['items_removed']}")
+    logging.info(f"Errors: {stats['errors']}")
 
 if __name__ == "__main__":
     main()

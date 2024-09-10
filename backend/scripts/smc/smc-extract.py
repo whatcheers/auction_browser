@@ -15,6 +15,33 @@ from colorama import init, Fore, Style
 # Initialize colorama for colored console output
 init(autoreset=True)
 
+# Initialize statistics
+stats = {
+    "auctions_processed": 0,
+    "items_scraped": 0,
+    "errors": 0,
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
+
+def update_statistics():
+    try:
+        with open('smc_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('smc_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
+
 def scroll_to_bottom(driver):
     """Scroll to the bottom of the page to load all dynamic content."""
     last_height = driver.execute_script("return document.body.scrollHeight")
@@ -60,7 +87,6 @@ def extract_items_from_page(soup, end_date, location):
             'url': full_url  # Use the full URL here
         })
     return item_details
-
 
 def extract_auction_info(driver, auction_url, end_date):
     """Extract all item information from an auction, handling pagination."""
@@ -138,29 +164,38 @@ if __name__ == "__main__":
     # Specify the Chrome binary path (adjust this path if necessary)
     chrome_options.binary_location = "/usr/bin/google-chrome-stable"
 
-    # Create a WebDriver instance
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=chrome_options)
+    # Initialize the WebDriver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
-    # Iterate over the auctions
-    for auction in auctions:
-        print(f"{Fore.GREEN}Processing auction: {auction['auctionName']}{Style.RESET_ALL}")
-        try:
-            auction_items = extract_auction_info(driver, auction['auctionUrl'], auction['endDate'])
-            all_items.extend(auction_items)
-            print(f"{Fore.GREEN}Auction {auction['auctionName']} processed successfully. Found {len(auction_items)} items.{Style.RESET_ALL}")
-            
-            # Add a random delay between auctions to be polite to the server
-            time.sleep(random.uniform(3, 6))
-        except Exception as e:
-            print(f"{Fore.RED}Error processing auction {auction['auctionName']}: {str(e)}{Style.RESET_ALL}")
+    try:
+        for auction in auctions:
+            auction_url = auction['auctionUrl']
+            end_date = auction['endDate']
+            items = extract_auction_info(driver, auction_url, end_date)
+            all_items.extend(items)
+            stats["auctions_scraped"] += 1
+            stats["items_scraped"] += len(items)
+    except Exception as e:
+        print(f"{Fore.RED}An error occurred: {e}{Style.RESET_ALL}")
+        stats["errors"] += 1
+    finally:
+        driver.quit()
 
-    # Close the WebDriver
-    driver.quit()
+    # Save the extracted items to a JSON file
+    with open('auction_data.json', 'w') as file:
+        json.dump(all_items, file, indent=4)
 
-    # Save the auction items to a JSON file
-    output_file = 'auction_data.json'
-    with open(output_file, 'w') as file:
-        json.dump(all_items, file, indent=2)
+    # Save statistics
+    update_statistics()
 
-    print(f"{Fore.GREEN}Auction data saved to {output_file}{Style.RESET_ALL}")
+    print(f"\n{Fore.BLUE}SMC Extract Statistics:{Style.RESET_ALL}")
+    print(f"Auctions scraped: {stats['auctions_scraped']}")
+    print(f"Items scraped: {stats['items_scraped']}")
+    print(f"Errors: {stats['errors']}")
+    print(f"Items added: {stats['items_added']}")
+    print(f"Items updated: {stats['items_updated']}")
+    print(f"Items removed: {stats['items_removed']}")
+    print(f"Items skipped: {stats['items_skipped']}")
+    print(f"Addresses processed: {stats['addresses_processed']}")
+    print(f"Addresses updated: {stats['addresses_updated']}")
+    print(f"Addresses skipped: {stats['addresses_skipped']}")

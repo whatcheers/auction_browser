@@ -453,3 +453,2044 @@ Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like R
 Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
 Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
 Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Blue 466E International Diesel Motor 1 - Error: name 'items_updated' is not defined
+Item: Snapon airhydraulic 20 ton Jack - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 6 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 3 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 4 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 7 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 2 - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 5 - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: Stihl FS90R Gas Weed Eater - Error: name 'items_updated' is not defined
+Item: Honda Harmony EN2500 Gas Generator - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6B - Error: name 'items_updated' is not defined
+Item: File Cabinet and Step Stool - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6E - Error: name 'items_updated' is not defined
+Item: Metal Shelf - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6C - Error: name 'items_updated' is not defined
+Item: GE Microwave 6A - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6D - Error: name 'items_updated' is not defined
+Item: Lot of HP Print Cartridges - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6B - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6A - Error: name 'items_updated' is not defined
+Item: Swinger Auger Hopper Mover - Error: name 'items_updated' is not defined
+Item: GE Microwave 6B - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6A - Error: name 'items_updated' is not defined
+Item: Lot of Printer Cartridges and Other Printer Items - Error: name 'items_updated' is not defined
+Item: Survey Lot - Error: name 'items_updated' is not defined
+Item: Honda EM 1800 Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: Sharp Microwave - Error: name 'items_updated' is not defined
+Item: 2015 Chevy Traverse SUV - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: Security Camera - Error: name 'items_updated' is not defined
+Item: Assorted Items - Error: name 'items_updated' is not defined
+Item: Television - Error: name 'items_updated' is not defined
+Item: Lot of 6 Mini Refrigerators - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: Vivax Metrotech Locator - Error: name 'items_updated' is not defined
+Item: 2012 Toro Groundsmaster 5900  16 Cutting Width - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Lot of 2  Echo Backpack Leaf Blowers - Error: name 'items_updated' is not defined
+Item: Tanaka Handheld Blower Inspire 25cc  THB260PF - Error: name 'items_updated' is not defined
+Item: 2014 Echo HC152 Hedge Trimmer - Error: name 'items_updated' is not defined
+Item: Canon 55 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Single Family Next to St Louis Downtown  Airport - Error: name 'items_updated' is not defined
+Item: Electric Adjustable Height Work Bench - Error: name 'items_updated' is not defined
+Item: Tricep extension - Error: name 'items_updated' is not defined
+Item: 24 filing cabinets - Error: name 'items_updated' is not defined
+Item: various filing cabinets - Error: name 'items_updated' is not defined
+Item: Shoulder press - Error: name 'items_updated' is not defined
+Item: Chest Press - Error: name 'items_updated' is not defined
+Item: Pull up and dip tower - Error: name 'items_updated' is not defined
+Item: 5 Dell computers with 2 monitors - Error: name 'items_updated' is not defined
+Item: 2 Allsteel desk chairs with arms - Error: name 'items_updated' is not defined
+Item: 9 wood  leather chairs - Error: name 'items_updated' is not defined
+Item: Chemical Controllers - Error: name 'items_updated' is not defined
+Item: Samsung TV version SS04 - Error: name 'items_updated' is not defined
+Item: Lot of 5 Unopened Boxes of Printer Cartridges - Error: name 'items_updated' is not defined
+Item: 2011 Ford F350 SD - Error: name 'items_updated' is not defined
+Item: 2010 TruCut C21 Push Mower  21 - Error: name 'items_updated' is not defined
+Item: Tru Cut 21 Push Mower - Error: name 'items_updated' is not defined
+Item: 2011 Ford F350 SD - Error: name 'items_updated' is not defined
+Item: 2009 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2024 Ford F350 Tailgate - Error: name 'items_updated' is not defined
+Item: 2024 Ford F350 Bumper - Error: name 'items_updated' is not defined
+Item: Sail Boat Stands S2s Lot of 50 - Error: name 'items_updated' is not defined
+Item: Filing cabinets and lecturn - Error: name 'items_updated' is not defined
+Item: Sail Boat Stands S3s Lot of 50 - Error: name 'items_updated' is not defined
+Item: Folding Tables - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Konica Minolta bizhub 223 - Error: name 'items_updated' is not defined
+Item: Konica Minolta bizhub C454 - Error: name 'items_updated' is not defined
+Item: 36 2 drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: 5 Library bookcases - Error: name 'items_updated' is not defined
+Item: Treadmill - Error: name 'items_updated' is not defined
+Item: Short Floor Bumper Racks QTY 2 - Error: name 'items_updated' is not defined
+Item: Floor Bumper Racks QTY 4 - Error: name 'items_updated' is not defined
+Item: Body Solid Leg Extension Machine - Error: name 'items_updated' is not defined
+Item: 4Way Neck Machine - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: 2008 Chevrolet Express G1500 Cargo Van - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Cobalt LS 4Door Sedan - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: CopyStar CS1620  Ricoh Aficio MP 5001  Ricoh Af - Error: name 'items_updated' is not defined
+Item: RAINBIRD IRRIGATION STATIONS  MISC PARTS  ONE L - Error: name 'items_updated' is not defined
+Item: Storage Shed w concrete blocks - Error: name 'items_updated' is not defined
+Item: LOT  Chicken cages - Error: name 'items_updated' is not defined
+Item: LOT  Quail Battery Cages - Error: name 'items_updated' is not defined
+Item: Siemens VivaE Drug Analyzer - Error: name 'items_updated' is not defined
+Item: 2001 FELLING POLE TRAILER - Error: name 'items_updated' is not defined
+Item: 2020 Ditch Witch HX50 Vacuum Excavator Trailer - Error: name 'items_updated' is not defined
+Item: 2010 Chevrolet Silverado 2500HD 4WD - Error: name 'items_updated' is not defined
+Item: Welding tools brand new  still in original packa - Error: name 'items_updated' is not defined
+Item: Hydraulic floor jack - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Black cabinets - Error: name 'items_updated' is not defined
+Item: HP LaserJet 4015 printer - Error: name 'items_updated' is not defined
+Item: Lot 4 of tables - Error: name 'items_updated' is not defined
+Item: Lot 2 of tables - Error: name 'items_updated' is not defined
+Item: Dell HP and Acer Computer Monitors - Error: name 'items_updated' is not defined
+Item: Dodge 2023 cargo van rear hitchbumper Pro Master - Error: name 'items_updated' is not defined
+Item: KVM switch bar code scanner Fujitsu scanner - Error: name 'items_updated' is not defined
+Item: Storage Shelf - Error: name 'items_updated' is not defined
+Item: L shaped Wood desk - Error: name 'items_updated' is not defined
+Item: Table on wheels - Error: name 'items_updated' is not defined
+Item: Seco 3 Well Hot Cart - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot 3 of tables - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot of 5 POE 48Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: Lot of 7 POE 24Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: APC Server Towers - Error: name 'items_updated' is not defined
+Item: HP OfficeJet Pro 7740 - Error: name 'items_updated' is not defined
+Item: Misc office supplies - Error: name 'items_updated' is not defined
+Item: WhipsPaddlesMisc UtencilsDish Machine Curtains - Error: name 'items_updated' is not defined
+Item: Blankets - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: office supplies - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Ford 941 rotary cutter - Error: name 'items_updated' is not defined
+Item: Ford 909 Rotary Cutter - Error: name 'items_updated' is not defined
+Item: Lot of Mixed Power Strips - Error: name 'items_updated' is not defined
+Item: Scrap Metal - Error: name 'items_updated' is not defined
+Item: Fisher Scientific Isotemp Refrigerator andor Free - Error: name 'items_updated' is not defined
+Item: cabinets - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Tower Computer Case with Motherboard and - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: 25 Oak Bunk Bed Frame Legs for Lumber Lot BB - Error: name 'items_updated' is not defined
+Item: 23Oak Bunk Bed Frame Legs for Lumber Lot CC - Error: name 'items_updated' is not defined
+Item: 25 Oak Bunk Bed Frame Legs for Lumber Lot AA - Error: name 'items_updated' is not defined
+Item: LabLine Model 701FVR17 Incubator - Error: name 'items_updated' is not defined
+Item: 6APC Server Racks - Error: name 'items_updated' is not defined
+Item: Carter Hoffman Cold Well food cart - Error: name 'items_updated' is not defined
+Item: Student Desk w Cubby - Error: name 'items_updated' is not defined
+Item: Outdoor Soccer Goal Frames - Error: name 'items_updated' is not defined
+Item: Mobile ingredient bins Food Storage - Error: name 'items_updated' is not defined
+Item: Readacrit Centrifuge - Error: name 'items_updated' is not defined
+Item: Oak Solid Core Doors 36 x 80 - Error: name 'items_updated' is not defined
+Item: Aluminum spiral dough mixers 2 qty - Error: name 'items_updated' is not defined
+Item: Platform Mats - Error: name 'items_updated' is not defined
+Item: Metal Storage Cart - Error: name 'items_updated' is not defined
+Item: Hot Holding Unit - Error: name 'items_updated' is not defined
+Item: Analog PH Meter - Error: name 'items_updated' is not defined
+Item: Solid Core Oak Doors - Error: name 'items_updated' is not defined
+Item: Red Framed Nets - Error: name 'items_updated' is not defined
+Item: 2 Tables - Error: name 'items_updated' is not defined
+Item: Wenger Rollaway II Acustical Shells - Error: name 'items_updated' is not defined
+Item: 2005 International 7400 - Error: name 'items_updated' is not defined
+Item: 27 drawer file cabinet - Error: name 'items_updated' is not defined
+Item: file cabinets group of 3 - Error: name 'items_updated' is not defined
+Item: reading table - Error: name 'items_updated' is not defined
+Item: wooden teacher desk - Error: name 'items_updated' is not defined
+Item: Stainless Steel Condiment serving table - Error: name 'items_updated' is not defined
+Item: Algebra 2 textbooks ISBN 9780547647074 - Error: name 'items_updated' is not defined
+Item: 6 Wheel Scissor Centralizer - Error: name 'items_updated' is not defined
+Item: Six drawer lateral filing cabinet - Error: name 'items_updated' is not defined
+Item: 6 Wheel Scissor Centralizer - Error: name 'items_updated' is not defined
+Item: Five drawer lateral filing cabinet - Error: name 'items_updated' is not defined
+Item: 1999 Earthquake Auger - Error: name 'items_updated' is not defined
+Item: 2003 Chevrolet S10 Ext Cab 4WD - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: Avocent Autoview 3016 Switch - Error: name 'items_updated' is not defined
+Item: 2 3com switch - Error: name 'items_updated' is not defined
+Item: Dell J5CJSD2 OptiPlex 3040 - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP  P  451W 4200 Lumen - Error: name 'items_updated' is not defined
+Item: Avocent AV 2216 Emerson Network Power - Error: name 'items_updated' is not defined
+Item: Fortigate FWF30E Firewall - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 404 HD - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 1820 - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 1820 - Error: name 'items_updated' is not defined
+Item: Go Pro Fusion Camera - Error: name 'items_updated' is not defined
+Item: Canon Rebel TR EOS 1100 Digital Camera - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector 4100 Lumen - Error: name 'items_updated' is not defined
+Item: Anchor Liberty Battery PA System  2X CH receivers - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP M322W - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP M322W - Error: name 'items_updated' is not defined
+Item: 2 3com switch - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Mackie Pro FX 12 12 Channel Mixer - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 404 HD - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: TED Pro Energy Monitoring Device - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector 4100 Lumen - Error: name 'items_updated' is not defined
+Item: 24 Samsung Monitor - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: 2005 Ford Explorer - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch  no cord factory reset - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch 48P Switch no cords - Error: name 'items_updated' is not defined
+Item: Hitachi Projector  CPWU8461 - Error: name 'items_updated' is not defined
+Item: Apple AirPort Base Station - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 3COM 4500 Switch no cord - Error: name 'items_updated' is not defined
+Item: Hitachi Projector  CPWU8461 - Error: name 'items_updated' is not defined
+Item: 3COM 4500 Switch no cord broken - Error: name 'items_updated' is not defined
+Item: Toshiba 2430S25524GHz  512GB40GB 12003 - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch no cords - Error: name 'items_updated' is not defined
+Item: Mac mini Server late 2012 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: DellJ5CJSD2 - Error: name 'items_updated' is not defined
+Item: USBC cables - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: Xirrus XR2000 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: MacBook Pro 15inch 2017 - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Mac Pro Mid 2010 damaged back corner - Error: name 'items_updated' is not defined
+Item: Logitech Case for iPad Pro 105 inch - Error: name 'items_updated' is not defined
+Item: Mac mini Late 2014 - Error: name 'items_updated' is not defined
+Item: 2014 Ford Taurus - Error: name 'items_updated' is not defined
+Item: 1956 House w detached Garage to be moved offsite - Error: name 'items_updated' is not defined
+Item: Lot of 3180 9 glass salad plates - Error: name 'items_updated' is not defined
+Item: 1 LOT OF 6 PANASONIC TOUGHBOOKS - Error: name 'items_updated' is not defined
+Item: 2013 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 1 Lot of 26 Desktops - Error: name 'items_updated' is not defined
+Item: Conference table - Error: name 'items_updated' is not defined
+Item: 2 drawer white filing cabinet - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Hand Sanitizer - Error: name 'items_updated' is not defined
+Item: Desk Hutch - Error: name 'items_updated' is not defined
+Item: Computer Cart on Wheels - Error: name 'items_updated' is not defined
+Item: Filing Cabinet - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Set of two Microwaves - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: 1988 Grey ODAY 24 Sailboat with Trailor - Error: name 'items_updated' is not defined
+Item: 2018 Lincoln MKZ Hybrid 20L Lic 10406 - Error: name 'items_updated' is not defined
+Item: 2016 Ford E350 Step Van 54L  8775North Americ - Error: name 'items_updated' is not defined
+Item: Pool Bundle 6 Diving Blocks  2 Sets of OlympicS - Error: name 'items_updated' is not defined
+Item: Tricep extension - Error: name 'items_updated' is not defined
+Item: 24 filing cabinets - Error: name 'items_updated' is not defined
+Item: various filing cabinets - Error: name 'items_updated' is not defined
+Item: Shoulder press - Error: name 'items_updated' is not defined
+Item: Chest Press - Error: name 'items_updated' is not defined
+Item: Pull up and dip tower - Error: name 'items_updated' is not defined
+Item: 5 Dell computers with 2 monitors - Error: name 'items_updated' is not defined
+Item: 2 Allsteel desk chairs with arms - Error: name 'items_updated' is not defined
+Item: 9 wood  leather chairs - Error: name 'items_updated' is not defined
+Item: Treadmill - Error: name 'items_updated' is not defined
+Item: Short Floor Bumper Racks QTY 2 - Error: name 'items_updated' is not defined
+Item: Floor Bumper Racks QTY 4 - Error: name 'items_updated' is not defined
+Item: Body Solid Leg Extension Machine - Error: name 'items_updated' is not defined
+Item: 4Way Neck Machine - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: 2008 Chevrolet Express G1500 Cargo Van - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Cobalt LS 4Door Sedan - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: CopyStar CS1620  Ricoh Aficio MP 5001  Ricoh Af - Error: name 'items_updated' is not defined
+Item: RAINBIRD IRRIGATION STATIONS  MISC PARTS  ONE L - Error: name 'items_updated' is not defined
+Item: Storage Shed w concrete blocks - Error: name 'items_updated' is not defined
+Item: LOT  Chicken cages - Error: name 'items_updated' is not defined
+Item: LOT  Quail Battery Cages - Error: name 'items_updated' is not defined
+Item: Siemens VivaE Drug Analyzer - Error: name 'items_updated' is not defined
+Item: 2001 FELLING POLE TRAILER - Error: name 'items_updated' is not defined
+Item: 2020 Ditch Witch HX50 Vacuum Excavator Trailer - Error: name 'items_updated' is not defined
+Item: 2010 Chevrolet Silverado 2500HD 4WD - Error: name 'items_updated' is not defined
+Item: Welding tools brand new  still in original packa - Error: name 'items_updated' is not defined
+Item: Hydraulic floor jack - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Black cabinets - Error: name 'items_updated' is not defined
+Item: HP LaserJet 4015 printer - Error: name 'items_updated' is not defined
+Item: Lot 4 of tables - Error: name 'items_updated' is not defined
+Item: Lot 2 of tables - Error: name 'items_updated' is not defined
+Item: Dell HP and Acer Computer Monitors - Error: name 'items_updated' is not defined
+Item: Dodge 2023 cargo van rear hitchbumper Pro Master - Error: name 'items_updated' is not defined
+Item: KVM switch bar code scanner Fujitsu scanner - Error: name 'items_updated' is not defined
+Item: Storage Shelf - Error: name 'items_updated' is not defined
+Item: L shaped Wood desk - Error: name 'items_updated' is not defined
+Item: Table on wheels - Error: name 'items_updated' is not defined
+Item: Seco 3 Well Hot Cart - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot 3 of tables - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot of 5 POE 48Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: Lot of 7 POE 24Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: APC Server Towers - Error: name 'items_updated' is not defined
+Item: HP OfficeJet Pro 7740 - Error: name 'items_updated' is not defined
+Item: Misc office supplies - Error: name 'items_updated' is not defined
+Item: WhipsPaddlesMisc UtencilsDish Machine Curtains - Error: name 'items_updated' is not defined
+Item: Blankets - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: office supplies - Error: name 'items_updated' is not defined
+Item: Ford 941 rotary cutter - Error: name 'items_updated' is not defined
+Item: Ford 909 Rotary Cutter - Error: name 'items_updated' is not defined
+Item: Lot of Mixed Power Strips - Error: name 'items_updated' is not defined
+Item: Scrap Metal - Error: name 'items_updated' is not defined
+Item: Fisher Scientific Isotemp Refrigerator andor Free - Error: name 'items_updated' is not defined
+Item: cabinets - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: This is a Tower Computer Case with Motherboard and - Error: name 'items_updated' is not defined
+Item: This is a Full Tower Computer Case with Motherboar - Error: name 'items_updated' is not defined
+Item: 25 Oak Bunk Bed Frame Legs for Lumber Lot BB - Error: name 'items_updated' is not defined
+Item: 23Oak Bunk Bed Frame Legs for Lumber Lot CC - Error: name 'items_updated' is not defined
+Item: 25 Oak Bunk Bed Frame Legs for Lumber Lot AA - Error: name 'items_updated' is not defined
+Item: LabLine Model 701FVR17 Incubator - Error: name 'items_updated' is not defined
+Item: 6APC Server Racks - Error: name 'items_updated' is not defined
+Item: Carter Hoffman Cold Well food cart - Error: name 'items_updated' is not defined
+Item: Student Desk w Cubby - Error: name 'items_updated' is not defined
+Item: Outdoor Soccer Goal Frames - Error: name 'items_updated' is not defined
+Item: Mobile ingredient bins Food Storage - Error: name 'items_updated' is not defined
+Item: Readacrit Centrifuge - Error: name 'items_updated' is not defined
+Item: Oak Solid Core Doors 36 x 80 - Error: name 'items_updated' is not defined
+Item: Aluminum spiral dough mixers 2 qty - Error: name 'items_updated' is not defined
+Item: Platform Mats - Error: name 'items_updated' is not defined
+Item: Metal Storage Cart - Error: name 'items_updated' is not defined
+Item: Hot Holding Unit - Error: name 'items_updated' is not defined
+Item: Analog PH Meter - Error: name 'items_updated' is not defined
+Item: Solid Core Oak Doors - Error: name 'items_updated' is not defined
+Item: Red Framed Nets - Error: name 'items_updated' is not defined
+Item: 2 Tables - Error: name 'items_updated' is not defined
+Item: Wenger Rollaway II Acustical Shells - Error: name 'items_updated' is not defined
+Item: 2005 International 7400 - Error: name 'items_updated' is not defined
+Item: 27 drawer file cabinet - Error: name 'items_updated' is not defined
+Item: file cabinets group of 3 - Error: name 'items_updated' is not defined
+Item: reading table - Error: name 'items_updated' is not defined
+Item: wooden teacher desk - Error: name 'items_updated' is not defined
+Item: Stainless Steel Condiment serving table - Error: name 'items_updated' is not defined
+Item: Algebra 2 textbooks ISBN 9780547647074 - Error: name 'items_updated' is not defined
+Item: 6 Wheel Scissor Centralizer - Error: name 'items_updated' is not defined
+Item: Six drawer lateral filing cabinet - Error: name 'items_updated' is not defined
+Item: 6 Wheel Scissor Centralizer - Error: name 'items_updated' is not defined
+Item: Five drawer lateral filing cabinet - Error: name 'items_updated' is not defined
+Item: 1999 Earthquake Auger - Error: name 'items_updated' is not defined
+Item: 2003 Chevrolet S10 Ext Cab 4WD - Error: name 'items_updated' is not defined
+Item: 2013 International 7400 Garbage Truck - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: Avocent Autoview 3016 Switch - Error: name 'items_updated' is not defined
+Item: 2 3com switch - Error: name 'items_updated' is not defined
+Item: Dell J5CJSD2 OptiPlex 3040 - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP  P  451W 4200 Lumen - Error: name 'items_updated' is not defined
+Item: Avocent AV 2216 Emerson Network Power - Error: name 'items_updated' is not defined
+Item: Fortigate FWF30E Firewall - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 404 HD - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 73 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 71 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 65 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 67 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 85 gld - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 96 gld - Error: name 'items_updated' is not defined
+Item: Extra Large Image from Iowa vs Michigan Football G - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 72 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 92 gld - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 68 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 56 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 48 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 9 gld - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 54 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 55 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 87 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 98 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 60 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 45 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 31 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 82 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 42 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 53 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 44 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 64 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 56 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 42 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 58 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 49 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 59 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 45 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 59 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 70 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 72 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 44 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 66 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 93 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 58 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 49 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 55 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 54 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 6 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 72 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 63 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 41 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 55 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 7 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 48 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 53 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 6 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 67 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 66 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 76 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 63 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 71 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 97 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 65 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 33 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 95 BLK - Error: name 'items_updated' is not defined
+Item: 2018 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Lot of 25 250 Gallon Paint Totes - Error: name 'items_updated' is not defined
+Item: Air Dryer Cartridge - Error: name 'items_updated' is not defined
+Item: Lab Equipment - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Alternator - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Brake Kit - Error: name 'items_updated' is not defined
+Item: Starter Motor - Error: name 'items_updated' is not defined
+Item: Leveling Valves - Error: name 'items_updated' is not defined
+Item: Alternator - Error: name 'items_updated' is not defined
+Item: Hand Sanitizer - Error: name 'items_updated' is not defined
+Item: Desk Hutch - Error: name 'items_updated' is not defined
+Item: Computer Cart on Wheels - Error: name 'items_updated' is not defined
+Item: Filing Cabinet - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Set of two Microwaves - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: 1988 Grey ODAY 24 Sailboat with Trailor - Error: name 'items_updated' is not defined
+Item: 2018 Lincoln MKZ Hybrid 20L Lic 10406 - Error: name 'items_updated' is not defined
+Item: 2016 Ford E350 Step Van 54L  8775North Americ - Error: name 'items_updated' is not defined
+Item: Pool Bundle 6 Diving Blocks  2 Sets of OlympicS - Error: name 'items_updated' is not defined
+Item: Lot 4 Ipad Color Stands with rotating heads - Error: name 'items_updated' is not defined
+Item: 2013 International 7400 Garbage Truck - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: Thomas Welch Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: Gast Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Canon GPR53 MAGENTA toner cartridges - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AMMCO Brake Lathe - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Blue Point Oil Filter Crusher - Error: name 'items_updated' is not defined
+Item: Canon GPR53 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Canon GPR53 CYAN toner cartridges - Error: name 'items_updated' is not defined
+Item: Parts Washer - Error: name 'items_updated' is not defined
+Item: 5 lengths of 4 hose w 4  Storz couplings - Error: name 'items_updated' is not defined
+Item: MagazineBrochure Wall Mount - Error: name 'items_updated' is not defined
+Item: 4 X 4 TABLE - Error: name 'items_updated' is not defined
+Item: Lot of Various Classroom Furniture - Error: name 'items_updated' is not defined
+Item: Refrigerator - Error: name 'items_updated' is not defined
+Item: Large Lot of Scrap Metal Items - Error: name 'items_updated' is not defined
+Item: 2014 Ford E350 Ext Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: Lot of 2 DEWALT 5 38 Trim Saws - Error: name 'items_updated' is not defined
+Item: Wooden Executive Desk with Hutch - Error: name 'items_updated' is not defined
+Item: Lot of 20 Laser Labs TM100 One Piece Tint Meters - Error: name 'items_updated' is not defined
+Item: Lot of 2 White 8Ft Long Folding Table - Error: name 'items_updated' is not defined
+Item: Lot of 16 Portable Alcohol Breath Testers - Error: name 'items_updated' is not defined
+Item: Lot of a Couch and Love Seat Set with 3 Pillows - Error: name 'items_updated' is not defined
+Item: Lot of 1 Norix Bed On Wheels - Error: name 'items_updated' is not defined
+Item: Dayton Manual Pallet Jack - Error: name 'items_updated' is not defined
+Item: Lot of 4 Blood Pressure Monitors and 5 Diagnostic  - Error: name 'items_updated' is not defined
+Item: Lot of Shredded Clothing - Error: name 'items_updated' is not defined
+Item: 1999 Ford E450 Bus Must Tow or Haul - Error: name 'items_updated' is not defined
+Item: Lot of 64 Stationary Chairs 59 with Arms - Error: name 'items_updated' is not defined
+Item: 2014 Dodge Grand Caravan 245130 Miles - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Lot of 9 Metal 4 Drawer Lockers - Error: name 'items_updated' is not defined
+Item: Lot of 2 New Ironing Boards and 2 New Professional - Error: name 'items_updated' is not defined
+Item: Lot Box of 1800 New Black Fabric Masks - Error: name 'items_updated' is not defined
+Item: Baldor Reliance 50 HP 3 Phase Electric Motors - Error: name 'items_updated' is not defined
+Item: 3356 2012 Ford F550 Super Duty Unit 2028O - Error: name 'items_updated' is not defined
+Item: 3355 2008 John Deere Gator TX Unit 2274O - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 1 of 4 - Error: name 'items_updated' is not defined
+Item: Dell PowerVault Backup Server - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 3 of 4 - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 2 of 4 - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 4 of 4 - Error: name 'items_updated' is not defined
+Item: 36 2 drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: 5 Library bookcases - Error: name 'items_updated' is not defined
+Item: Lot 4 Ipad Color Stands with rotating heads - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: Altman scoop lights - Error: name 'items_updated' is not defined
+Item: Bobcat Hydraulic 36 Walk behind mower - Error: name 'items_updated' is not defined
+Item: Used Strand Fresnelite 6 - Error: name 'items_updated' is not defined
+Item: Used Soundcraft Soundboard and Stage box - Error: name 'items_updated' is not defined
+Item: Little Wonder 6 HP High Output Blower Landscaping  - Error: name 'items_updated' is not defined
+Item: Toro Tru Trak Turbo Force 48 Mower Stand Walk Behi - Error: name 'items_updated' is not defined
+Item: Used Strand Leko fixtures - Error: name 'items_updated' is not defined
+Item: Lot of 7 Cardiac Science PowerHeart AED G3 - Error: name 'items_updated' is not defined
+Item: Lot of 19 Various Air Fuel Oil Hydro Filters John  - Error: name 'items_updated' is not defined
+Item: Lot of 2 Snowmobiles and 1 Snowmobile Trailer Used - Error: name 'items_updated' is not defined
+Item: Leviton Colortran Cyclorama lights - Error: name 'items_updated' is not defined
+Item: Sanyo Projector - Error: name 'items_updated' is not defined
+Item: DaLite Projection Screen - Error: name 'items_updated' is not defined
+Item: 2001 Ford F350 SD with Snow Plow and Spreader - Error: name 'items_updated' is not defined
+Item: Vulcan Electric 6 Burner Cooktop and Flat Top w T - Error: name 'items_updated' is not defined
+Item: Electric Adjustable Height Work Bench - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: 2012 Toro Groundsmaster 5900  16 Cutting Width - Error: name 'items_updated' is not defined
+Item: Lot of 2  Echo Backpack Leaf Blowers - Error: name 'items_updated' is not defined
+Item: Tanaka Handheld Blower Inspire 25cc  THB260PF - Error: name 'items_updated' is not defined
+Item: 2014 Echo HC152 Hedge Trimmer - Error: name 'items_updated' is not defined
+Item: Thermal evo 2 Autel drone and 2 DJI mini 2 drones - Error: name 'items_updated' is not defined
+Item: Small Canceller Machine - Error: name 'items_updated' is not defined
+Item: Powered Pallet Jack  Multi Ton Model WPT45 - Error: name 'items_updated' is not defined
+Item: Filing Cabinets  lot of 3 - Error: name 'items_updated' is not defined
+Item: MECHANIC TOOL BOX - Error: name 'items_updated' is not defined
+Item: Floor Scrubber - Error: name 'items_updated' is not defined
+Item: Columbus McKinnon Electric Hoist  Model WR HP 1 - Error: name 'items_updated' is not defined
+Item: HP LaserJet Toner  197 units  all NEW - Error: name 'items_updated' is not defined
+Item: Toro Lawnmower - Error: name 'items_updated' is not defined
+Item: MECHANIC TOOL BOX - Error: name 'items_updated' is not defined
+Item: MECHANIC TOOL BOX - Error: name 'items_updated' is not defined
+Item: TIRE REPAIR KITS  lot of 10 - Error: name 'items_updated' is not defined
+Item: 0945 Acres Industrial Lot 41 Miles from Downtown - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve Large 60 x 188 Sq F - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 31  - Error: name 'items_updated' is not defined
+Item: Residential Lot in Chicago Suburbs Joliet IL - Error: name 'items_updated' is not defined
+Item: Single Family House in Greater St Louis Area - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 83  - Error: name 'items_updated' is not defined
+Item: Residential Lot in Chicago Suburbs Joliet IL - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve Large 80 x 140 Sq F - Error: name 'items_updated' is not defined
+Item: Residential Property in Greater St Louis Area - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 31  - Error: name 'items_updated' is not defined
+Item: Single Family House in Greater St Louis Area - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large125 x 140 Sq  - Error: name 'items_updated' is not defined
+Item: 5 Adjecent City Lots on IL15 about 27 Miles from - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve CORNER TWO 2 Adja - Error: name 'items_updated' is not defined
+Item: 4 Adjecent Residential City Lots about 47 Miles f - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 83  - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 31  - Error: name 'items_updated' is not defined
+Item: Lot of 4  Aiphone Video Intercom - Error: name 'items_updated' is not defined
+Item: Lot of 4  Lighweight Mortar  25LB Bag - Error: name 'items_updated' is not defined
+Item: Lot of 15  Securitron BPS241 1 Amp 24VDC Power  - Error: name 'items_updated' is not defined
+Item: Lot of 2  Grout  25lb Bag - Error: name 'items_updated' is not defined
+Item: Allsteel Overhead Bins Lot of 4 - Error: name 'items_updated' is not defined
+Item: Single Handle 2 Wooden Door Cabinet - Error: name 'items_updated' is not defined
+Item: 2 Drawer Lateral Beige Cabinet - Error: name 'items_updated' is not defined
+Item: Sliding Door Grey Cabinet - Error: name 'items_updated' is not defined
+Item: Federal Signal PA 640 box - Error: name 'items_updated' is not defined
+Item: 2014 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2016 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2016 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2008 Caterpillar 140M AWD Motor Grader - Error: name 'items_updated' is not defined
+Item: 2004 John Deere 772CH Motor Grader - Error: name 'items_updated' is not defined
+Item: 2020 Caterpillar 140 Motor Grader - Error: name 'items_updated' is not defined
+Item: Single Family house Close to Millikin University - Error: name 'items_updated' is not defined
+Item: Single Family house Close to Millikin University - Error: name 'items_updated' is not defined
+Item: Attention Investors Deeply Discounted Single Fami - Error: name 'items_updated' is not defined
+Item: Quadient Inc IM500 Postage Machine - Error: name 'items_updated' is not defined
+Item: Gas Positive Pressure Fans - Error: name 'items_updated' is not defined
+Item: 2015 Peterbilt 365 TA Rolloff  Truck - Error: name 'items_updated' is not defined
+Item: Kids Table and 5 Chairs - Error: name 'items_updated' is not defined
+Item: 2007 International 7400 TA Side Load Garbage Truc - Error: name 'items_updated' is not defined
+Item: 2024 Lot 7 Large Dark Cherry Desk with Glass Top - Error: name 'items_updated' is not defined
+Item: 2011 Peterbilt 320 Pendpac Front Load Garbage Truc - Error: name 'items_updated' is not defined
+Item: Vivax Metrotech Locator - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Van Lic 10045 North  - Error: name 'items_updated' is not defined
+Item: Toro Groundsmaster 4000D Batwing Mower 4WD - Error: name 'items_updated' is not defined
+Item: White shelves - Error: name 'items_updated' is not defined
+Item: Harmsco Pool FilterVacuum - Error: name 'items_updated' is not defined
+Item: Leitz Microtome Machine - Error: name 'items_updated' is not defined
+Item: Cleveland SteamPro XVI with Steam Tilt Kettles - Error: name 'items_updated' is not defined
+Item: DICKSON REUSABLE GOWNS - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Angstrom Face Shields - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: Wooden armoire 2doors2drawers - Error: name 'items_updated' is not defined
+Item: U shaped office desk - Error: name 'items_updated' is not defined
+Item: Mini Excavator Tracks never used - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: CARPET TILE  3 boxes of 20 tiles - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 3 shelves - Error: name 'items_updated' is not defined
+Item: Home made trailer - Error: name 'items_updated' is not defined
+Item: Wooden Lshaped office desk - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Meeting tables - Error: name 'items_updated' is not defined
+Item: Wooden office desk - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: 2007 ERide EXV2 Utility Vehicle - Error: name 'items_updated' is not defined
+Item: 1990 Idaho Norland DF 4000 Airport Snow Blower - Error: name 'items_updated' is not defined
+Item: 1997 Oshkosh Series 60 Airport Snow Broom - Error: name 'items_updated' is not defined
+Item: Fluke TI45 IR Flexcam Thermal Imager North Americ - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: 2020 Ford Explorer 4WD 120395 Miles - Error: name 'items_updated' is not defined
+Item: Broken  iPad 7th Generation WiFi  Cellular  128 - Error: name 'items_updated' is not defined
+Item: 1991 Chevrolet CK Cheyenne 2500 57L 2WD - Error: name 'items_updated' is not defined
+Item: Tire Changer - Error: name 'items_updated' is not defined
+Item: 2Post Vehicle Lift - Error: name 'items_updated' is not defined
+Item: Blue 2015 Dodge Grand Caravan - Error: name 'items_updated' is not defined
+Item: 83 Tandem Utility Trailer - Error: name 'items_updated' is not defined
+Item: Pallet 3  Electronics Printers and Servers - Error: name 'items_updated' is not defined
+Item: New LG Apartment Size Sensor Dryer - Error: name 'items_updated' is not defined
+Item: Brush Hog  5ft - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: Three Point Sprayer - Error: name 'items_updated' is not defined
+Item: 2008 Ford Ranger - Error: name 'items_updated' is not defined
+Item: Sweepster  36 Walk Behind Sweeper Gas Engine - Error: name 'items_updated' is not defined
+Item: Federal Signal PA 640 box - Error: name 'items_updated' is not defined
+Item: 1988 Caterpillar 140G Motor Grader - Error: name 'items_updated' is not defined
+Item: 2017 Dodge Grand Caravan 118374 Miles - Error: name 'items_updated' is not defined
+Item: 2004 Toyota Tacoma - Error: name 'items_updated' is not defined
+Item: Lot of 2 Body Fat Testing Machines North American - Error: name 'items_updated' is not defined
+Item: 1997 Chevrolet CK 1500 Ext Cab 65ft Bed 4WD - Error: name 'items_updated' is not defined
+Item: SPEEDAIRE Stationary Air CompressorGenerator - Error: name 'items_updated' is not defined
+Item: Husqvarna 49 Chainsaw - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A2115 191 I99900K  360 GHz Nor - Error: name 'items_updated' is not defined
+Item: John Deere Garden Tractor with snowplow 48 blade  - Error: name 'items_updated' is not defined
+Item: 2017 Ford Focus - Error: name 'items_updated' is not defined
+Item: 2015 Ford Taurus - Error: name 'items_updated' is not defined
+Item: 2011 Chevrolet Colorado with LOW MILES - Error: name 'items_updated' is not defined
+Item: Battery Powered Speaker systempodium - Error: name 'items_updated' is not defined
+Item: 2020 PETERBILT 520 REFUSE TRUCK ASL - Error: name 'items_updated' is not defined
+Item: Kohler Generator Genset Model 14RCA North Americ - Error: name 'items_updated' is not defined
+Item: Toro Sandpro 2040Z Infield groomer - Error: name 'items_updated' is not defined
+Item: Ham and Glute Machines QTY 5 - Error: name 'items_updated' is not defined
+Item: Power Row Machine QTY 2 - Error: name 'items_updated' is not defined
+Item: Lot of Various AudioVisual Equipment North Ameri - Error: name 'items_updated' is not defined
+Item: Flashlight North American Bidders Only - Error: name 'items_updated' is not defined
+Item: VariDesk ProPlus36 Adjustable Height Desk North A - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: VariDesk ProPlus36 Adjustable Height Desk North A - Error: name 'items_updated' is not defined
+Item: 1957 House to be moved offsite - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Pick up truck tool box - Error: name 'items_updated' is not defined
+Item: 2013 Chevrolet C3500 With 8 ft Reading service bod - Error: name 'items_updated' is not defined
+Item: Band Instructor Stand - Error: name 'items_updated' is not defined
+Item: Lot of 4 Lexmark Printers 1 Ricoh Copier and 1 Ca - Error: name 'items_updated' is not defined
+Item: 1 Pallet Honeywell N95 Disposable Face Masks - Error: name 'items_updated' is not defined
+Item: 26 Metal cabinets misc - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Lic 10110 North Ame - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: Mail Cart - Error: name 'items_updated' is not defined
+Item: Stryker Ambulance Cot - Error: name 'items_updated' is not defined
+Item: Honeywell Posicheck - Error: name 'items_updated' is not defined
+Item: 1993 International 4700 cab and chasis - Error: name 'items_updated' is not defined
+Item: Jerrdan T1210D 12 ton wrecker body - Error: name 'items_updated' is not defined
+Item: Kubota B9200 Tractor - Error: name 'items_updated' is not defined
+Item: John Deere 524D Snow Blower - Error: name 'items_updated' is not defined
+Item: 2013 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Lot of 5 Wooden Executive Desks - Error: name 'items_updated' is not defined
+Item: Lot of 5 Wooden Executive Desks - Error: name 'items_updated' is not defined
+Item: Lot of 3 Wood Executive Desks and 2 Credenzas - Error: name 'items_updated' is not defined
+Item: Sony Ipela Cameras Inovonics Transponder Motion  - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: 1 PALLET OF GOWNS REUSABLE CLOTH NONSURGICAL - Error: name 'items_updated' is not defined
+Item: 2015 Ford Taurus SSP - Error: name 'items_updated' is not defined
+Item: 52 Pallets Disposable Face Masks Honeywell N95 - Error: name 'items_updated' is not defined
+Item: Assorted camerasvideo equipmentsold as is - Error: name 'items_updated' is not defined
+Item: Matco tool box - Error: name 'items_updated' is not defined
+Item: 6 Sets of Bus Seats - Error: name 'items_updated' is not defined
+Item: 1990 Idaho Norland DF 4000 Airport Snow Blower - Error: name 'items_updated' is not defined
+Item: 1997 Oshkosh Series 60 Airport Snow Broom - Error: name 'items_updated' is not defined
+Item: Wall Cabinets - Error: name 'items_updated' is not defined
+Item: Sleigh - Error: name 'items_updated' is not defined
+Item: Office Credenza - Error: name 'items_updated' is not defined
+Item: 1 Pallet AdVantage Line Reusable Gowns - Error: name 'items_updated' is not defined
+Item: Office Credenza - Error: name 'items_updated' is not defined
+Item: 2016 Ford F150 2WD XL Super Cab Lic 8710 North - Error: name 'items_updated' is not defined
+Item: Carpet Chair Mat with Lip 36x48 - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: Black File Cabinet - Error: name 'items_updated' is not defined
+Item: 2001 Dodge Ram 2500 - Error: name 'items_updated' is not defined
+Item: Wachker Neuson GP3800 Honda GX Gas Generator - Error: name 'items_updated' is not defined
+Item: Fluke TI45 IR Flexcam Thermal Imager North Americ - Error: name 'items_updated' is not defined
+Item: Verismo Commercial Espresso Machine North America - Error: name 'items_updated' is not defined
+Item: 245 Maxit by Daige Adhesive Coater Machine Nort - Error: name 'items_updated' is not defined
+Item: 57 copies of Goodes World Atlas - Error: name 'items_updated' is not defined
+Item: 2 lateral gray filing cabinets - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Dell OptiPlex 7070 SFF i79700  300 GHz North A - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: Honeycorr Face Shields - Error: name 'items_updated' is not defined
+Item: FunktionOne Resolution 2S8 loudspeaker 8 with  - Error: name 'items_updated' is not defined
+Item: Ammco Brake Lathe - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Lic 8675 North Amer - Error: name 'items_updated' is not defined
+Item: Lot of 15 Various Dell and HP Monitor Stands - Error: name 'items_updated' is not defined
+Item: Hard plastic composite chairs with steel legs - Error: name 'items_updated' is not defined
+Item: Lot of 5 Various Dell Precision SFFs North Ameri - Error: name 'items_updated' is not defined
+Item: Lot of Wood Furniture 3 Desks 3 Bookcases 2 Fil - Error: name 'items_updated' is not defined
+Item: Lot of CSpra Disinfectant - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Silverado 1500 Work Truck Long Bed  - Error: name 'items_updated' is not defined
+Item: 2008 Ford F350 SD XLT Crew Cab 4WD - Error: name 'items_updated' is not defined
+Item: Lot of 4 Metal Lateral Files 2 Metal Shelves and  - Error: name 'items_updated' is not defined
+Item: 5 Tires and Rims  Michelin LT245 75 R17 tires on  - Error: name 'items_updated' is not defined
+Item: 5 Tires and Rims  Michelin LT245 75 R17 tires on  - Error: name 'items_updated' is not defined
+Item: 10 Upholstered Chairs - Error: name 'items_updated' is not defined
+Item: 2010 Ford Escape Hybrid - Error: name 'items_updated' is not defined
+Item: DeWalt Reciprocating Saw - Error: name 'items_updated' is not defined
+Item: Gun holster North American Bidders Only - Error: name 'items_updated' is not defined
+Item: 2018 Chevrolet Suburban 1500 LS 4WD Lic 8679Nor - Error: name 'items_updated' is not defined
+Item: Hazardous Material Collection Cabinets - Error: name 'items_updated' is not defined
+Item: 2003 JOHN DEERE 110 BACKHOE - Error: name 'items_updated' is not defined
+Item: 1 pallet of Isolation Gowns Disposable XL - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: Stryker Ambulance Cot - Error: name 'items_updated' is not defined
+Item: Lot of 64 Various Models of Dell OptiPlex SFF Nor - Error: name 'items_updated' is not defined
+Item: Lot of Roland CD2u SDCD Recorders North America - Error: name 'items_updated' is not defined
+Item: 2012 Ford F150 - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: 2013 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: Lot of Roland CD2u SDCD Recorders North America - Error: name 'items_updated' is not defined
+Item: Lot of 64 Various Models of Dell OptiPlex SFF Nor - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: 26 Metal cabinets misc - Error: name 'items_updated' is not defined
+Item: Ammco Brake Lathe - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: 2 lateral gray filing cabinets - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Silverado 1500 Work Truck Long Bed  - Error: name 'items_updated' is not defined
+Item: Honeycorr Face Shields - Error: name 'items_updated' is not defined
+Item: Lot of CSpra Disinfectant - Error: name 'items_updated' is not defined
+Item: 2013 Chevrolet C3500 With 8 ft Reading service bod - Error: name 'items_updated' is not defined
+Item: Band Instructor Stand - Error: name 'items_updated' is not defined
+Item: 2015 Ford Taurus - Error: name 'items_updated' is not defined
+Item: 2017 GMC Sierra 1500 8ft Long Bed   LOW MILES  - Error: name 'items_updated' is not defined
+Item: Battery Powered Speaker systempodium - Error: name 'items_updated' is not defined
+Item: Broken  iPad 7th Generation WiFi  Cellular  128 - Error: name 'items_updated' is not defined
+Item: 1991 Chevrolet CK Cheyenne 2500 57L 2WD - Error: name 'items_updated' is not defined
+Item: 2014 Freightliner 108SD - Error: name 'items_updated' is not defined
+Item: 11 ovens - Error: name 'items_updated' is not defined
+Item: 2017 Ford Focus - Error: name 'items_updated' is not defined
+Item: John Deere Garden Tractor with snowplow 48 blade  - Error: name 'items_updated' is not defined
+Item: 2011 Chevrolet Colorado with LOW MILES - Error: name 'items_updated' is not defined
+Item: 2020 PETERBILT 520 REFUSE TRUCK ASL - Error: name 'items_updated' is not defined
+Item: Kohler Generator Genset Model 14RCA North Americ - Error: name 'items_updated' is not defined
+Item: Toro Sandpro 2040Z Infield groomer - Error: name 'items_updated' is not defined
+Item: Blue 2015 Dodge Grand Caravan - Error: name 'items_updated' is not defined
+Item: 2Post Vehicle Lift - Error: name 'items_updated' is not defined
+Item: Tire Changer - Error: name 'items_updated' is not defined
+Item: 83 Tandem Utility Trailer - Error: name 'items_updated' is not defined
+Item: Pallet 3  Electronics Printers and Servers - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: Federal Signal PA 640 box - Error: name 'items_updated' is not defined
+Item: Lot of Braun WelchAllyn Thermometers North Ameri - Error: name 'items_updated' is not defined
+Item: 2016 Dodge Grand Caravan SE - Error: name 'items_updated' is not defined
+Item: 2008 Ford Ranger - Error: name 'items_updated' is not defined
+Item: Sweepster  36 Walk Behind Sweeper Gas Engine - Error: name 'items_updated' is not defined
+Item: Desktop Lot - Error: name 'items_updated' is not defined
+Item: Lot of 18 Brand New Drapes 18W X 805 L - Error: name 'items_updated' is not defined
+Item: SPEEDAIRE Stationary Air CompressorGenerator - Error: name 'items_updated' is not defined
+Item: 1988 Caterpillar 140G Motor Grader - Error: name 'items_updated' is not defined
+Item: 2017 Dodge Grand Caravan 118374 Miles - Error: name 'items_updated' is not defined
+Item: New LG Apartment Size Sensor Dryer - Error: name 'items_updated' is not defined
+Item: Brush Hog  5ft - Error: name 'items_updated' is not defined
+Item: 2020 Ford F150 Tailgate - Error: name 'items_updated' is not defined
+Item: Three Point Sprayer - Error: name 'items_updated' is not defined
+Item: 2022 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: 2007 Jeep Commander - Error: name 'items_updated' is not defined
+Item: 2004 Toyota Tacoma - Error: name 'items_updated' is not defined
+Item: Hydraulic Powered Broom - Error: name 'items_updated' is not defined
+Item: Toro Zero Turn Mower - Error: name 'items_updated' is not defined
+Item: Lot of 2 Body Fat Testing Machines North American - Error: name 'items_updated' is not defined
+Item: 1997 Chevrolet CK 1500 Ext Cab 65ft Bed 4WD - Error: name 'items_updated' is not defined
+Item: Lot of 2  Bushnell  Red Dot Optics - Error: name 'items_updated' is not defined
+Item: Lot of 144 Latitude laptop computers UNTESTED ASI - Error: name 'items_updated' is not defined
+Item: Lot of 2 Western Snow Plow Pocket Receiver Mounts - Error: name 'items_updated' is not defined
+Item: Husqvarna 49 Chainsaw - Error: name 'items_updated' is not defined
+Item: 83 Utility Trailer - Error: name 'items_updated' is not defined
+Item: Kar Kaddy - Error: name 'items_updated' is not defined
+Item: 77 Utility Trailer w metal deck - Error: name 'items_updated' is not defined
+Item: Blankets - Error: name 'items_updated' is not defined
+Item: Lot of 12 Mascot Silent Cut 21 Reel Type Mowers - Error: name 'items_updated' is not defined
+Item: 2014 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2002 GMC Sierra 2500HD Duramax 66L Turbo Diesel 5 - Error: name 'items_updated' is not defined
+Item: Enforcer Ferro Electric Pallet Jack Charger - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 60 x 188 Sq  - Error: name 'items_updated' is not defined
+Item: 2019 PETERBILT 520 REFUSE TRUCK ASL - Error: name 'items_updated' is not defined
+Item: iPad 6th Generation WiFi  Cellular  32 G - Error: name 'items_updated' is not defined
+Item: OKI Fuser Units and Transfer Belt - Error: name 'items_updated' is not defined
+Item: 1998 Monroe Towmaster - Error: name 'items_updated' is not defined
+Item: 1982 Ford F700 - Error: name 'items_updated' is not defined
+Item: Smith Root Inc VVP158 Variable Pulsator Electro  - Error: name 'items_updated' is not defined
+Item: 2009 ERide EXV2 Utility - Error: name 'items_updated' is not defined
+Item: 19942002 Dodge Ram 1500 2500 Rear Tailgate White  - Error: name 'items_updated' is not defined
+Item: Tough Books - Error: name 'items_updated' is not defined
+Item: Brand New Kitchen Aid Tilt Head Stand Mixer - Error: name 'items_updated' is not defined
+Item: 2014 Freightliner 108SD - Error: name 'items_updated' is not defined
+Item: 2003 John Deere 200CLC Excavator - Error: name 'items_updated' is not defined
+Item: Extra Large Image from Iowa vs Pitt Football Game  - Error: name 'items_updated' is not defined
+Item: Metal Sign from Kinnick Stadium North American Bi - Error: name 'items_updated' is not defined
+Item: 2016 Chrysler 200 - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Shop vacs - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A2115 191 I99900K  360 GHz Nor - Error: name 'items_updated' is not defined
+Item: Pulley Functional Trainer - Error: name 'items_updated' is not defined
+Item: 2018 Land Pride Tow Behind Mower Tractor - Error: name 'items_updated' is not defined
+Item: Double Squat Racks QTY 3 - Error: name 'items_updated' is not defined
+Item: Lot of 1 Wood Desk and 21 File Cabinets Pickup By - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 31  - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve TWO 2 Adjacent Ci - Error: name 'items_updated' is not defined
+Item: John Deere Tractor - Error: name 'items_updated' is not defined
+Item: 2017 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2016 GMC Sierra 1500 4WD 8ft Long Bed - Error: name 'items_updated' is not defined
+Item: 2019 Chevrolet Malibu Fleet 15L Lic 9900 Nor - Error: name 'items_updated' is not defined
+Item: Lot of 15 Metal Vertical File Cabinets - Error: name 'items_updated' is not defined
+Item: PlexiGlass Sign of Iowa Football Bowl Game Appeara - Error: name 'items_updated' is not defined
+Item: 6 Foot Metal Framed Picnic Table Composite Top - Error: name 'items_updated' is not defined
+Item: Lot of CPR Manikins - Error: name 'items_updated' is not defined
+Item: 2014 Ford Escape - Error: name 'items_updated' is not defined
+Item: Framed Photo from 1982 Peach Bowl North American  - Error: name 'items_updated' is not defined
+Item: Metal Sign from Kinnick Stadium North American Bi - Error: name 'items_updated' is not defined
+Item: Lot of 4 Various Floor Machine Scrubbers - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: 2001 Sterling LT7500 Vactor 2100 Series - Error: name 'items_updated' is not defined
+Item: Sentry Security Lock Box 3 Drawer File Cabinet D - Error: name 'items_updated' is not defined
+Item: 2013 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2004 Caterpillar 963C Track Loader  Dozer - Error: name 'items_updated' is not defined
+Item: Hustler 54 Lawnmower Raptor SD - Error: name 'items_updated' is not defined
+Item: Lot of 4 Various Video CamerasCamera - Error: name 'items_updated' is not defined
+Item: Lot of One 250 Pound Anvil - Error: name 'items_updated' is not defined
+Item: Case 621B Wheel Loader - Error: name 'items_updated' is not defined
+Item: Fisher Scientific PCR Workstation - Error: name 'items_updated' is not defined
+Item: 2012 Dodge Grand Caravan SE - Error: name 'items_updated' is not defined
+Item: 2007 ERide EXV2 Utility - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Lot of 4 Various Video CamerasCamera - Error: name 'items_updated' is not defined
+Item: Lot of One 250 Pound Anvil - Error: name 'items_updated' is not defined
+Item: 2011 Ford F250 SD XL 4WD - Error: name 'items_updated' is not defined
+Item: 2007 GMC Savana - Error: name 'items_updated' is not defined
+Item: 2005 PUMA 29foot RV - Error: name 'items_updated' is not defined
+Item: Case 621B Wheel Loader - Error: name 'items_updated' is not defined
+Item: 1986 Chevrolet D30 - Error: name 'items_updated' is not defined
+Item: 2017 Ford Taurus - Error: name 'items_updated' is not defined
+Item: Lot of 100 Kenwood TK790 Mobile HiBand Radios wit - Error: name 'items_updated' is not defined
+Item: 2003 Ford F250 SD - Error: name 'items_updated' is not defined
+Item: Nintendo Wii with Controllers and Games North Ame - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Club Wagon XL Van 165276 Miles - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Silverado Classic 2500HD Work Truck - Error: name 'items_updated' is not defined
+Item: 2015 Chrysler 200 - Error: name 'items_updated' is not defined
+Item: 1980 Case 1825 Skid Steer - Error: name 'items_updated' is not defined
+Item: 2006 Ford E350 Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: 2021 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Minn Koth trolling motorEagle fish Mark 320Garmi - Error: name 'items_updated' is not defined
+Item: 2004 GMC Sierra 2500HD with Plow - Error: name 'items_updated' is not defined
+Item: 1984 Chevrolet D30 - Error: name 'items_updated' is not defined
+Item: 2007 Ford E350 Ext Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: 2016 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Assorted power tools Honda generator STIHL Gas S - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Club Wagon XL Van 183058 Miles - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Ext Club Wagon XL Van 198607 Mile - Error: name 'items_updated' is not defined
+Item: Lot of 10 TroyBilt 21 Gas Push Mowers with Rear  - Error: name 'items_updated' is not defined
+Item: Pizza Oven - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Charger Police AWD 104191 Miles - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Club Wagon XL 158580 Miles - Error: name 'items_updated' is not defined
+Item: New Kitchen Aid Stainless Steel Dishwasher - Error: name 'items_updated' is not defined
+Item: 2009 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Wacker GP3800A Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: Lot of Lot of New Bowl Set Pan Sets Cuisinart Po - Error: name 'items_updated' is not defined
+Item: 1992 Trencher Ditch Witch 1620 - Error: name 'items_updated' is not defined
+Item: Weather Guard Toolbox - Error: name 'items_updated' is not defined
+Item: 2008 Ford Club Wagon XL 94804 Miles - Error: name 'items_updated' is not defined
+Item: Stihl BG86Handheld Blower - Error: name 'items_updated' is not defined
+Item: Wacker GP3800A Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: 2007 RediHaul DeckOver Flatbed Trailer - Error: name 'items_updated' is not defined
+Item: bed and rear bumper for 2015 F250 - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Blue 466E International Diesel Motor 1 - Error: name 'items_updated' is not defined
+Item: Snapon airhydraulic 20 ton Jack - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 6 - Error: name 'items_updated' is not defined
+Item: 2015 Chevy Traverse SUV - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6B - Error: name 'items_updated' is not defined
+Item: File Cabinet and Step Stool - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6E - Error: name 'items_updated' is not defined
+Item: Metal Shelf - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6C - Error: name 'items_updated' is not defined
+Item: GE Microwave 6A - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6D - Error: name 'items_updated' is not defined
+Item: Lot of HP Print Cartridges - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6B - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6A - Error: name 'items_updated' is not defined
+Item: Swinger Auger Hopper Mover - Error: name 'items_updated' is not defined
+Item: GE Microwave 6B - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6A - Error: name 'items_updated' is not defined
+Item: Lot of Printer Cartridges and Other Printer Items - Error: name 'items_updated' is not defined
+Item: Honda EM 1800 Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: Survey Lot - Error: name 'items_updated' is not defined
+Item: Lot of 6 Mini Refrigerators - Error: name 'items_updated' is not defined
+Item: Sharp Microwave - Error: name 'items_updated' is not defined
+Item: Stihl FS90R Gas Weed Eater - Error: name 'items_updated' is not defined
+Item: Honda Harmony EN2500 Gas Generator - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: Security Camera - Error: name 'items_updated' is not defined
+Item: Assorted Items - Error: name 'items_updated' is not defined
+Item: Television - Error: name 'items_updated' is not defined
+Item: Vivax Metrotech Locator - Error: name 'items_updated' is not defined
+Item: 2012 Toro Groundsmaster 5900  16 Cutting Width - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Tanaka Handheld Blower Inspire 25cc  THB260PF - Error: name 'items_updated' is not defined
+Item: 2014 Echo HC152 Hedge Trimmer - Error: name 'items_updated' is not defined
+Item: Canon 55 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Lot of 2  Echo Backpack Leaf Blowers - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 3 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 4 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 7 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 2 - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 5 - Error: name 'items_updated' is not defined
+Item: Single Family Next to St Louis Downtown  Airport - Error: name 'items_updated' is not defined
+Item: Electric Adjustable Height Work Bench - Error: name 'items_updated' is not defined
+Item: Tricep extension - Error: name 'items_updated' is not defined
+Item: 24 filing cabinets - Error: name 'items_updated' is not defined
+Item: various filing cabinets - Error: name 'items_updated' is not defined
+Item: Shoulder press - Error: name 'items_updated' is not defined
+Item: Chest Press - Error: name 'items_updated' is not defined
+Item: Pull up and dip tower - Error: name 'items_updated' is not defined
+Item: 5 Dell computers with 2 monitors - Error: name 'items_updated' is not defined
+Item: 2 Allsteel desk chairs with arms - Error: name 'items_updated' is not defined
+Item: 9 wood  leather chairs - Error: name 'items_updated' is not defined
+Item: Chemical Controllers - Error: name 'items_updated' is not defined
+Item: Samsung TV version SS04 - Error: name 'items_updated' is not defined
+Item: Lot of 5 Unopened Boxes of Printer Cartridges - Error: name 'items_updated' is not defined
+Item: 2011 Ford F350 SD - Error: name 'items_updated' is not defined
+Item: 2010 TruCut C21 Push Mower  21 - Error: name 'items_updated' is not defined
+Item: Tru Cut 21 Push Mower - Error: name 'items_updated' is not defined
+Item: 2011 Ford F350 SD - Error: name 'items_updated' is not defined
+Item: 2009 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2024 Ford F350 Tailgate - Error: name 'items_updated' is not defined
+Item: 2024 Ford F350 Bumper - Error: name 'items_updated' is not defined
+Item: Sail Boat Stands S2s Lot of 50 - Error: name 'items_updated' is not defined
+Item: Filing cabinets and lecturn - Error: name 'items_updated' is not defined
+Item: Sail Boat Stands S3s Lot of 50 - Error: name 'items_updated' is not defined
+Item: Folding Tables - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Konica Minolta bizhub 223 - Error: name 'items_updated' is not defined
+Item: Konica Minolta bizhub C454 - Error: name 'items_updated' is not defined
+Item: 36 2 drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: 5 Library bookcases - Error: name 'items_updated' is not defined
+Item: Treadmill - Error: name 'items_updated' is not defined
+Item: Short Floor Bumper Racks QTY 2 - Error: name 'items_updated' is not defined
+Item: Floor Bumper Racks QTY 4 - Error: name 'items_updated' is not defined
+Item: Body Solid Leg Extension Machine - Error: name 'items_updated' is not defined
+Item: 4Way Neck Machine - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: 2008 Chevrolet Express G1500 Cargo Van - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Cobalt LS 4Door Sedan - Error: name 'items_updated' is not defined
+Item: 2012 Chevrolet Impala 4door Sedan - Error: name 'items_updated' is not defined
+Item: CopyStar CS1620  Ricoh Aficio MP 5001  Ricoh Af - Error: name 'items_updated' is not defined
+Item: RAINBIRD IRRIGATION STATIONS  MISC PARTS  ONE L - Error: name 'items_updated' is not defined
+Item: Storage Shed w concrete blocks - Error: name 'items_updated' is not defined
+Item: LOT  Chicken cages - Error: name 'items_updated' is not defined
+Item: LOT  Quail Battery Cages - Error: name 'items_updated' is not defined
+Item: Siemens VivaE Drug Analyzer - Error: name 'items_updated' is not defined
+Item: 2001 FELLING POLE TRAILER - Error: name 'items_updated' is not defined
+Item: 2020 Ditch Witch HX50 Vacuum Excavator Trailer - Error: name 'items_updated' is not defined
+Item: 2010 Chevrolet Silverado 2500HD 4WD - Error: name 'items_updated' is not defined
+Item: Welding tools brand new  still in original packa - Error: name 'items_updated' is not defined
+Item: Hydraulic floor jack - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Black cabinets - Error: name 'items_updated' is not defined
+Item: HP LaserJet 4015 printer - Error: name 'items_updated' is not defined
+Item: Lot 4 of tables - Error: name 'items_updated' is not defined
+Item: Lot 2 of tables - Error: name 'items_updated' is not defined
+Item: Dell HP and Acer Computer Monitors - Error: name 'items_updated' is not defined
+Item: Dodge 2023 cargo van rear hitchbumper Pro Master - Error: name 'items_updated' is not defined
+Item: KVM switch bar code scanner Fujitsu scanner - Error: name 'items_updated' is not defined
+Item: Storage Shelf - Error: name 'items_updated' is not defined
+Item: L shaped Wood desk - Error: name 'items_updated' is not defined
+Item: Table on wheels - Error: name 'items_updated' is not defined
+Item: Seco 3 Well Hot Cart - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot 3 of tables - Error: name 'items_updated' is not defined
+Item: School Bus - Error: name 'items_updated' is not defined
+Item: Lot of 5 POE 48Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: Lot of 7 POE 24Port Catalyst 2960X Cisco Switche - Error: name 'items_updated' is not defined
+Item: APC Server Towers - Error: name 'items_updated' is not defined
+Item: HP OfficeJet Pro 7740 - Error: name 'items_updated' is not defined
+Item: Misc office supplies - Error: name 'items_updated' is not defined
+Item: WhipsPaddlesMisc UtencilsDish Machine Curtains - Error: name 'items_updated' is not defined
+Item: Blankets - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: office supplies - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: Avocent Autoview 3016 Switch - Error: name 'items_updated' is not defined
+Item: 2 3com switch - Error: name 'items_updated' is not defined
+Item: Dell J5CJSD2 OptiPlex 3040 - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP  P  451W 4200 Lumen - Error: name 'items_updated' is not defined
+Item: Avocent AV 2216 Emerson Network Power - Error: name 'items_updated' is not defined
+Item: Fortigate FWF30E Firewall - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 404 HD - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 1820 - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 1820 - Error: name 'items_updated' is not defined
+Item: Go Pro Fusion Camera - Error: name 'items_updated' is not defined
+Item: Canon Rebel TR EOS 1100 Digital Camera - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector 4100 Lumen - Error: name 'items_updated' is not defined
+Item: Anchor Liberty Battery PA System  2X CH receivers - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 High Density Access Point - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP M322W - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector NP M322W - Error: name 'items_updated' is not defined
+Item: 2 3com switch - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: Mackie Pro FX 12 12 Channel Mixer - Error: name 'items_updated' is not defined
+Item: Behringer Audio Mixer UMC 404 HD - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: TED Pro Energy Monitoring Device - Error: name 'items_updated' is not defined
+Item: NEC LCD Projector 4100 Lumen - Error: name 'items_updated' is not defined
+Item: 24 Samsung Monitor - Error: name 'items_updated' is not defined
+Item: 24 ViewSonic Monitor - Error: name 'items_updated' is not defined
+Item: 2005 Ford Explorer - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch  no cord factory reset - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch 48P Switch no cords - Error: name 'items_updated' is not defined
+Item: Hitachi Projector  CPWU8461 - Error: name 'items_updated' is not defined
+Item: Apple AirPort Base Station - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: HP 292048G PoE Switch no cords - Error: name 'items_updated' is not defined
+Item: 3COM 4500 Switch no cord - Error: name 'items_updated' is not defined
+Item: Hitachi Projector  CPWU8461 - Error: name 'items_updated' is not defined
+Item: 3COM 4500 Switch no cord broken - Error: name 'items_updated' is not defined
+Item: Toshiba 2430S25524GHz  512GB40GB 12003 - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch no cords - Error: name 'items_updated' is not defined
+Item: Mac mini Server late 2012 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: DellJ5CJSD2 - Error: name 'items_updated' is not defined
+Item: USBC cables - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: Xirrus XR2000 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: MacBook Pro 15inch 2017 - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Mac Pro Mid 2010 damaged back corner - Error: name 'items_updated' is not defined
+Item: Logitech Case for iPad Pro 105 inch - Error: name 'items_updated' is not defined
+Item: Mac mini Late 2014 - Error: name 'items_updated' is not defined
+Item: 2014 Ford Taurus - Error: name 'items_updated' is not defined
+Item: 1956 House w detached Garage to be moved offsite - Error: name 'items_updated' is not defined
+Item: Lot of 3180 9 glass salad plates - Error: name 'items_updated' is not defined
+Item: 1 LOT OF 6 PANASONIC TOUGHBOOKS - Error: name 'items_updated' is not defined
+Item: 2013 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 1 Lot of 26 Desktops - Error: name 'items_updated' is not defined
+Item: Conference table - Error: name 'items_updated' is not defined
+Item: 2 drawer white filing cabinet - Error: name 'items_updated' is not defined
+Item: Desk - Error: name 'items_updated' is not defined
+Item: 4 gray shelving units - Error: name 'items_updated' is not defined
+Item: 2Drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: FIve 5 mesh office chairs - Error: name 'items_updated' is not defined
+Item: 2001 Crafco Supershot SS125 - Error: name 'items_updated' is not defined
+Item: 3 office chairs - Error: name 'items_updated' is not defined
+Item: Metal shelving unit - Error: name 'items_updated' is not defined
+Item: Wood Chair  End Table - Error: name 'items_updated' is not defined
+Item: 2 metal shelving units - Error: name 'items_updated' is not defined
+Item: 5 office chairs - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: Monroe 10 Key Adding Machine North American Bidde - Error: name 'items_updated' is not defined
+Item: Lot of 10 Windsor Upright Vacuums North American  - Error: name 'items_updated' is not defined
+Item: Yale Pallet Jack MPB040EN24T2748 North American  - Error: name 'items_updated' is not defined
+Item: Lot of Janitorial Equipment North American Bidder - Error: name 'items_updated' is not defined
+Item: DuoGard Modular Shelter 468983 North American Bi - Error: name 'items_updated' is not defined
+Item: Yale Pallet Jack MPB040EN24T2748 North American  - Error: name 'items_updated' is not defined
+Item: Columbia Equipment CO Bus Shelter 468982 North A - Error: name 'items_updated' is not defined
+Item: Fire Hose  3 inch  Brand New - Error: name 'items_updated' is not defined
+Item: 1998 Mobile Office Building - Error: name 'items_updated' is not defined
+Item: Genie Personal Lift PLC30DC - Error: name 'items_updated' is not defined
+Item: Stackable Banquet Chairs Lot of 71 - Error: name 'items_updated' is not defined
+Item: Lot of 56 Dell Optiplex computers i5i7 UNTESTED - Error: name 'items_updated' is not defined
+Item: WastequipRayfoGalbreath 30 yard self contained c - Error: name 'items_updated' is not defined
+Item: Bulk Oil Tank Lot 2  New - Error: name 'items_updated' is not defined
+Item: Bulk Oil Tank Lot 1  New - Error: name 'items_updated' is not defined
+Item: 2018 John Deere 2030a ProGator UTV - Error: name 'items_updated' is not defined
+Item: 2014 Caterpillar M318D Wheeled Excavator - Error: name 'items_updated' is not defined
+Item: Uniram URS500 Series Solvent Recycler - Error: name 'items_updated' is not defined
+Item: Automotive Paint Guns Sharp  Sicmo - Error: name 'items_updated' is not defined
+Item: Uniram Cascade Spray Gun Cleaner UG3000 - Error: name 'items_updated' is not defined
+Item: 2016 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: Oshkosh Model HT 2926 Tractor with MB 4600 Runway  - Error: name 'items_updated' is not defined
+Item: 2017 RAM 3500 - Error: name 'items_updated' is not defined
+Item: Assorted prek furniture - Error: name 'items_updated' is not defined
+Item: Ricoh Toner Print Cartridges IM C6000 and MPC406 v - Error: name 'items_updated' is not defined
+Item: Empire Abrasive EFR2636 Sandblaster - Error: name 'items_updated' is not defined
+Item: 2001 John Deere 4200 Utility Loader with soft side - Error: name 'items_updated' is not defined
+Item: KUBOTA Tractor L3130 wheels and tires OEM Set with - Error: name 'items_updated' is not defined
+Item: Lenovo Chromebook C340 11 300e500e Chromebook 2 - Error: name 'items_updated' is not defined
+Item: 2016 Bomag BC772RB4 Landfill Compactor - Error: name 'items_updated' is not defined
+Item: Insulation Vacuum - Error: name 'items_updated' is not defined
+Item: Toyota Electric Pallet Jack - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Lot of 3180 9 glass salad plates - Error: name 'items_updated' is not defined
+Item: 1 LOT OF 6 PANASONIC TOUGHBOOKS - Error: name 'items_updated' is not defined
+Item: 2013 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 1 Lot of 26 Desktops - Error: name 'items_updated' is not defined
+Item: Conference table - Error: name 'items_updated' is not defined
+Item: 2 drawer white filing cabinet - Error: name 'items_updated' is not defined
+Item: Desk - Error: name 'items_updated' is not defined
+Item: 4 gray shelving units - Error: name 'items_updated' is not defined
+Item: 2Drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: FIve 5 mesh office chairs - Error: name 'items_updated' is not defined
+Item: 2001 Crafco Supershot SS125 - Error: name 'items_updated' is not defined
+Item: 3 office chairs - Error: name 'items_updated' is not defined
+Item: Metal shelving unit - Error: name 'items_updated' is not defined
+Item: Wood Chair  End Table - Error: name 'items_updated' is not defined
+Item: 2 metal shelving units - Error: name 'items_updated' is not defined
+Item: 5 office chairs - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: Monroe 10 Key Adding Machine North American Bidde - Error: name 'items_updated' is not defined
+Item: Lot of 10 Windsor Upright Vacuums North American  - Error: name 'items_updated' is not defined
+Item: Yale Pallet Jack MPB040EN24T2748 North American  - Error: name 'items_updated' is not defined
+Item: Lot of Janitorial Equipment North American Bidder - Error: name 'items_updated' is not defined
+Item: DuoGard Modular Shelter 468983 North American Bi - Error: name 'items_updated' is not defined
+Item: Yale Pallet Jack MPB040EN24T2748 North American  - Error: name 'items_updated' is not defined
+Item: Columbia Equipment CO Bus Shelter 468982 North A - Error: name 'items_updated' is not defined
+Item: Fire Hose  3 inch  Brand New - Error: name 'items_updated' is not defined
+Item: 1998 Mobile Office Building - Error: name 'items_updated' is not defined
+Item: Genie Personal Lift PLC30DC - Error: name 'items_updated' is not defined
+Item: Stackable Banquet Chairs Lot of 71 - Error: name 'items_updated' is not defined
+Item: Lot of 56 Dell Optiplex computers i5i7 UNTESTED - Error: name 'items_updated' is not defined
+Item: WastequipRayfoGalbreath 30 yard self contained c - Error: name 'items_updated' is not defined
+Item: Bulk Oil Tank Lot 2  New - Error: name 'items_updated' is not defined
+Item: Bulk Oil Tank Lot 1  New - Error: name 'items_updated' is not defined
+Item: 2018 John Deere 2030a ProGator UTV - Error: name 'items_updated' is not defined
+Item: 2014 Caterpillar M318D Wheeled Excavator - Error: name 'items_updated' is not defined
+Item: Uniram URS500 Series Solvent Recycler - Error: name 'items_updated' is not defined
+Item: Automotive Paint Guns Sharp  Sicmo - Error: name 'items_updated' is not defined
+Item: Uniram Cascade Spray Gun Cleaner UG3000 - Error: name 'items_updated' is not defined
+Item: 2016 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: Oshkosh Model HT 2926 Tractor with MB 4600 Runway  - Error: name 'items_updated' is not defined
+Item: 2017 RAM 3500 - Error: name 'items_updated' is not defined
+Item: Assorted prek furniture - Error: name 'items_updated' is not defined
+Item: Ricoh Toner Print Cartridges IM C6000 and MPC406 v - Error: name 'items_updated' is not defined
+Item: Empire Abrasive EFR2636 Sandblaster - Error: name 'items_updated' is not defined
+Item: 2001 John Deere 4200 Utility Loader with soft side - Error: name 'items_updated' is not defined
+Item: KUBOTA Tractor L3130 wheels and tires OEM Set with - Error: name 'items_updated' is not defined
+Item: Lenovo Chromebook C340 11 300e500e Chromebook 2 - Error: name 'items_updated' is not defined
+Item: 2016 Bomag BC772RB4 Landfill Compactor - Error: name 'items_updated' is not defined
+Item: Insulation Vacuum - Error: name 'items_updated' is not defined
+Item: Toyota Electric Pallet Jack - Error: name 'items_updated' is not defined
+Item: 2014 Vermeer HG6000 Horizontal Grinder - Error: name 'items_updated' is not defined
+Item: BULK COMPOSTED MATERIAL 2400  YDS - Error: name 'items_updated' is not defined
+Item: 19 rail car AC units Freon has been recovered fr - Error: name 'items_updated' is not defined
+Item: PhysioControl LIFEPAK 15 Station Battery Charger - Error: name 'items_updated' is not defined
+Item: Trek Mystic YOUTH 20 pink bike - Error: name 'items_updated' is not defined
+Item: Huffy RockIt YOUTH bike - Error: name 'items_updated' is not defined
+Item: Malice Rallye YOUTH bike - Error: name 'items_updated' is not defined
+Item: Haro Bikes YOUTH 20 bike - Error: name 'items_updated' is not defined
+Item: Hunter Irrigation Controller - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Assortement of Items - Error: name 'items_updated' is not defined
+Item: HP Printer - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: 2002 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Toro Mower - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 40 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 31 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 38 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 41 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 40 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 38 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 36 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 37 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 41 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 41 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 55 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 7 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 48 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 53 blk - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 6 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 67 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 66 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 76 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 63 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 71 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 97 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 65 BLK - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 33 GLD - Error: name 'items_updated' is not defined
+Item: Iowa Football Practice Jersey 95 BLK - Error: name 'items_updated' is not defined
+Item: 2018 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Lot of 25 250 Gallon Paint Totes - Error: name 'items_updated' is not defined
+Item: Air Dryer Cartridge - Error: name 'items_updated' is not defined
+Item: Lab Equipment - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Alternator - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Brake Kit - Error: name 'items_updated' is not defined
+Item: Starter Motor - Error: name 'items_updated' is not defined
+Item: Leveling Valves - Error: name 'items_updated' is not defined
+Item: Alternator - Error: name 'items_updated' is not defined
+Item: Hand Sanitizer - Error: name 'items_updated' is not defined
+Item: Desk Hutch - Error: name 'items_updated' is not defined
+Item: Computer Cart on Wheels - Error: name 'items_updated' is not defined
+Item: Filing Cabinet - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Set of two Microwaves - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: Teacher Desk - Error: name 'items_updated' is not defined
+Item: 1988 Grey ODAY 24 Sailboat with Trailor - Error: name 'items_updated' is not defined
+Item: 2018 Lincoln MKZ Hybrid 20L Lic 10406 - Error: name 'items_updated' is not defined
+Item: 2016 Ford E350 Step Van 54L  8775North Americ - Error: name 'items_updated' is not defined
+Item: Pool Bundle 6 Diving Blocks  2 Sets of OlympicS - Error: name 'items_updated' is not defined
+Item: Single Family Next to St Louis Downtown  Airport - Error: name 'items_updated' is not defined
+Item: Stihl FS90R Gas Weed Eater - Error: name 'items_updated' is not defined
+Item: Honda Harmony EN2500 Gas Generator - Error: name 'items_updated' is not defined
+Item: Honda EM 1800 Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6B - Error: name 'items_updated' is not defined
+Item: File Cabinet and Step Stool - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6E - Error: name 'items_updated' is not defined
+Item: Metal Shelf - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6C - Error: name 'items_updated' is not defined
+Item: GE Microwave 6A - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6D - Error: name 'items_updated' is not defined
+Item: Lot of HP Print Cartridges - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6B - Error: name 'items_updated' is not defined
+Item: Lot of 4 Wood Chairs 6A - Error: name 'items_updated' is not defined
+Item: Swinger Auger Hopper Mover - Error: name 'items_updated' is not defined
+Item: GE Microwave 6B - Error: name 'items_updated' is not defined
+Item: Lot of HP Ink Cartridges 6A - Error: name 'items_updated' is not defined
+Item: Lot of Printer Cartridges and Other Printer Items - Error: name 'items_updated' is not defined
+Item: Sharp Microwave - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: 2012 Toro Groundsmaster 5900  16 Cutting Width - Error: name 'items_updated' is not defined
+Item: Lot of 2  Echo Backpack Leaf Blowers - Error: name 'items_updated' is not defined
+Item: Tanaka Handheld Blower Inspire 25cc  THB260PF - Error: name 'items_updated' is not defined
+Item: 2014 Echo HC152 Hedge Trimmer - Error: name 'items_updated' is not defined
+Item: Canon 55 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Snapon airhydraulic 20 ton Jack - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 2 - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 6 - Error: name 'items_updated' is not defined
+Item: Blue 466E International Diesel Motor 1 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 3 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 4 - Error: name 'items_updated' is not defined
+Item: 466E International Diesel Motor 7 - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 5 - Error: name 'items_updated' is not defined
+Item: 2015 Chevy Traverse SUV - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: Security Camera - Error: name 'items_updated' is not defined
+Item: Assorted Items - Error: name 'items_updated' is not defined
+Item: Television - Error: name 'items_updated' is not defined
+Item: Survey Lot - Error: name 'items_updated' is not defined
+Item: Lot of 6 Mini Refrigerators - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: Vivax Metrotech Locator - Error: name 'items_updated' is not defined
+Item: Lot 4 Ipad Color Stands with rotating heads - Error: name 'items_updated' is not defined
+Item: 2013 International 7400 Garbage Truck - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: Thomas Welch Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: Gast Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Canon GPR53 MAGENTA toner cartridges - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AMMCO Brake Lathe - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Blue Point Oil Filter Crusher - Error: name 'items_updated' is not defined
+Item: Canon GPR53 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Canon GPR53 CYAN toner cartridges - Error: name 'items_updated' is not defined
+Item: Parts Washer - Error: name 'items_updated' is not defined
+Item: 5 lengths of 4 hose w 4  Storz couplings - Error: name 'items_updated' is not defined
+Item: MagazineBrochure Wall Mount - Error: name 'items_updated' is not defined
+Item: 4 X 4 TABLE - Error: name 'items_updated' is not defined
+Item: Lot of Various Classroom Furniture - Error: name 'items_updated' is not defined
+Item: Refrigerator - Error: name 'items_updated' is not defined
+Item: Large Lot of Scrap Metal Items - Error: name 'items_updated' is not defined
+Item: 2014 Ford E350 Ext Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: Lot of 2 DEWALT 5 38 Trim Saws - Error: name 'items_updated' is not defined
+Item: Wooden Executive Desk with Hutch - Error: name 'items_updated' is not defined
+Item: Lot of 20 Laser Labs TM100 One Piece Tint Meters - Error: name 'items_updated' is not defined
+Item: Lot of 2 White 8Ft Long Folding Table - Error: name 'items_updated' is not defined
+Item: Lot of 16 Portable Alcohol Breath Testers - Error: name 'items_updated' is not defined
+Item: Lot of a Couch and Love Seat Set with 3 Pillows - Error: name 'items_updated' is not defined
+Item: Lot of 1 Norix Bed On Wheels - Error: name 'items_updated' is not defined
+Item: Dayton Manual Pallet Jack - Error: name 'items_updated' is not defined
+Item: Lot of 4 Blood Pressure Monitors and 5 Diagnostic  - Error: name 'items_updated' is not defined
+Item: Lot of Shredded Clothing - Error: name 'items_updated' is not defined
+Item: 1999 Ford E450 Bus Must Tow or Haul - Error: name 'items_updated' is not defined
+Item: Lot of 64 Stationary Chairs 59 with Arms - Error: name 'items_updated' is not defined
+Item: 2014 Dodge Grand Caravan 245130 Miles - Error: name 'items_updated' is not defined
+Item: Lot of 27 Rolling Office Chairs - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Hitachi Projector  CPWU8461 - Error: name 'items_updated' is not defined
+Item: 3COM 4500 Switch no cord broken - Error: name 'items_updated' is not defined
+Item: Toshiba 2430S25524GHz  512GB40GB 12003 - Error: name 'items_updated' is not defined
+Item: HP 2530 Switch no cords - Error: name 'items_updated' is not defined
+Item: Mac mini Server late 2012 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: DellJ5CJSD2 - Error: name 'items_updated' is not defined
+Item: USBC cables - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iboss Hard drive removed broken  no cord - Error: name 'items_updated' is not defined
+Item: Xirrus XR2000 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: MacBook Pro 15inch 2017 - Error: name 'items_updated' is not defined
+Item: Xirrus XD4130 - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Mac Pro Mid 2010 damaged back corner - Error: name 'items_updated' is not defined
+Item: Logitech Case for iPad Pro 105 inch - Error: name 'items_updated' is not defined
+Item: Mac mini Late 2014 - Error: name 'items_updated' is not defined
+Item: Thomas Welch Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: Gast Pump - Error: name 'items_updated' is not defined
+Item: Eppendorf Centrifuge - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Canon GPR53 MAGENTA toner cartridges - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: AMMCO Brake Lathe - Error: name 'items_updated' is not defined
+Item: AB Veriti Thermacyler - Error: name 'items_updated' is not defined
+Item: Blue Point Oil Filter Crusher - Error: name 'items_updated' is not defined
+Item: Canon GPR53 Yellow  toner cartridges - Error: name 'items_updated' is not defined
+Item: Canon GPR53 CYAN toner cartridges - Error: name 'items_updated' is not defined
+Item: Parts Washer - Error: name 'items_updated' is not defined
+Item: 5 lengths of 4 hose w 4  Storz couplings - Error: name 'items_updated' is not defined
+Item: MagazineBrochure Wall Mount - Error: name 'items_updated' is not defined
+Item: 4 X 4 TABLE - Error: name 'items_updated' is not defined
+Item: Lot of Various Classroom Furniture - Error: name 'items_updated' is not defined
+Item: Refrigerator - Error: name 'items_updated' is not defined
+Item: Large Lot of Scrap Metal Items - Error: name 'items_updated' is not defined
+Item: 2014 Ford E350 Ext Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: Lot of 2 DEWALT 5 38 Trim Saws - Error: name 'items_updated' is not defined
+Item: Wooden Executive Desk with Hutch - Error: name 'items_updated' is not defined
+Item: Lot of 20 Laser Labs TM100 One Piece Tint Meters - Error: name 'items_updated' is not defined
+Item: Lot of 2 White 8Ft Long Folding Table - Error: name 'items_updated' is not defined
+Item: Lot of 16 Portable Alcohol Breath Testers - Error: name 'items_updated' is not defined
+Item: Lot of a Couch and Love Seat Set with 3 Pillows - Error: name 'items_updated' is not defined
+Item: Lot of 1 Norix Bed On Wheels - Error: name 'items_updated' is not defined
+Item: Dayton Manual Pallet Jack - Error: name 'items_updated' is not defined
+Item: Lot of 4 Blood Pressure Monitors and 5 Diagnostic  - Error: name 'items_updated' is not defined
+Item: Lot of Shredded Clothing - Error: name 'items_updated' is not defined
+Item: 1999 Ford E450 Bus Must Tow or Haul - Error: name 'items_updated' is not defined
+Item: Lot of 64 Stationary Chairs 59 with Arms - Error: name 'items_updated' is not defined
+Item: 2014 Dodge Grand Caravan 245130 Miles - Error: name 'items_updated' is not defined
+Item: Lot of 27 Rolling Office Chairs - Error: name 'items_updated' is not defined
+Item: Lot of 3 Large Used Victory Commercial Food Warmer - Error: name 'items_updated' is not defined
+Item: Lot of 9 Metal 4 Drawer Lockers - Error: name 'items_updated' is not defined
+Item: Lot of 2 New Ironing Boards and 2 New Professional - Error: name 'items_updated' is not defined
+Item: Lot Box of 1800 New Black Fabric Masks - Error: name 'items_updated' is not defined
+Item: Baldor Reliance 50 HP 3 Phase Electric Motors - Error: name 'items_updated' is not defined
+Item: 3356 2012 Ford F550 Super Duty Unit 2028O - Error: name 'items_updated' is not defined
+Item: 3355 2008 John Deere Gator TX Unit 2274O - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 1 of 4 - Error: name 'items_updated' is not defined
+Item: Dell PowerVault Backup Server - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 3 of 4 - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 2 of 4 - Error: name 'items_updated' is not defined
+Item: King Vision Video Laryngoscope 4 of 4 - Error: name 'items_updated' is not defined
+Item: 36 2 drawer lateral file cabinet - Error: name 'items_updated' is not defined
+Item: 5 Library bookcases - Error: name 'items_updated' is not defined
+Item: Lot 4 Ipad Color Stands with rotating heads - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: Altman scoop lights - Error: name 'items_updated' is not defined
+Item: Bobcat Hydraulic 36 Walk behind mower - Error: name 'items_updated' is not defined
+Item: Used Strand Fresnelite 6 - Error: name 'items_updated' is not defined
+Item: Used Soundcraft Soundboard and Stage box - Error: name 'items_updated' is not defined
+Item: Little Wonder 6 HP High Output Blower Landscaping  - Error: name 'items_updated' is not defined
+Item: Toro Tru Trak Turbo Force 48 Mower Stand Walk Behi - Error: name 'items_updated' is not defined
+Item: Used Strand Leko fixtures - Error: name 'items_updated' is not defined
+Item: Lot of 7 Cardiac Science PowerHeart AED G3 - Error: name 'items_updated' is not defined
+Item: Lot of 19 Various Air Fuel Oil Hydro Filters John  - Error: name 'items_updated' is not defined
+Item: Lot of 2 Snowmobiles and 1 Snowmobile Trailer Used - Error: name 'items_updated' is not defined
+Item: Leviton Colortran Cyclorama lights - Error: name 'items_updated' is not defined
+Item: Sanyo Projector - Error: name 'items_updated' is not defined
+Item: DaLite Projection Screen - Error: name 'items_updated' is not defined
+Item: 2001 Ford F350 SD with Snow Plow and Spreader - Error: name 'items_updated' is not defined
+Item: Vulcan Electric 6 Burner Cooktop and Flat Top w T - Error: name 'items_updated' is not defined
+Item: Blue 466E International Diesel Motor 1 - Error: name 'items_updated' is not defined
+Item: Snapon airhydraulic 20 ton Jack - Error: name 'items_updated' is not defined
+Item: 570 International Diesel Motor 6 - Error: name 'items_updated' is not defined
+Item: Survey Lot - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: U shaped office desk - Error: name 'items_updated' is not defined
+Item: CARPET TILE  3 boxes of 20 tiles - Error: name 'items_updated' is not defined
+Item: DICKSON REUSABLE GOWNS - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Angstrom Face Shields - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 3 shelves - Error: name 'items_updated' is not defined
+Item: Home made trailer - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Wooden Lshaped office desk - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Meeting tables - Error: name 'items_updated' is not defined
+Item: Harmsco Pool FilterVacuum - Error: name 'items_updated' is not defined
+Item: Leitz Microtome Machine - Error: name 'items_updated' is not defined
+Item: Cleveland SteamPro XVI with Steam Tilt Kettles - Error: name 'items_updated' is not defined
+Item: Mini Excavator Tracks never used - Error: name 'items_updated' is not defined
+Item: White shelves - Error: name 'items_updated' is not defined
+Item: Toro Groundsmaster 4000D Batwing Mower 4WD - Error: name 'items_updated' is not defined
+Item: Wooden armoire 2doors2drawers - Error: name 'items_updated' is not defined
+Item: Electric Adjustable Height Work Bench - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Van Lic 10045 North  - Error: name 'items_updated' is not defined
+Item: 2016 Ford F150 2WD XL Super Cab Lic 8710 North - Error: name 'items_updated' is not defined
+Item: Assorted camerasvideo equipmentsold as is - Error: name 'items_updated' is not defined
+Item: 6 Sets of Bus Seats - Error: name 'items_updated' is not defined
+Item: 52 Pallets Disposable Face Masks Honeywell N95 - Error: name 'items_updated' is not defined
+Item: Matco tool box - Error: name 'items_updated' is not defined
+Item: Sleigh - Error: name 'items_updated' is not defined
+Item: Carpet Chair Mat with Lip 36x48 - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: 2003 JOHN DEERE 110 BACKHOE - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Lic 8675 North Amer - Error: name 'items_updated' is not defined
+Item: Lot of 15 Various Dell and HP Monitor Stands - Error: name 'items_updated' is not defined
+Item: Hard plastic composite chairs with steel legs - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: Pick up truck tool box - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Lot of 4 Lexmark Printers 1 Ricoh Copier and 1 Ca - Error: name 'items_updated' is not defined
+Item: 1 Pallet Honeywell N95 Disposable Face Masks - Error: name 'items_updated' is not defined
+Item: 2013 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Lot of 5 Wooden Executive Desks - Error: name 'items_updated' is not defined
+Item: Lot of 5 Wooden Executive Desks - Error: name 'items_updated' is not defined
+Item: Sony Ipela Cameras Inovonics Transponder Motion  - Error: name 'items_updated' is not defined
+Item: Lot of 3 Wood Executive Desks and 2 Credenzas - Error: name 'items_updated' is not defined
+Item: Johnston 3000 Sweeper - Error: name 'items_updated' is not defined
+Item: 10 Upholstered Chairs - Error: name 'items_updated' is not defined
+Item: 2018 Chevrolet Suburban 1500 LS 4WD Lic 8679Nor - Error: name 'items_updated' is not defined
+Item: 57 copies of Goodes World Atlas - Error: name 'items_updated' is not defined
+Item: 2 lateral gray filing cabinets - Error: name 'items_updated' is not defined
+Item: 5 Tires and Rims  Michelin LT245 75 R17 tires on  - Error: name 'items_updated' is not defined
+Item: 5 Tires and Rims  Michelin LT245 75 R17 tires on  - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: 1 pallet of Isolation Gowns Disposable XL - Error: name 'items_updated' is not defined
+Item: Ammco Brake Lathe - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: City Lot about 30 Miles from Downtown St Louis - Error: name 'items_updated' is not defined
+Item: Honeycorr Face Shields - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Grand Caravan SE Lic 10110 North Ame - Error: name 'items_updated' is not defined
+Item: John Deere 524D Snow Blower - Error: name 'items_updated' is not defined
+Item: Mail Cart - Error: name 'items_updated' is not defined
+Item: Fluke TI45 IR Flexcam Thermal Imager North Americ - Error: name 'items_updated' is not defined
+Item: Verismo Commercial Espresso Machine North America - Error: name 'items_updated' is not defined
+Item: 245 Maxit by Daige Adhesive Coater Machine Nort - Error: name 'items_updated' is not defined
+Item: 1990 Idaho Norland DF 4000 Airport Snow Blower - Error: name 'items_updated' is not defined
+Item: 1997 Oshkosh Series 60 Airport Snow Broom - Error: name 'items_updated' is not defined
+Item: 2016 Ford F150 2WD XL Super Cab Lic 8710 North - Error: name 'items_updated' is not defined
+Item: Sleigh - Error: name 'items_updated' is not defined
+Item: Carpet Chair Mat with Lip 36x48 - Error: name 'items_updated' is not defined
+Item: 6 Sets of Bus Seats - Error: name 'items_updated' is not defined
+Item: Lot of Various AudioVisual Equipment North Ameri - Error: name 'items_updated' is not defined
+Item: VariDesk ProPlus36 Adjustable Height Desk North A - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: VariDesk ProPlus36 Adjustable Height Desk North A - Error: name 'items_updated' is not defined
+Item: Flashlight North American Bidders Only - Error: name 'items_updated' is not defined
+Item: Lot of 64 Various Models of Dell OptiPlex SFF Nor - Error: name 'items_updated' is not defined
+Item: Lot of Roland CD2u SDCD Recorders North America - Error: name 'items_updated' is not defined
+Item: Lot of 5 Various Dell Precision SFFs North Ameri - Error: name 'items_updated' is not defined
+Item: Lot of Wood Furniture 3 Desks 3 Bookcases 2 Fil - Error: name 'items_updated' is not defined
+Item: 2008 Ford F350 SD XLT Crew Cab 4WD - Error: name 'items_updated' is not defined
+Item: Lot of 4 Metal Lateral Files 2 Metal Shelves and  - Error: name 'items_updated' is not defined
+Item: 2006 Chevrolet Silverado 1500 Work Truck Long Bed  - Error: name 'items_updated' is not defined
+Item: Lot of CSpra Disinfectant - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Dell OptiPlex 7070 SFF i79700  300 GHz North A - Error: name 'items_updated' is not defined
+Item: 2013 Chevrolet C3500 With 8 ft Reading service bod - Error: name 'items_updated' is not defined
+Item: Band Instructor Stand - Error: name 'items_updated' is not defined
+Item: Stryker Ambulance Cot - Error: name 'items_updated' is not defined
+Item: Honeywell Posicheck - Error: name 'items_updated' is not defined
+Item: 1993 International 4700 cab and chasis - Error: name 'items_updated' is not defined
+Item: Jerrdan T1210D 12 ton wrecker body - Error: name 'items_updated' is not defined
+Item: Kubota B9200 Tractor - Error: name 'items_updated' is not defined
+Item: Recycling Bins - Error: name 'items_updated' is not defined
+Item: Stryker Ambulance Cot - Error: name 'items_updated' is not defined
+Item: 26 Metal cabinets misc - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: 2011 Ford Econoline 450 13 Passenger Shuttle Van  - Error: name 'items_updated' is not defined
+Item: 1957 House to be moved offsite - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Angstrom Face Shields - Error: name 'items_updated' is not defined
+Item: File cabinets - Error: name 'items_updated' is not defined
+Item: Wooden Lshaped office desk - Error: name 'items_updated' is not defined
+Item: Wooden 4 shelf bookshelf2 drawer file - Error: name 'items_updated' is not defined
+Item: Meeting tables - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 3 shelves - Error: name 'items_updated' is not defined
+Item: Home made trailer - Error: name 'items_updated' is not defined
+Item: DICKSON REUSABLE GOWNS - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Wooden office desk - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: Wooden bookshelf 5 shelves - Error: name 'items_updated' is not defined
+Item: CARPET TILE  3 boxes of 20 tiles - Error: name 'items_updated' is not defined
+Item: 2020 Ford Explorer 4WD 120395 Miles - Error: name 'items_updated' is not defined
+Item: Broadcast Media equipment - Error: name 'items_updated' is not defined
+Item: 2007 ERide EXV2 Utility Vehicle - Error: name 'items_updated' is not defined
+Item: Power Row Machine QTY 2 - Error: name 'items_updated' is not defined
+Item: 2012 Ford F150 - Error: name 'items_updated' is not defined
+Item: Ham and Glute Machines QTY 5 - Error: name 'items_updated' is not defined
+Item: 2021 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2006 Freightliner M2 106 Tanker Truck LOW MILES - Error: name 'items_updated' is not defined
+Item: Lot of Kitchen Utensils Cups Bowls Plates Tray - Error: name 'items_updated' is not defined
+Item: 2019 PETERBILT 520 REFUSE TRUCK ASL - Error: name 'items_updated' is not defined
+Item: 2010 Chevrolet Silverado 1500 - Error: name 'items_updated' is not defined
+Item: iPad 6th Generation WiFi  Cellular  32 G - Error: name 'items_updated' is not defined
+Item: 2008 Chevrolet Uplander 126596 Miles - Error: name 'items_updated' is not defined
+Item: Hurdles - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: OKI Fuser Units and Transfer Belt - Error: name 'items_updated' is not defined
+Item: 1998 Monroe Towmaster - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 60 x 188 Sq  - Error: name 'items_updated' is not defined
+Item: Tailgates and Hitches - Error: name 'items_updated' is not defined
+Item: 2014 Ford F550 DUMP TRUCK - Error: name 'items_updated' is not defined
+Item: John Deere 1210A Grain Cart - Error: name 'items_updated' is not defined
+Item: Frigidaire top freezer with Ice maker - Error: name 'items_updated' is not defined
+Item: 2002 Dodge Ram Van 1500 SWB - Error: name 'items_updated' is not defined
+Item: MacBook Pro 13inch 2017 Four Thunderbolt 3 Por - Error: name 'items_updated' is not defined
+Item: Single Squat Racks QTY 4 - Error: name 'items_updated' is not defined
+Item: Ammco Brake Lathe - Error: name 'items_updated' is not defined
+Item: Thieman Model TT15RM Truck Lift Gate - Error: name 'items_updated' is not defined
+Item: John Deere WHP52A Walk Behind Mower - Error: name 'items_updated' is not defined
+Item: 2008 Donzi 290CC Boat with 2 Mercury 250HP Outboar - Error: name 'items_updated' is not defined
+Item: iPad 6th Generation WiFi  Cellular  32 G - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 72 x 142 Sq  - Error: name 'items_updated' is not defined
+Item: 2013 Chevrolet Impala - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: 2007 Jeep Commander - Error: name 'items_updated' is not defined
+Item: 2004 Toyota Tacoma - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Various Work Equipment - Error: name 'items_updated' is not defined
+Item: 2007 Chevrolet Silverado Classic 2500HD Work Truck - Error: name 'items_updated' is not defined
+Item: Lot of 144 Latitude laptop computers UNTESTED ASI - Error: name 'items_updated' is not defined
+Item: Desktop Lot - Error: name 'items_updated' is not defined
+Item: Lot of 18 Brand New Drapes 18W X 805 L - Error: name 'items_updated' is not defined
+Item: 2020 Ford F150 Tailgate - Error: name 'items_updated' is not defined
+Item: Three Point Sprayer - Error: name 'items_updated' is not defined
+Item: 1997 Chevrolet CK 1500 Ext Cab 65ft Bed 4WD - Error: name 'items_updated' is not defined
+Item: Lot of 2 Western Snow Plow Pocket Receiver Mounts - Error: name 'items_updated' is not defined
+Item: 2017 Apple iMac - Error: name 'items_updated' is not defined
+Item: Lot of 2 Body Fat Testing Machines North American - Error: name 'items_updated' is not defined
+Item: Federal Signal PA 640 box - Error: name 'items_updated' is not defined
+Item: Lot of 2  Bushnell  Red Dot Optics - Error: name 'items_updated' is not defined
+Item: Allsteel Overhead Bins Lot of 4 - Error: name 'items_updated' is not defined
+Item: Stryker Power Cot 6500 Power Pro XT 2 of 2 - Error: name 'items_updated' is not defined
+Item: 2006 Ford F150 XLT SuperCab 4WD - Error: name 'items_updated' is not defined
+Item: 83 Utility Trailer - Error: name 'items_updated' is not defined
+Item: 77 Utility Trailer w metal deck - Error: name 'items_updated' is not defined
+Item: Kar Kaddy - Error: name 'items_updated' is not defined
+Item: 2002 Dodge Ram Van 1500 SWB - Error: name 'items_updated' is not defined
+Item: 2008 Donzi 290CC Boat with 2 Mercury 250HP Outboar - Error: name 'items_updated' is not defined
+Item: MacBook Pro 13inch 2017 Four Thunderbolt 3 Por - Error: name 'items_updated' is not defined
+Item: Thieman Model TT15RM Truck Lift Gate - Error: name 'items_updated' is not defined
+Item: iPad 6th Generation WiFi  Cellular  32 G - Error: name 'items_updated' is not defined
+Item: Dell OptiPlex 7070 SFF i79700  300 GHz North A - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A2115 191 I99900K  360 GHz Nor - Error: name 'items_updated' is not defined
+Item: Lot of 2  325 Gallon Tanks - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A1419 171 I56500  320 GHz Nort - Error: name 'items_updated' is not defined
+Item: International 1086 Tractor - Error: name 'items_updated' is not defined
+Item: 2018 Ford Explorer - Error: name 'items_updated' is not defined
+Item: TwoTiered Dumbbell Racks QTY 3 - Error: name 'items_updated' is not defined
+Item: Pottery Kiln - Error: name 'items_updated' is not defined
+Item: 2007 Jeep Commander - Error: name 'items_updated' is not defined
+Item: 2004 Toyota Tacoma - Error: name 'items_updated' is not defined
+Item: Hydraulic Powered Broom - Error: name 'items_updated' is not defined
+Item: Toro Zero Turn Mower - Error: name 'items_updated' is not defined
+Item: New LG Apartment Size Sensor Dryer - Error: name 'items_updated' is not defined
+Item: Brush Hog  5ft - Error: name 'items_updated' is not defined
+Item: 2008 Ford Ranger - Error: name 'items_updated' is not defined
+Item: Sweepster  36 Walk Behind Sweeper Gas Engine - Error: name 'items_updated' is not defined
+Item: 2019 Chevrolet Malibu Fleet 15L Lic 9900 Nor - Error: name 'items_updated' is not defined
+Item: 2016 GMC Sierra 1500 4WD 8ft Long Bed - Error: name 'items_updated' is not defined
+Item: Tough Books - Error: name 'items_updated' is not defined
+Item: Lot of 1 Wood Desk and 21 File Cabinets Pickup By - Error: name 'items_updated' is not defined
+Item: Pulley Functional Trainer - Error: name 'items_updated' is not defined
+Item: 2018 Land Pride Tow Behind Mower Tractor - Error: name 'items_updated' is not defined
+Item: Double Squat Racks QTY 3 - Error: name 'items_updated' is not defined
+Item: Lot of 15 Metal Vertical File Cabinets - Error: name 'items_updated' is not defined
+Item: Brand New Kitchen Aid Tilt Head Stand Mixer - Error: name 'items_updated' is not defined
+Item: PlexiGlass Sign of Iowa Football Bowl Game Appeara - Error: name 'items_updated' is not defined
+Item: 6 Foot Metal Framed Picnic Table Composite Top - Error: name 'items_updated' is not defined
+Item: Lot of Braun WelchAllyn Thermometers North Ameri - Error: name 'items_updated' is not defined
+Item: 2016 Dodge Grand Caravan SE - Error: name 'items_updated' is not defined
+Item: SPEEDAIRE Stationary Air CompressorGenerator - Error: name 'items_updated' is not defined
+Item: Husqvarna 49 Chainsaw - Error: name 'items_updated' is not defined
+Item: 2022 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: 2017 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Shop vacs - Error: name 'items_updated' is not defined
+Item: 27 Apple IMac A2115 191 I99900K  360 GHz Nor - Error: name 'items_updated' is not defined
+Item: 1988 Caterpillar 140G Motor Grader - Error: name 'items_updated' is not defined
+Item: 2017 Dodge Grand Caravan 118374 Miles - Error: name 'items_updated' is not defined
+Item: 19942002 Dodge Ram 1500 2500 Rear Tailgate White  - Error: name 'items_updated' is not defined
+Item: 2015 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Lot of 12 Mascot Silent Cut 21 Reel Type Mowers - Error: name 'items_updated' is not defined
+Item: Blankets - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: Stryker Power Cot 6500 Power Pro XT 1 of 2 - Error: name 'items_updated' is not defined
+Item: 2016 Chevrolet Impala Limited - Error: name 'items_updated' is not defined
+Item: Lot of CPR Manikins - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve City Lot about 31  - Error: name 'items_updated' is not defined
+Item: John Deere Tractor - Error: name 'items_updated' is not defined
+Item: 2010 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: Extra Large Image from Iowa vs Pitt Football Game  - Error: name 'items_updated' is not defined
+Item: Metal Sign from Kinnick Stadium North American Bi - Error: name 'items_updated' is not defined
+Item: 2014 Freightliner 108SD - Error: name 'items_updated' is not defined
+Item: 2003 John Deere 200CLC Excavator - Error: name 'items_updated' is not defined
+Item: 2016 Chrysler 200 - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve TWO 2 Adjacent Ci - Error: name 'items_updated' is not defined
+Item: Lot of Kitchen Utensils Cups Bowls Plates Tray - Error: name 'items_updated' is not defined
+Item: iPad 6th Generation WiFi  Cellular  32 G - Error: name 'items_updated' is not defined
+Item: Enforcer Ferro Electric Pallet Jack Charger - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 60 x 188 Sq  - Error: name 'items_updated' is not defined
+Item: 2019 PETERBILT 520 REFUSE TRUCK ASL - Error: name 'items_updated' is not defined
+Item: John Deere 1210A Grain Cart - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 72 x 142 Sq  - Error: name 'items_updated' is not defined
+Item: Single Squat Racks QTY 4 - Error: name 'items_updated' is not defined
+Item: 2014 Ford F550 DUMP TRUCK - Error: name 'items_updated' is not defined
+Item: 2010 Chevrolet Silverado 1500 - Error: name 'items_updated' is not defined
+Item: 2006 Freightliner M2 106 Tanker Truck LOW MILES - Error: name 'items_updated' is not defined
+Item: Ammco Brake Lathe - Error: name 'items_updated' is not defined
+Item: Hurdles - Error: name 'items_updated' is not defined
+Item: 2021 Ford Explorer - Error: name 'items_updated' is not defined
+Item: 2009 ERide EXV2 Utility - Error: name 'items_updated' is not defined
+Item: 1Starting Bid No Reserve  Large 60 x 188 Sq  - Error: name 'items_updated' is not defined
+Item: 2014 Ford Econoline - Error: name 'items_updated' is not defined
+Item: John Deere WHP52A Walk Behind Mower - Error: name 'items_updated' is not defined
+Item: 2002 GMC Sierra 2500HD Duramax 66L Turbo Diesel 5 - Error: name 'items_updated' is not defined
+Item: Tailgates and Hitches - Error: name 'items_updated' is not defined
+Item: Frigidaire top freezer with Ice maker - Error: name 'items_updated' is not defined
+Item: 1982 Ford F700 - Error: name 'items_updated' is not defined
+Item: Framed Photo from 1982 Peach Bowl North American  - Error: name 'items_updated' is not defined
+Item: 2017 GMC Sierra 1500 8ft Long Bed   LOW MILES  - Error: name 'items_updated' is not defined
+Item: 11 ovens - Error: name 'items_updated' is not defined
+Item: 1991 Chevrolet CK Cheyenne 2500 57L 2WD - Error: name 'items_updated' is not defined
+Item: Broken  iPad 7th Generation WiFi  Cellular  128 - Error: name 'items_updated' is not defined
+Item: Kohler Generator Genset Model 14RCA North Americ - Error: name 'items_updated' is not defined
+Item: Toro Sandpro 2040Z Infield groomer - Error: name 'items_updated' is not defined
+Item: Metal Sign from Kinnick Stadium North American Bi - Error: name 'items_updated' is not defined
+Item: 2014 Ford Escape - Error: name 'items_updated' is not defined
+Item: Lot of 4 Various Floor Machine Scrubbers - Error: name 'items_updated' is not defined
+Item: Battery Powered Speaker systempodium - Error: name 'items_updated' is not defined
+Item: 2017 Ford Focus - Error: name 'items_updated' is not defined
+Item: 2015 Ford Taurus - Error: name 'items_updated' is not defined
+Item: Tire Changer - Error: name 'items_updated' is not defined
+Item: iPad 6th generation WiFi  Cellular - Error: name 'items_updated' is not defined
+Item: 2001 Sterling LT7500 Vactor 2100 Series - Error: name 'items_updated' is not defined
+Item: 2013 Ford Econoline - Error: name 'items_updated' is not defined
+Item: 2014 Freightliner 108SD - Error: name 'items_updated' is not defined
+Item: Sentry Security Lock Box 3 Drawer File Cabinet D - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: Pallet 3  Electronics Printers and Servers - Error: name 'items_updated' is not defined
+Item: 2004 Caterpillar 963C Track Loader  Dozer - Error: name 'items_updated' is not defined
+Item: Hustler 54 Lawnmower Raptor SD - Error: name 'items_updated' is not defined
+Item: 2016 Chevrolet Impala Limited - Error: name 'items_updated' is not defined
+Item: 2012 Dodge Grand Caravan SE - Error: name 'items_updated' is not defined
+Item: Fisher Scientific PCR Workstation - Error: name 'items_updated' is not defined
+Item: 2007 ERide EXV2 Utility - Error: name 'items_updated' is not defined
+Item: 2011 Ford F250 SD XL 4WD - Error: name 'items_updated' is not defined
+Item: 2009 Sterling LT9500 - Error: name 'items_updated' is not defined
+Item: 2016 Chevrolet G3500 Express Van 119003 Miles - Error: name 'items_updated' is not defined
+Item: 2005 PUMA 29foot RV - Error: name 'items_updated' is not defined
+Item: 2007 GMC Savana - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Ext Club Wagon XL Van 198607 Mile - Error: name 'items_updated' is not defined
+Item: Lot of 10 TroyBilt 21 Gas Push Mowers with Rear  - Error: name 'items_updated' is not defined
+Item: Nintendo Wii with Controllers and Games North Ame - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Club Wagon XL Van 183058 Miles - Error: name 'items_updated' is not defined
+Item: 2015 Chrysler 200 - Error: name 'items_updated' is not defined
+Item: 1980 Case 1825 Skid Steer - Error: name 'items_updated' is not defined
+Item: 2017 Ford Taurus - Error: name 'items_updated' is not defined
+Item: Pizza Oven - Error: name 'items_updated' is not defined
+Item: 2006 Ford E350 Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: Weather Guard Toolbox - Error: name 'items_updated' is not defined
+Item: 2008 Ford Club Wagon XL 94804 Miles - Error: name 'items_updated' is not defined
+Item: 2021 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Wacker GP3800A Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: 2007 Ford E350 Ext Club Wagon XL Van - Error: name 'items_updated' is not defined
+Item: 2019 Dodge Charger Police AWD 104191 Miles - Error: name 'items_updated' is not defined
+Item: Wacker GP3800A Portable Gas Generator - Error: name 'items_updated' is not defined
+Item: Lot of Lot of New Bowl Set Pan Sets Cuisinart Po - Error: name 'items_updated' is not defined
+Item: 1992 Trencher Ditch Witch 1620 - Error: name 'items_updated' is not defined
+Item: 2009 Ford E350 Club Wagon XL 158580 Miles - Error: name 'items_updated' is not defined
+Item: New Kitchen Aid Stainless Steel Dishwasher - Error: name 'items_updated' is not defined
+Item: 2009 Ford Econoline wBraun Wheelchair Lift - Error: name 'items_updated' is not defined
+Item: 2016 Ford Explorer - Error: name 'items_updated' is not defined
+Item: Stihl BG86Handheld Blower - Error: name 'items_updated' is not defined
+Item: 2007 RediHaul DeckOver Flatbed Trailer - Error: name 'items_updated' is not defined
+Item: Lot of 100 Kenwood TK790 Mobile HiBand Radios wit - Error: name 'items_updated' is not defined
+Item: 2003 Ford F250 SD - Error: name 'items_updated' is not defined
+Item: bed and rear bumper for 2015 F250 - Error: name 'items_updated' is not defined
+Item: John Deere Garden Tractor with snowplow 48 blade  - Error: name 'items_updated' is not defined
+Item: Visit our partner site at httpswwwsierraauctioncom - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: Attention Investors Single Family House For Sale in Blytheville Arkansas - Error: name 'items_updated' is not defined
+Item: 1965 Cessna 172F - Error: name 'items_updated' is not defined
+Item: 14 Unit Apartment Building  14 N Washington St Du Quoin IL - Error: name 'items_updated' is not defined
+Item: 2017 MercedesBenz SClass - Error: name 'items_updated' is not defined
+Item: Vacant Land Topanga California NO RESERVE - Error: name 'items_updated' is not defined
+Item: HOVERGUARD HOVERCRAFT W TRAILER HOVERTOUR 1000 - Error: name 'items_updated' is not defined
+Item: 2007 Toyota Camry LE Sedan 4DR - Error: name 'items_updated' is not defined
+Item: Team 2 Tiny House built by Building Construction Science Program Students at MSU - Error: name 'items_updated' is not defined
+Item: 2006 Volvo VNL Showhauler 1610 Garage Unit - Error: name 'items_updated' is not defined
+Item: 2012 DODGE CHARGER SRO NOT A POLICE PACKAGE VEHICLE - Error: name 'items_updated' is not defined
+Item: 29 FT FOUNTAIN FEVER GOFAST BOAT - Error: name 'items_updated' is not defined
+Item: UNUSED 2024 MECO P4 ELECTRIC VEHICLE - Error: name 'items_updated' is not defined
+Item: 2017 Chevrolet Tahoe - Error: name 'items_updated' is not defined
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'
+Item: 2015 Bentley Continental GT Flying Spur AWD 47K Miles Sedan 60L W12 Like Rolls Royce - Error: could not convert string to float: 'Not specified'

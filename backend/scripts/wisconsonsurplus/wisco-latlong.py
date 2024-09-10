@@ -1,109 +1,137 @@
-import pymysql
+import mysql.connector
 from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut, GeocoderServiceError
+import time
+import json
+from colorama import init, Fore, Style
 import logging
 
-# ANSI color codes for console output
-class colors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+# Initialize colorama
+init()
 
-# Set up logging to console
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Connect to the MySQL server
-connection = pymysql.connect(
-    host='localhost',
-    user='whatcheer',
-    password='meatwad',
-    database='auctions'
-)
+# Initialize statistics
+stats = {
+    "auctions_scraped": 0,
+    "items_added": 0,
+    "items_updated": 0,
+    "items_removed": 0,
+    "items_skipped": 0,
+    "errors": 0,
+    "addresses_processed": 0,
+    "addresses_updated": 0,
+    "addresses_skipped": 0
+}
 
-cursor = connection.cursor()
+def update_statistics():
+    try:
+        with open('wisco_statistics.json', 'r') as f:
+            existing_stats = json.load(f)
+        for key in stats:
+            existing_stats[key] = (existing_stats.get(key, 0) or 0) + stats[key]
+        with open('wisco_statistics.json', 'w') as f:
+            json.dump(existing_stats, f, indent=2)
+    except FileNotFoundError:
+        with open('wisco_statistics.json', 'w') as f:
+            json.dump(stats, f, indent=2)
 
-# Set a custom user agent for geocoding
-user_agent = "whatcheers/AI-github"
-geolocator = Nominatim(user_agent=user_agent)
+# Database connection details
+db_config = {
+    'user': 'whatcheer',
+    'password': 'meatwad',
+    'host': 'localhost',
+    'database': 'auctions',
+}
 
-# Function to geocode using different methods
-def geocode_address(address):
-    # Preset default coordinates for the center of Wisconsin
-    default_latitude = 44.5
-    default_longitude = -89.5
+def connect_to_database():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        if connection.is_connected():
+            logging.info(f"{Fore.GREEN}Successfully connected to the database.{Style.RESET_ALL}")
+            return connection
+    except mysql.connector.Error as e:
+        logging.error(f"{Fore.RED}Error connecting to the database: {e}{Style.RESET_ALL}")
+        stats["errors"] += 1
+    return None
 
-    address_parts = address.split(',')
-    fallbacks = [address]
-
-    # Adjust the fallback logic based on the parts of the address available
-    if len(address_parts) >= 3:
-        # Full address available
-        fallbacks += [f"{address_parts[-3]}, {address_parts[-2]}", address_parts[-1].strip().split(' ')[-1]]
-    elif len(address_parts) == 2:
-        # Only city and state available
-        fallbacks += [address_parts[1].strip().split(' ')[-1]]
-    elif len(address_parts) == 1:
-        # Only zip code or city available
-        pass  # No further fallback needed
-
-    for attempt in fallbacks:
+def geocode_address(geolocator, address):
+    max_attempts = 3
+    for attempt in range(max_attempts):
         try:
-            location = geolocator.geocode(attempt, timeout=10)
+            location = geolocator.geocode(address)
             if location:
                 return location.latitude, location.longitude
-        except Exception as e:
-            logging.error(f"{colors.FAIL}Attempt for geocoding address '{attempt}' failed: {e}{colors.ENDC}")
-    
-    # If all attempts fail, log a warning and return default coordinates
-    logging.warning(f"{colors.WARNING}All geocoding attempts failed for address: '{address}'. Using default coordinates.{colors.ENDC}")
-    return default_latitude, default_longitude
+            else:
+                logging.warning(f"{Fore.YELLOW}No location found for address: {address}{Style.RESET_ALL}")
+                stats["addresses_skipped"] += 1
+                return None, None
+        except (GeocoderTimedOut, GeocoderServiceError):
+            if attempt < max_attempts - 1:
+                time.sleep(1)
+            else:
+                logging.error(f"{Fore.RED}Geocoding failed after {max_attempts} attempts for address: {address}{Style.RESET_ALL}")
+                stats["errors"] += 1
+                return None, None
 
-# Specify the table name
-table_name = "wiscosurp_auctions"
+def update_coordinates():
+    connection = connect_to_database()
+    if not connection:
+        return
 
-# Select the 'location' column from the table only if latitude or longitude is NULL
-cursor.execute(f"SELECT `location`, latitude, longitude FROM {table_name} WHERE `location` IS NOT NULL AND (latitude IS NULL OR longitude IS NULL)")
-addresses = cursor.fetchall()
+    try:
+        cursor = connection.cursor()
+        geolocator = Nominatim(user_agent="wisco_surplus_geocoder")
 
-previous_address = None
-previous_latitude = None
-previous_longitude = None
+        # Fetch rows with missing coordinates
+        cursor.execute("SELECT id, location FROM wiscosurp_auctions WHERE latitude IS NULL OR longitude IS NULL")
+        rows = cursor.fetchall()
 
-for address, latitude, longitude in addresses:
-    # Check if latitude and longitude are already present
-    if latitude is not None and longitude is not None:
-        logging.info(f"{colors.OKBLUE}Skipping address {address} in table {table_name} as latitude and longitude are already present.{colors.ENDC}")
-        continue
+        for row in rows:
+            id, address = row
+            stats["addresses_processed"] += 1
+            
+            if not address:
+                logging.warning(f"{Fore.YELLOW}Skipping empty address for id {id}{Style.RESET_ALL}")
+                stats["addresses_skipped"] += 1
+                continue
 
-    # Check if the current address is the same as the previous address
-    if address == previous_address:
-        # If so, copy the latitude and longitude from the previous record
-        latitude = previous_latitude
-        longitude = previous_longitude
-    else:
-        # Otherwise, attempt to geocode the address
-        latitude, longitude = geocode_address(address)
+            latitude, longitude = geocode_address(geolocator, address)
+            
+            if latitude is not None and longitude is not None:
+                update_query = "UPDATE wiscosurp_auctions SET latitude = %s, longitude = %s WHERE id = %s"
+                cursor.execute(update_query, (latitude, longitude, id))
+                connection.commit()
+                stats["addresses_updated"] += 1
+                logging.info(f"{Fore.GREEN}Updated coordinates for id {id}: {latitude}, {longitude}{Style.RESET_ALL}")
+            else:
+                logging.warning(f"{Fore.YELLOW}Could not geocode address for id {id}: {address}{Style.RESET_ALL}")
+                stats["addresses_skipped"] += 1
 
-    # Update the previous address and coordinates for the next iteration
-    previous_address = address
-    previous_latitude = latitude
-    previous_longitude = longitude
+            # Add a small delay to avoid overwhelming the geocoding service
+            time.sleep(1)
 
-    # Update the database if latitude and longitude are obtained
-    if latitude is not None and longitude is not None:
-        update_query = f"UPDATE {table_name} SET latitude=%s, longitude=%s WHERE `location`=%s"
-        cursor.execute(update_query, (latitude, longitude, address))
-        connection.commit()
-        logging.info(f"{colors.OKGREEN}Updated {table_name} with Latitude={latitude}, Longitude={longitude} for address {address}{colors.ENDC}")
-    else:
-        logging.warning(f"{colors.WARNING}Geocoding failed for address {address} in table {table_name}. Latitude and Longitude not updated.{colors.ENDC}")
+    except mysql.connector.Error as e:
+        logging.error(f"{Fore.RED}Database error: {e}{Style.RESET_ALL}")
+        stats["errors"] += 1
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            logging.info(f"{Fore.GREEN}Database connection closed.{Style.RESET_ALL}")
 
-print(f"{colors.OKGREEN}Geocoding and updating completed for table {table_name} in auctions database.{colors.ENDC}")
+def main():
+    update_coordinates()
 
-cursor.close()
-connection.close()
-logging.info(f"{colors.OKBLUE}Connection to database closed.{colors.ENDC}")
+    # Save statistics
+    update_statistics()
+
+    logging.info(f"{Fore.BLUE}Wisconsin Surplus Lat/Long Statistics:{Style.RESET_ALL}")
+    logging.info(f"Addresses processed: {stats['addresses_processed']}")
+    logging.info(f"Addresses updated: {stats['addresses_updated']}")
+    logging.info(f"Addresses skipped: {stats['addresses_skipped']}")
+    logging.info(f"Errors: {stats['errors']}")
+
+if __name__ == "__main__":
+    main()

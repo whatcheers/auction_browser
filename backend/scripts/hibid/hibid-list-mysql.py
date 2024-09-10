@@ -63,6 +63,12 @@ if archive_files:
     with open(target_file_path) as json_file:
         items = json.load(json_file)
 
+    stats = {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_skipped": 0
+    }
+
     skipped_items = []
     duplicate_items = 0
     successful_items = 0
@@ -81,12 +87,15 @@ if archive_files:
             data_item = (title, start_date, end_date, company, location, url)
             cursor.execute(add_item, data_item)
             if cursor.rowcount > 0:
-                successful_items += 1
+                if cursor.lastrowid:
+                    stats["items_added"] += 1
+                else:
+                    stats["items_updated"] += 1
             else:
-                duplicate_items += 1
+                stats["items_skipped"] += 1
         except Exception as e:
             print(f"{Fore.RED}Error inserting item: {title}. Error: {e}{Style.RESET_ALL}")
-            skipped_items.append(item)
+            stats["items_skipped"] += 1
 
     # Commit the changes and close the connection
     cnx.commit()
@@ -94,8 +103,8 @@ if archive_files:
     cnx.close()
 
     # Print the summary
-    print(f"{Fore.GREEN}Successful insertions: {successful_items}{Style.RESET_ALL}")
-    print(f"{Fore.YELLOW}Duplicate items: {duplicate_items}{Style.RESET_ALL}")
-    print(f"{Fore.RED}Skipped items: {len(skipped_items)}{Style.RESET_ALL}")
+    print(f"{Fore.GREEN}Items added: {stats['items_added']}{Style.RESET_ALL}")
+    print(f"{Fore.BLUE}Items updated: {stats['items_updated']}{Style.RESET_ALL}")
+    print(f"{Fore.YELLOW}Items skipped: {stats['items_skipped']}{Style.RESET_ALL}")
 else:
     print(f"{Fore.YELLOW}No auctions_data.json files found in the archive directory.{Style.RESET_ALL}")
