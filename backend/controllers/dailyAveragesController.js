@@ -16,9 +16,13 @@ async function getDailyAveragesData(req, res) {
         AVG(errors) as avg_errors,
         AVG(addresses_processed) as avg_addresses_processed,
         AVG(addresses_updated) as avg_addresses_updated,
-        AVG(addresses_skipped) as avg_addresses_skipped
+        AVG(addresses_skipped) as avg_addresses_skipped,
+        SUM(errors) as error_count,
+        MAX(timestamp) as last_run_timestamp
       FROM statistics
       GROUP BY DATE(timestamp)
+      ORDER BY DATE(timestamp) DESC
+      LIMIT 7
     `;
     const [rows] = await connection.execute(query);
     res.json(rows);

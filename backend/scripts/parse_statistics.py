@@ -18,7 +18,8 @@ default_stats = {
     "errors": 0,
     "addresses_processed": 0,
     "addresses_updated": 0,
-    "addresses_skipped": 0
+    "addresses_skipped": 0,
+    "run_status": "success"
 }
 
 # List of expected statistics files with their paths
@@ -122,13 +123,13 @@ def insert_aggregated_statistics(stats):
             insert_query = """
             INSERT INTO statistics (
                 auctions_scraped, items_added, items_updated, items_removed, items_skipped, errors,
-                addresses_processed, addresses_updated, addresses_skipped, timestamp
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                addresses_processed, addresses_updated, addresses_skipped, timestamp, run_status
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             cursor.execute(insert_query, (
                 stats["auctions_scraped"], stats["items_added"], stats["items_updated"], stats["items_removed"],
                 stats["items_skipped"], stats["errors"], stats["addresses_processed"], stats["addresses_updated"],
-                stats["addresses_skipped"], stats["timestamp"]
+                stats["addresses_skipped"], stats["timestamp"], stats["run_status"]
             ))
             connection.commit()
             print("Aggregated statistics inserted into MySQL database.")
@@ -161,7 +162,8 @@ def calculate_daily_averages():
                 AVG(errors) as avg_errors,
                 AVG(addresses_processed) as avg_addresses_processed,
                 AVG(addresses_updated) as avg_addresses_updated,
-                AVG(addresses_skipped) as avg_addresses_skipped
+                AVG(addresses_skipped) as avg_addresses_skipped,
+                SUM(CASE WHEN run_status = 'error' THEN 1 ELSE 0 END) as error_count
             FROM statistics
             GROUP BY DATE(timestamp)
             """
