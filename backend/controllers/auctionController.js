@@ -87,4 +87,14 @@ async function getAuctionData(req, res) {
   }
 }
 
-module.exports = { getAuctionData };
+async function getDailyAveragesData(req, res) {
+    try {
+        // Your logic to fetch and return daily averages data
+    } catch (error) {
+        await logError('Error fetching daily averages data', error);
+        console.error('Error fetching daily averages data:', error);
+        res.status(500).json({ error: 'Failed to fetch daily averages data', details: error.message });
+    }
+}
+
+module.exports = { getAuctionData, getDailyAveragesData };

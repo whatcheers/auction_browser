@@ -25,7 +25,7 @@ import { tableNames, getCategoryFromUrl } from './components/utils';
 import { categorizeItems as categorizationFunction } from './components/categorizeItems';
 import CategorizedCounts from './components/CategorizedCounts';
 import CategoryDetails from './components/CategoryDetails';
-import LastRunStatus from './components/LastRunStatus';
+import DailyAverages from './components/DailyAverages';
 import SearchBox from './components/SearchBox';
 import DataLoadingProgress from './components/DataLoadingProgress';
 
@@ -77,9 +77,6 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
-  // Moved all useCallback hooks to the top level of the component to avoid rule violations.
-  // These hooks were previously within other functions, violating the rule of hooks.
-  
   const categorizeItems = useCallback((data) => {
     if (data.length === 0) return;
 
@@ -358,7 +355,7 @@ const App = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Auction Data Viewer
             </Typography>
-            <LastRunStatus apiUrl={apiUrl} />
+            <DailyAverages apiUrl={apiUrl} />
             <FormControlLabel
               control={
                 <Switch

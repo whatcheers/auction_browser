@@ -4,8 +4,7 @@ import { Box, Typography, CircularProgress } from '@mui/material';
 const API_URL = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
 const LastRunStatus = () => {
-  const [status, setStatus] = useState(null);
-  const [timestamp, setTimestamp] = useState(null);
+  const [averages, setAverages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -13,9 +12,9 @@ const LastRunStatus = () => {
     let isMounted = true;
     const controller = new AbortController();
 
-    const fetchStatus = async () => {
+    const fetchAverages = async () => {
       try {
-        const response = await fetch(`${API_URL}/api/last-run-status`, {
+        const response = await fetch(`${API_URL}/api/daily-averages`, {
           credentials: 'include',
           signal: controller.signal
         });
@@ -24,16 +23,13 @@ const LastRunStatus = () => {
         }
         const data = await response.json();
         if (isMounted) {
-          setStatus(data.status);
-          setTimestamp(data.timestamp);
+          setAverages(data);
           setError('');
         }
       } catch (err) {
         if (err.name !== 'AbortError' && isMounted) {
-          console.error('Error fetching last run status:', err);
-          setError('Failed to fetch status');
-          setStatus('Unknown');
-          setTimestamp(null);
+          console.error('Error fetching daily averages:', err);
+          setError('Failed to fetch daily averages');
         }
       } finally {
         if (isMounted) {
@@ -42,7 +38,7 @@ const LastRunStatus = () => {
       }
     };
 
-    fetchStatus();
+    fetchAverages();
 
     return () => {
       isMounted = false;
@@ -57,11 +53,16 @@ const LastRunStatus = () => {
   return (
     <Box>
       <Typography variant="body2" color={error ? 'error' : 'inherit'}>
-        {error ? `Error: ${error}` : `Last Run Status: ${status || 'Unknown'}`}
+        {error ? `Error: ${error}` : 'Daily Averages:'}
       </Typography>
-      <Typography variant="body2">
-        {timestamp ? `Timestamp: ${new Date(timestamp).toLocaleString()}` : 'Timestamp: Unknown'}
-      </Typography>
+      {averages.map((avg, index) => (
+        <Box key={index}>
+          <Typography variant="body2">Date: {avg.date}</Typography>
+          <Typography variant="body2">Total Sales: {avg.total_sales}</Typography>
+          <Typography variant="body2">Addresses Skipped: {avg.avg_addresses_skipped}</Typography>
+          {/* Add more fields as needed */}
+        </Box>
+      ))}
     </Box>
   );
 };

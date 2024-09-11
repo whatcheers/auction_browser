@@ -7,11 +7,6 @@ const cors = require('cors');
 const privateKey = fs.readFileSync(process.env.SSL_KEY_PATH, 'utf8');
 const certificate = fs.readFileSync(process.env.SSL_CERT_PATH, 'utf8');
 
-app.use(cors({
-  origin: process.env.CORS_ORIGIN,
-  credentials: true
-}));
-
 const httpsOptions = {
   key: privateKey,
   cert: certificate,
@@ -19,6 +14,13 @@ const httpsOptions = {
 
 const port = process.env.PORT || 3002;
 const server = https.createServer(httpsOptions, app);
+
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 server.listen(port, (err) => {
   if (err) {

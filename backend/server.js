@@ -5,7 +5,7 @@ const cors = require('cors');
 const loggingMiddleware = require('./middlewares/loggingMiddleware');
 const auctionRoutes = require('./routes/auctionRoutes');
 const favoriteRoutes = require('./routes/favoriteRoutes');
-const lastRunStatusRoutes = require('./routes/lastRunStatusRoutes');
+const dailyAveragesRoutes = require('./routes/dailyAveragesRoutes');
 
 const app = express();
 
@@ -21,6 +21,6 @@ app.use(loggingMiddleware);
 
 app.use('/api', auctionRoutes);
 app.use('/api', favoriteRoutes);
-app.use('/api', lastRunStatusRoutes);  // Note the '/bin' prefix to match the original URL
+app.use('/api', dailyAveragesRoutes);
 
 module.exports = app;
