@@ -55,7 +55,10 @@ for file in stats_files:
     with open(file, 'r') as f:
         stats = json.load(f)
         for key in aggregated_stats:
-            aggregated_stats[key] += stats.get(key, 0)
+            if key != "run_status":  # Skip run_status as it's a string
+                aggregated_stats[key] = int(aggregated_stats[key]) + int(stats.get(key, 0))
+            elif stats.get(key) == "error":  # If any run_status is "error", set aggregated to "error"
+                aggregated_stats[key] = "error"
 
 # Add timestamp to aggregated statistics
 aggregated_stats["timestamp"] = datetime.datetime.now().isoformat()
@@ -102,6 +105,7 @@ def ensure_statistics_table_exists():
                     addresses_processed INT,
                     addresses_updated INT,
                     addresses_skipped INT,
+                    run_status VARCHAR(10),
                     timestamp DATETIME
                 )
             """)
