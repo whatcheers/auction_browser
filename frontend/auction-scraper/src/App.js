@@ -144,7 +144,13 @@ const App = () => {
   
       setLoadingStatus('Sending request to server...');
       
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -261,58 +267,43 @@ const App = () => {
 
   const handleSearch = useCallback(async (searchQuery) => {
     console.log('handleSearch called with query:', searchQuery);
-  
+
     if (!selectedEndpoint) {
       setError('Please select an endpoint before searching.');
       return;
     }
-  
-    if (searchQuery.trim() === '') {
-      loadDefaultData();
-      return;
-    }
-  
+
     try {
-      let url;
-  
-      const params = new URLSearchParams();
-      params.append('searchTerm', encodeURIComponent(searchQuery));
-      params.append('startDate', startDate);
-      params.append('endDate', endDate);
-  
-      if (selectedEndpoint === 'all_tables') {
-        url = `${apiUrl}/api/search-auction-data?tableName=all_tables&${params.toString()}`;
-      } else if (selectedEndpoint === 'ending_today') {
-        url = `https://hashbrowns/bin/get_auction_data.php?todayOnly=true&${params.toString()}`;
-      } else {
-        url = `${apiUrl}/api/search-auction-data?tableName=${selectedEndpoint}&${params.toString()}`;
-      }
-  
+      const params = new URLSearchParams({
+        tableName: selectedEndpoint,
+        searchTerm: searchQuery,
+        startDate: startDate,
+        endDate: endDate
+      });
+
+      const url = `${apiUrl}/api/search-auction-data?${params.toString()}`;
+
       console.log('Fetching search results from URL:', url);
-  
+
       const response = await fetch(url);
       const result = await response.json();
-  
+
       if (response.ok) {
         console.log('Search results loaded:', result);
         rawDataRef.current = result;
-        setMapData(result);  // Update mapData with the search results
+        setMapData(result);
         setError(null);
         setUpdateTrigger((prev) => prev + 1);
       } else {
-        if (response.status === 404 && result.error) {
-          setError(result.error);
-          rawDataRef.current = [];
-          setMapData([]);  // Clear mapData if no results found
-        } else {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        throw new Error(result.error || 'Failed to fetch search results');
       }
     } catch (error) {
       console.error('Failed to fetch search results:', error);
       setError(error.message);
+      rawDataRef.current = [];
+      setMapData([]);
     }
-  }, [selectedEndpoint, startDate, endDate, loadDefaultData]);
+  }, [selectedEndpoint, startDate, endDate]);
 
   const loadFavoritesData = useCallback(async () => {
     console.log('Loading favorites data');

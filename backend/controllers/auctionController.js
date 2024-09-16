@@ -17,7 +17,7 @@ const tableNames = {
 };
 
 async function getAuctionData(req, res) {
-  let { tableName, startDate, endDate } = req.query;
+  let { tableName, startDate, endDate, searchTerm } = req.query;
 
   if (!tableName) {
     return res.status(400).json({ error: 'TableName parameter is required' });
@@ -31,7 +31,7 @@ async function getAuctionData(req, res) {
     return res.status(400).json({ error: 'StartDate and EndDate parameters are required' });
   }
 
-  const cacheKey = `auction_data_${tableName}_${startDate}_${endDate}`;
+  const cacheKey = `auction_data_${tableName}_${startDate}_${endDate}_${searchTerm || ''}`;
   logInfo(`Checking cache for key: ${cacheKey}`);
   const cachedData = cache.get(cacheKey);
   if (cachedData) {
@@ -45,14 +45,19 @@ async function getAuctionData(req, res) {
     connection = await getDbConnection();
     let data = [];
 
+    const searchCondition = searchTerm ? `AND item_name LIKE ?` : '';
+    const searchParams = searchTerm ? [`%${searchTerm}%`] : [];
+
     if (tableName === 'all_tables') {
       for (const [key, table] of Object.entries(tableNames)) {
         const query = `
           SELECT *, '${key}' as table_name 
           FROM ${table}
-          WHERE DATE(time_left) BETWEEN ? AND ?
+          WHERE DATE(time_left) BETWEEN ? AND ? 
+          ${searchTerm ? `AND item_name LIKE ?` : ''}
         `;
-        const [rows] = await connection.execute(query, [startDate, endDate]);
+        const params = [startDate, endDate, ...searchParams];
+        const [rows] = await connection.execute(query, params);
         data = data.concat(rows);
       }
     } else if (tableName === 'ending_today') {
@@ -61,9 +66,11 @@ async function getAuctionData(req, res) {
     } else if (tableName in tableNames) {
       const query = `
         SELECT * FROM ${tableNames[tableName]}
-        WHERE DATE(time_left) BETWEEN ? AND ?
+        WHERE DATE(time_left) BETWEEN ? AND ? 
+        ${searchTerm ? `AND item_name LIKE ?` : ''}
       `;
-      const [rows] = await connection.execute(query, [startDate, endDate]);
+      const params = [startDate, endDate, ...searchParams];
+      const [rows] = await connection.execute(query, params);
       data = rows;
     } else {
       return res.status(400).json({ error: `Invalid table name: ${tableName}` });
@@ -97,4 +104,71 @@ async function getDailyAveragesData(req, res) {
     }
 }
 
-module.exports = { getAuctionData, getDailyAveragesData };
+async function searchAuctionData(req, res) {
+  let { tableName, startDate, endDate, searchTerm } = req.query;
+
+  if (!tableName || !startDate || !endDate || !searchTerm) {
+    return res.status(400).json({ error: 'TableName, StartDate, EndDate, and SearchTerm parameters are required' });
+  }
+
+  const cacheKey = `search_auction_data_${tableName}_${startDate}_${endDate}_${searchTerm}`;
+  logInfo(`Checking cache for key: ${cacheKey}`);
+  const cachedData = cache.get(cacheKey);
+  if (cachedData) {
+    logInfo(`Cache hit for key: ${cacheKey}`);
+    return res.json(cachedData);
+  }
+  logInfo(`Cache miss for key: ${cacheKey}`);
+
+  let connection;
+  try {
+    connection = await getDbConnection();
+    let data = [];
+
+    const searchCondition = `AND item_name LIKE ?`;
+    const searchParams = [`%${searchTerm}%`];
+
+    if (tableName === 'all_tables') {
+      for (const [key, table] of Object.entries(tableNames)) {
+        const query = `
+          SELECT *, '${key}' as table_name 
+          FROM ${table}
+          WHERE DATE(time_left) BETWEEN ? AND ? 
+          AND item_name LIKE ?
+        `;
+        const params = [startDate, endDate, `%${searchTerm}%`];
+        const [rows] = await connection.execute(query, params);
+        data = data.concat(rows);
+      }
+    } else if (tableName in tableNames) {
+      const query = `
+        SELECT * FROM ${tableNames[tableName]}
+        WHERE DATE(time_left) BETWEEN ? AND ? 
+        AND item_name LIKE ?
+      `;
+      const params = [startDate, endDate, `%${searchTerm}%`];
+      const [rows] = await connection.execute(query, params);
+      data = rows;
+    } else {
+      return res.status(400).json({ error: `Invalid table name: ${tableName}` });
+    }
+
+    if (data.length === 0) {
+      logInfo(`No data found for ${tableName} between ${startDate} and ${endDate} with search term "${searchTerm}"`);
+      return res.status(404).json({ error: 'No data found for the specified search criteria' });
+    }
+
+    logInfo(`Caching data for key: ${cacheKey}`);
+    cache.set(cacheKey, data);
+    logInfo(`Data cached successfully for key: ${cacheKey}`);
+    res.json(data);
+  } catch (error) {
+    await logError('Error searching auction data', error);
+    console.error('Error searching auction data:', error);
+    res.status(500).json({ error: 'Failed to search auction data', details: error.message });
+  } finally {
+    if (connection) await connection.end();
+  }
+}
+
+module.exports = { getAuctionData, getDailyAveragesData, searchAuctionData };
