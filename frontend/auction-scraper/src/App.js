@@ -13,7 +13,8 @@ import {
   CssBaseline,
   FormControlLabel,
   Snackbar,
-  Alert
+  Alert,
+  IconButton
 } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
@@ -28,6 +29,9 @@ import CategoryDetails from './components/CategoryDetails';
 import DailyAverages from './components/DailyAverages';
 import SearchBox from './components/SearchBox';
 import DataLoadingProgress from './components/DataLoadingProgress';
+import Alerts from './components/Alerts';
+import AddAlert from './components/AddAlert';
+import NewItemsPopup from './components/NewItemsPopup';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
@@ -48,6 +52,7 @@ const App = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingStatus, setLoadingStatus] = useState('');
   const [mapData, setMapData] = useState([]);
+  const [addAlertOpen, setAddAlertOpen] = useState(false);
 
   const lightTheme = createTheme({
     palette: {
@@ -88,9 +93,12 @@ const App = () => {
       }
       formattedResults[item.category].push(item);
     });
-
     setCategorizedData(formattedResults);
   }, []);
+
+  const handleAddAlertClick = () => {
+    setAddAlertOpen(true);
+  };
 
   const handleClusterClick = useCallback((clusterItems) => {
     console.log('Cluster clicked, items:', clusterItems);
@@ -347,128 +355,50 @@ const App = () => {
               Auction Data Viewer
             </Typography>
             <DailyAverages apiUrl={apiUrl} />
-            <FormControlLabel
-              control={
-                <Switch
-                  checked={darkMode}
-                  onChange={toggleDarkMode}
-                  icon={<Brightness7Icon />}
-                  checkedIcon={<Brightness4Icon />}
-                />
-              }
-              label={darkMode ? "Dark Mode" : "Light Mode"}
-            />
+            <NewItemsPopup />
+            <IconButton onClick={toggleDarkMode} color="inherit">
+              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
           </Toolbar>
         </AppBar>
         <Container maxWidth={false} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', py: 2 }}>
-          <Box sx={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            alignItems: 'center', 
-            gap: 1, 
-            mb: 2,
-            '& > *': { minWidth: 'auto', flexShrink: 0 }
-          }}>
-            <EndpointSelector
-              selectedEndpoint={selectedEndpoint}
-              onEndpointChange={setSelectedEndpoint}
-            />
-            <DateRangeSelector
-              startDate={startDate}
-              endDate={endDate}
-              onStartDateChange={setStartDate}
-              onEndDateChange={setEndDate}
-            />
-            <Button 
-              variant="contained" 
-              onClick={loadAuctionData} 
-              disabled={isGetDataDisabled}
-              size="small"
-            >
-              Get Data
-            </Button>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, '& > *': { minWidth: 'auto', flexShrink: 0 } }}>
+            <EndpointSelector selectedEndpoint={selectedEndpoint} onEndpointChange={setSelectedEndpoint} />
+            <DateRangeSelector startDate={startDate} endDate={endDate} onStartDateChange={setStartDate} onEndDateChange={setEndDate} />
+            <Button variant="contained" onClick={loadAuctionData} disabled={isGetDataDisabled} size="small">Get Data</Button>
             <Button variant="contained" onClick={handleExportClick} size="small">Export</Button>
             <Button variant="contained" onClick={handleCategorizeClick} size="small">Categorize</Button>
             <Button variant="contained" onClick={loadFavoritesData} size="small">Favorites</Button>
-            {showCategories && (
-              <Button variant="contained" onClick={handleCloseCategorization} size="small">Close Categories</Button>
-            )}
+            {showCategories && <Button variant="contained" onClick={handleCloseCategorization} size="small">Close Categories</Button>}
             <Button variant="contained" onClick={loadDefaultData} size="small">Clear</Button>
             <Box sx={{ flexGrow: 1, minWidth: '200px' }}>
               <SearchBox onSearch={handleSearch} />
             </Box>
           </Box>
-          <DataLoadingProgress 
-            isLoading={isLoading}
-            progress={loadingProgress}
-            status={loadingStatus}
-          />
+          <DataLoadingProgress isLoading={isLoading} progress={loadingProgress} status={loadingStatus} />
           <Box sx={{ flexGrow: 1, display: 'flex', minHeight: 0 }}>
-            <Paper 
-              elevation={3} 
-              sx={{ 
-                flexGrow: 1, 
-                display: 'flex', 
-                flexDirection: 'column',
-                overflow: 'hidden',
-                mr: showCategories ? 2 : 0
-              }}
-            >
-              <MapComponent
-                data={mapData}  // Pass the updated mapData
-                selectedEndpoint={selectedEndpoint}
-                onClusterClick={handleClusterClick}
-                onRowSelect={handleRowSelect}
-                selectedRows={selectedRows}
-                handleFavorite={handleFavorite}
-                updateTrigger={updateTrigger}
-                darkMode={darkMode}  // Pass darkMode to MapComponent
-              />
+            <Paper elevation={3} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', mr: showCategories ? 2 : 0 }}>
+              <MapComponent data={mapData} selectedEndpoint={selectedEndpoint} onClusterClick={handleClusterClick} onRowSelect={handleRowSelect} selectedRows={selectedRows} handleFavorite={handleFavorite} updateTrigger={updateTrigger} darkMode={darkMode} />
             </Paper>
             {showCategories && (
-              <Paper 
-                elevation={3} 
-                sx={{ 
-                  width: 300, 
-                  p: 2, 
-                  overflowY: 'auto', 
-                  display: 'flex',
-                  flexDirection: 'column'
-                }}
-              >
+              <Paper elevation={3} sx={{ width: 300, p: 2, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
                 {selectedCategory ? (
                   <>
-                    <Button variant="outlined" onClick={handleBackToCategories} sx={{ mb: 2 }}>
-                      Back to Categories
-                    </Button>
-                    <CategoryDetails
-                      category={selectedCategory}
-                      items={categorizedData[selectedCategory]}
-                      onFavorite={handleFavorite}
-                      onRowClick={handleRowSelect}
-                      selectedRows={selectedRows}
-                    />
+                    <Button variant="outlined" onClick={handleBackToCategories} sx={{ mb: 2 }}>Back to Categories</Button>
+                    <CategoryDetails category={selectedCategory} items={categorizedData[selectedCategory]} onFavorite={handleFavorite} onRowClick={handleRowSelect} selectedRows={selectedRows} />
                   </>
                 ) : (
-                  <CategorizedCounts
-                    categorizedData={categorizedData}
-                    onCategoryClick={handleCategoryClick}
-                  />
+                  <CategorizedCounts categorizedData={categorizedData} onCategoryClick={handleCategoryClick} />
                 )}
               </Paper>
             )}
           </Box>
+          <Alerts />
         </Container>
       </Box>
-      <Snackbar 
-        open={!!error} 
-        autoHideDuration={6000} 
-        onClose={() => setError(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>
-          {error}
-        </Alert>
+      <AddAlert open={addAlertOpen} onClose={() => setAddAlertOpen(false)} />
+      <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError(null)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
+        <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>{error}</Alert>
       </Snackbar>
     </ThemeProvider>
   );

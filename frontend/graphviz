@@ -1,0 +1,53 @@
+digraph AppArchitecture {
+    rankdir=LR;
+    node [shape=box, style=filled, fontname="Arial"];
+
+    subgraph cluster_Frontend {
+        label="Frontend - App.js";
+        style=filled;
+        color=lightblue;
+
+        App [label="App.js", color=lightgreen, labelloc=b];
+        MapComponent [label="MapComponent.js", color=lightyellow, labelloc=b];
+        EndpointSelector [label="EndpointSelector", color=lightcoral, labelloc=b];
+        DateRangeSelector [label="DateRangeSelector", color=lightpink, labelloc=b];
+        SearchBox [label="SearchBox", color=lightgray, labelloc=b];
+        DataLoadingProgress [label="DataLoadingProgress", color=lightcyan, labelloc=b];
+        Alerts [label="Alerts", color=lightgoldenrodyellow, labelloc=b];
+        AddAlert [label="AddAlert", color=lightseagreen, labelloc=b];
+        NewItemsPopup [label="NewItemsPopup", color=lightsteelblue, labelloc=b];
+        CategorizedCounts [label="CategorizedCounts", color=lightcoral, labelloc=b];
+        CategoryDetails [label="CategoryDetails", color=lightpink, labelloc=b];
+        DailyAverages [label="DailyAverages", color=lightgray, labelloc=b];
+        LastRunStatus [label="LastRunStatus.js", color=lightgray, labelloc=b];
+    }
+
+    subgraph cluster_Backend {
+        label="Auction Browser - httpserve.js";
+        style=filled;
+        color=lightgrey;
+
+        getAuctionData [label="/api/get-auction-data", color=lightgreen, labelloc=b];
+        favorite [label="/api/favorite", color=lightyellow, labelloc=b];
+        searchAuctionData [label="/api/search-auction-data", color=lightcoral, labelloc=b];
+        favorites [label="/api/favorites", color=lightpink, labelloc=b];
+        dailyAverages [label="/api/daily-averages", color=lightgray, labelloc=b];
+    }
+
+    // Frontend to Backend interactions
+    App -> getAuctionData [label="Load Auction Data"];
+    App -> favorite [label="Update Favorite"];
+    App -> searchAuctionData [label="Search Data"];
+    App -> favorites [label="Load Favorites"];
+    App -> dailyAverages [label="Load Daily Averages"];
+
+    // Component interactions
+    App -> {MapComponent EndpointSelector DateRangeSelector SearchBox Alerts AddAlert NewItemsPopup CategorizedCounts CategoryDetails DailyAverages DataLoadingProgress LastRunStatus} [constraint=false];
+
+    // Theme management
+    lightTheme [label="Light Theme"];
+    darkTheme [label="Dark Theme"];
+    toggleDarkMode [label="Toggle Dark Mode"];
+    App -> toggleDarkMode;
+    toggleDarkMode -> {lightTheme darkTheme} [constraint=false];
+}
