@@ -32,6 +32,7 @@ import DataLoadingProgress from './components/DataLoadingProgress';
 import Alerts from './components/Alerts';
 import AddAlert from './components/AddAlert';
 import NewItemsPopup from './components/NewItemsPopup';
+import debounce from 'lodash/debounce';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
@@ -53,6 +54,7 @@ const App = () => {
   const [loadingStatus, setLoadingStatus] = useState('');
   const [mapData, setMapData] = useState([]);
   const [addAlertOpen, setAddAlertOpen] = useState(false);
+  const isLoadingRef = useRef(false);
 
   const lightTheme = createTheme({
     palette: {
@@ -133,6 +135,8 @@ const App = () => {
   }, []);
 
   const loadAuctionData = useCallback(async () => {
+    if (isLoadingRef.current) return;
+    isLoadingRef.current = true;
     console.log('loadAuctionData called with:', { selectedEndpoint, startDate, endDate });
     setIsLoading(true);
     setLoadingProgress(0);
@@ -188,12 +192,26 @@ const App = () => {
       setLoadingStatus('Error: ' + error.message);
     } finally {
       setIsLoading(false);
+      isLoadingRef.current = false;
     }
   }, [selectedEndpoint, startDate, endDate]);
 
+  const loadAuctionDataRef = useRef(loadAuctionData);
+  
+  useEffect(() => {
+    loadAuctionDataRef.current = loadAuctionData;
+  }, [loadAuctionData]);
+
+  const debouncedLoadAuctionData = useCallback(
+    debounce(() => {
+      loadAuctionDataRef.current();
+    }, 300),
+    []
+  );
+
   const loadDefaultData = useCallback(() => {
     if (selectedEndpoint === 'ending_today') {
-      loadAuctionData();
+      debouncedLoadAuctionData();
     } else {
       const startDate = '2024-01-01';
       const endDate = '2024-12-31';
@@ -210,7 +228,7 @@ const App = () => {
           setError(error.message);
         });
     }
-  }, [selectedEndpoint, loadAuctionData]);
+  }, [selectedEndpoint, debouncedLoadAuctionData]);
 
   const handleExportClick = useCallback(() => {
     exportCSV(rawDataRef.current, 'selected_data.csv');
@@ -355,7 +373,7 @@ const App = () => {
               Auction Data Viewer
             </Typography>
             <DailyAverages apiUrl={apiUrl} />
-            <NewItemsPopup />
+            <NewItemsPopup onAddAlertClick={handleAddAlertClick} />
             <IconButton onClick={toggleDarkMode} color="inherit">
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
@@ -365,7 +383,7 @@ const App = () => {
           <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1, mb: 2, '& > *': { minWidth: 'auto', flexShrink: 0 } }}>
             <EndpointSelector selectedEndpoint={selectedEndpoint} onEndpointChange={setSelectedEndpoint} />
             <DateRangeSelector startDate={startDate} endDate={endDate} onStartDateChange={setStartDate} onEndDateChange={setEndDate} />
-            <Button variant="contained" onClick={loadAuctionData} disabled={isGetDataDisabled} size="small">Get Data</Button>
+            <Button variant="contained" onClick={debouncedLoadAuctionData} disabled={isGetDataDisabled} size="small">Get Data</Button>
             <Button variant="contained" onClick={handleExportClick} size="small">Export</Button>
             <Button variant="contained" onClick={handleCategorizeClick} size="small">Categorize</Button>
             <Button variant="contained" onClick={loadFavoritesData} size="small">Favorites</Button>

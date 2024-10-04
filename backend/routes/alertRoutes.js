@@ -103,4 +103,23 @@ router.get('/alerts/test', (req, res) => {
     res.json({ message: 'Alert routes are working' });
 });
 
+// Add this new route to delete an alert
+router.delete('/alerts/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const connection = await getDbConnection();
+        const [result] = await connection.execute('DELETE FROM alerts WHERE id = ?', [id]);
+        await connection.end();
+        
+        if (result.affectedRows > 0) {
+            res.json({ message: 'Alert deleted successfully' });
+        } else {
+            res.status(404).json({ message: 'Alert not found' });
+        }
+    } catch (error) {
+        console.error('Error deleting alert:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
+
 module.exports = router;
