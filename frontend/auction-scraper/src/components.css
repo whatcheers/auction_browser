@@ -1,0 +1,103 @@
+/* Button Component */
+.custom-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.custom-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.custom-button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Category Details Component */
+.category-details {
+  padding: 16px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+}
+
+.category-details-list {
+  margin-top: 15px;
+}
+
+.category-details-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  transition: background-color 0.3s ease;
+}
+
+.category-details-item:last-child {
+  border-bottom: none;
+}
+
+.category-details-item.selected {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Date Range Selector Component */
+.date-range-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-input {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+  color: var(--text-color);
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Search Box Component */
+.search-box {
+  display: flex;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.search-box input {
+  flex-grow: 1;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-box button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Map Component */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin: 15px;
+}

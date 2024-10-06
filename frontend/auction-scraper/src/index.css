@@ -14,6 +14,17 @@
   --border-color: #ddd; /* Generic border color */
   --border-radius: 4px; /* Standard border radius */
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Common box shadow */
+  --success-color: #4CAF50;
+  --warning-color: #FFC107;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --border-color: #4a4a4a;
+  }
 }
 
 /* Global styles */
@@ -21,4 +32,21 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
 }

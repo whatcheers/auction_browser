@@ -1,17 +1,8 @@
-:root {
-  --primary-color: #64B5F6; /* Light Blue */
-  --secondary-color: #F44336; /* Red */
-  --background-color: #f0f0f0; /* Light Gray */
-  --text-color: #333; /* Dark Gray */
-  --border-color: #ddd; /* Generic border color */
-  --border-radius: 4px; /* Standard border radius */
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Common box shadow */
-}
-
 .App-header {
   background-color: var(--primary-color);
   color: white;
-  padding: 20px;
+  padding: 15px 20px;
+  box-shadow: var(--box-shadow);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,16 +13,6 @@
   font-weight: 500; /* Adjust font weight */
   color: #ffffff; /* This ensures the text is white */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Adds a shadow for better readability */
-}
-
-.custom-button {
-  background-color: var(--secondary-color);
-  color: white;
-  margin: 5px; /* Adds margin between buttons */
-}
-
-.custom-button:hover {
-  background-color: #e53935; /* Manual adjustment for hover color */
 }
 
 .DataGrid {
@@ -47,11 +28,6 @@
   height: calc(100vh - 60px); /* Adjust height to consider header */
   overflow: hidden; /* Prevents scrolling on the main content container */
   padding: 20px;
-}
-
-.map-container {
-  flex-grow: 1; /* Allows the map to fill the remaining space */
-  overflow: hidden; /* Optional: if you want the map itself to be non-scrollable */
 }
 
 .sidebar {

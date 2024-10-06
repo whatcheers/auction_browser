@@ -79,7 +79,6 @@ const App = () => {
       },
     },
   });
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -133,7 +132,6 @@ const App = () => {
       }
     });
   }, []);
-
   const loadAuctionData = useCallback(async () => {
     if (isLoadingRef.current) return;
     isLoadingRef.current = true;
@@ -356,7 +354,6 @@ const App = () => {
     }
     
   }, [apiUrl, categorizeItems]);
-
   useEffect(() => {
     console.log('Current state:', { selectedEndpoint, startDate, endDate });
   }, [selectedEndpoint, startDate, endDate]);
