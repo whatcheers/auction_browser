@@ -1,208 +1,216 @@
-import React, { useRef, useCallback, useState, useEffect } from 'react';
-import 'ol/ol.css';
-import { Map, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import XYZ from 'ol/source/XYZ';
-import { fromLonLat } from 'ol/proj';
-import { Vector as VectorLayer } from 'ol/layer';
-import { Vector as VectorSource, Cluster } from 'ol/source';
-import Feature from 'ol/Feature';
-import Point from 'ol/geom/Point';
-import { Style, Icon } from 'ol/style';
-import { usePopper } from 'react-popper';
-import PopupContent from './PopupContent';
-import { getCategoryFromUrl, generateSvgIcon } from './utils';
-import { containsCoordinate } from 'ol/extent';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
+import mapboxgl from 'mapbox-gl';
+import ClusterSidebar from './ClusterSidebar';
+import { iconConfigs, getCategoryFromUrl } from './utils';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFwczJtYXB3aXRoIiwiYSI6ImNtMXhkY2ZuZzA1aDcyanB6cTlwcGR4Y2IifQ.aFQgruBVDzb2fmF112BhMw';
 
 const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger, darkMode }) => {
+  const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
-  const mapInstance = useRef(null);
-  const vectorSourceRef = useRef(null);
-  const vectorLayerRef = useRef(null);
-  const popperElementRef = useRef(null);
-  const [popupVisible, setPopupVisible] = useState(false);
-  const [popupFeatures, setPopupFeatures] = useState([]);
-  const [referenceElement, setReferenceElement] = useState(null);
-  const [detailedData, setDetailedData] = useState({});
-  const [extent, setExtent] = useState(null);
-  const [popupState, setPopupState] = useState({
-    position: { x: 0, y: 0 },
-    size: { width: 300, height: 400 }
-  });
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [clusterData, setClusterData] = useState([]);
 
-  const { styles, attributes } = usePopper(referenceElement, popperElementRef.current, {
-    placement: 'top',
-    modifiers: [
-      {
-        name: 'offset',
-        options: {
-          offset: [0, 10],
-        },
-      },
-    ],
-  });
+  const initializeMap = useCallback(() => {
+    if (mapRef.current) return;
 
-  const createFeatureStyle = useCallback((feature) => {
-    const item = feature.get('itemData');
-    return new Style({
-      image: new Icon({
-        src: generateSvgIcon(getCategoryFromUrl(item.url), undefined, undefined, item.favorite === 'Y'),
-        imgSize: [50, 50],
-      }),
+    mapRef.current = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: darkMode ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
+      center: [-93.2140, 42.0046], // Centered on Iowa
+      zoom: 6 // Adjusted zoom level to show most of Iowa
     });
-  }, []);
 
-  const handleFavoriteClick = useCallback((item) => {
-    handleFavorite(item);
-  }, [handleFavorite]);
+    mapRef.current.on('load', setupMapLayers);
+  }, [darkMode]);
 
-  const handleRowClick = useCallback((item) => {
-    onRowSelect(item.url);
-    onClusterClick([item]);
-  }, [onRowSelect, onClusterClick]);
+  const setupMapLayers = useCallback(() => {
+    const map = mapRef.current;
+    if (!map.getSource('auctions')) {
+      map.addSource('auctions', {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features: [] },
+        cluster: true,
+        clusterMaxZoom: 10,
+        clusterRadius: 30
+      });
 
-  const updateMapFeatures = useCallback(() => {
-    if (!vectorSourceRef.current || !Array.isArray(data) || !extent) return;
-
-    vectorSourceRef.current.clear();
-    const features = data.reduce((acc, item) => {
-      if (item.latitude && item.longitude) {
-        const coordinates = fromLonLat([parseFloat(item.longitude), parseFloat(item.latitude)]);
-        if (containsCoordinate(extent, coordinates)) {
-          const feature = new Feature({
-            geometry: new Point(coordinates),
-            itemData: item,
-          });
-          feature.setStyle(createFeatureStyle(feature));
-          acc.push(feature);
+      // Cluster layer
+      map.addLayer({
+        id: 'clusters',
+        type: 'circle',
+        source: 'auctions',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': [
+            'step',
+            ['get', 'point_count'],
+            '#51bbd6',
+            10,
+            '#f1f075',
+            50,
+            '#f28cb1'
+          ],
+          'circle-radius': [
+            'step',
+            ['get', 'point_count'],
+            20,
+            10,
+            30,
+            50,
+            40
+          ]
         }
-      }
-      return acc;
-    }, []);
+      });
 
-    vectorSourceRef.current.addFeatures(features);
-  }, [data, createFeatureStyle, extent]);
+      // Cluster count layer
+      map.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'auctions',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': '{point_count_abbreviated}',
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 12
+        }
+      });
 
-  const clusterStyle = useCallback((feature) => {
-    const size = feature.get('features').length;
-    const featureCategories = feature.get('features').map(f => getCategoryFromUrl(f.get('itemData').url));
-    return new Style({
-      image: new Icon({
-        src: generateSvgIcon('cluster', size, featureCategories),
-        imgSize: [50, 50],
-      }),
+      // Unclustered point layer
+      map.addLayer({
+        id: 'unclustered-point',
+        type: 'circle',
+        source: 'auctions',
+        filter: ['!', ['has', 'point_count']],
+        paint: {
+          'circle-color': '#11b4da',
+          'circle-radius': 10,
+          'circle-stroke-width': 1,
+          'circle-stroke-color': '#fff'
+        }
+      });
+    }
+
+    // Event listeners
+    map.on('click', 'clusters', (e) => {
+      const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+      const clusterId = features[0].properties.cluster_id;
+      const pointCount = features[0].properties.point_count;
+      const clusterSource = map.getSource('auctions');
+
+      clusterSource.getClusterLeaves(clusterId, pointCount, 0, (err, aFeatures) => {
+        if (err) {
+          console.error('Error getting cluster leaves:', err);
+          return;
+        }
+        
+        const clusterItems = aFeatures.map(f => f.properties);
+        setClusterData(clusterItems);
+        setSidebarVisible(true);
+      });
+    });
+
+    map.on('click', 'unclustered-point', (e) => {
+      const properties = e.features[0].properties;
+      setClusterData([properties]);
+      setSidebarVisible(true);
     });
   }, []);
 
-  const updateExtent = useCallback(() => {
-    if (mapInstance.current) {
-      setExtent(mapInstance.current.getView().calculateExtent(mapInstance.current.getSize()));
-    }
+  const handleClusterClick = useCallback((e) => {
+    const features = mapRef.current.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    const clusterId = features[0].properties.cluster_id;
+    const pointCount = features[0].properties.point_count;
+    const clusterSource = mapRef.current.getSource('auctions');
+
+    clusterSource.getClusterLeaves(clusterId, pointCount, 0, (err, aFeatures) => {
+      if (err) {
+        console.error('Error getting cluster leaves:', err);
+        return;
+      }
+      
+      const clusterItems = aFeatures.map(f => f.properties);
+      setClusterData(clusterItems);
+      setSidebarVisible(true);
+    });
+  }, []);
+
+  const handleUnclusteredPointClick = useCallback((e) => {
+    const properties = e.features[0].properties;
+    setClusterData([properties]);
+    setSidebarVisible(true);
   }, []);
 
   useEffect(() => {
-    if (!mapInstance.current) {
-      mapInstance.current = new Map({
-        target: mapRef.current,
-        layers: [
-          new TileLayer({
-            source: new XYZ({
-              url: 'https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
-            }),
-          }),
-        ],
-        view: new View({
-          center: fromLonLat([-93.0977, 41.8780]),
-          zoom: 7,
-        }),
-      });
-
-      vectorSourceRef.current = new VectorSource();
-      const clusterSource = new Cluster({
-        distance: 50,
-        source: vectorSourceRef.current,
-      });
-
-      vectorLayerRef.current = new VectorLayer({
-        source: clusterSource,
-        style: clusterStyle,
-      });
-
-      mapInstance.current.addLayer(vectorLayerRef.current);
-
-      mapInstance.current.on('singleclick', async (event) => {
-        mapInstance.current.forEachFeatureAtPixel(event.pixel, async (feature) => {
-          const features = feature.get('features');
-          if (features && features.length > 0) {
-            setPopupFeatures(features);
-            setReferenceElement(event.coordinate);
-            setPopupVisible(true);
-            
-            const itemIds = features.map(f => f.get('itemData').id);
-            const newDetailedData = await onClusterClick(itemIds);
-            setDetailedData(prevData => ({...prevData, ...newDetailedData}));
-          } else {
-            setPopupVisible(false);
-          }
-        });
-      });
-
-      mapInstance.current.on('moveend', updateExtent);
-      updateExtent();
+    if (mapRef.current) {
+      mapRef.current.on('click', 'clusters', handleClusterClick);
+      mapRef.current.on('click', 'unclustered-point', handleUnclusteredPointClick);
     }
-
-    updateMapFeatures();
-    mapInstance.current.updateSize();
-
     return () => {
-      if (mapInstance.current) {
-        mapInstance.current.un('moveend', updateExtent);
+      if (mapRef.current) {
+        mapRef.current.off('click', 'clusters', handleClusterClick);
+        mapRef.current.off('click', 'unclustered-point', handleUnclusteredPointClick);
       }
     };
-  }, [updateMapFeatures, onClusterClick, clusterStyle, updateExtent]);
+  }, [handleClusterClick, handleUnclusteredPointClick]);
 
-  useEffect(() => {
-    updateMapFeatures();
-  }, [data, updateMapFeatures]);
+  const updateMapData = useCallback(() => {
+    if (!mapRef.current || !mapRef.current.isStyleLoaded()) return;
 
-  useEffect(() => {
-    if (vectorSourceRef.current) {
-      vectorSourceRef.current.getFeatures().forEach(feature => {
-        feature.setStyle(createFeatureStyle(feature));
+    const features = data
+      .filter(item => !isNaN(parseFloat(item.longitude)) && !isNaN(parseFloat(item.latitude)))
+      .map(item => ({
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [parseFloat(item.longitude), parseFloat(item.latitude)]
+        },
+        properties: {
+          ...item,
+          category: item.url ? getCategoryFromUrl(item.url) : 'default'
+        }
+      }));
+
+    const source = mapRef.current.getSource('auctions');
+    if (source) {
+      source.setData({
+        type: 'FeatureCollection',
+        features: features
       });
-      if (vectorLayerRef.current) {
-        vectorLayerRef.current.changed();
-      }
     }
-  }, [updateTrigger, createFeatureStyle]);
+  }, [data]);
 
-  const handlePopupChange = useCallback((newState) => {
-    setPopupState(newState);
-  }, []);
+  useEffect(() => {
+    initializeMap();
+    return () => {
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, [initializeMap]);
+
+  useEffect(() => {
+    if (mapRef.current && mapRef.current.isStyleLoaded()) {
+      updateMapData();
+    } else {
+      mapRef.current?.once('style.load', updateMapData);
+    }
+  }, [updateMapData, updateTrigger]);
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-      <div ref={mapRef} style={{ width: '100%', height: '100%' }} />
-      {popupVisible && (
-        <div
-          ref={popperElementRef}
-          style={{ ...styles.popper, zIndex: 1000, position: 'absolute', top: 0, left: 0 }}
-          {...attributes.popper}
-        >
-          <PopupContent
-            features={popupFeatures.map(f => ({
-              ...f.get('itemData'),
-              ...detailedData[f.get('itemData').id]
-            }))}
-            onClose={() => setPopupVisible(false)}
-            onFavorite={handleFavoriteClick}
-            onRowClick={handleRowClick}
-            selectedRows={selectedRows}
-            popupState={popupState}
-            onPopupChange={handlePopupChange}
-            darkMode={darkMode}  // Pass darkMode to PopupContent
-          />
-        </div>
+    <div style={{ width: '100%', height: '100%', position: 'relative', display: 'flex' }}>
+      <div ref={mapContainerRef} style={{ width: '100%', height: '100%' }} />
+      {sidebarVisible && (
+        <ClusterSidebar
+          data={clusterData}
+          onClose={() => setSidebarVisible(false)}
+          onFavorite={handleFavorite}
+          onRowClick={onRowSelect}
+          selectedRows={selectedRows}
+          darkMode={darkMode}
+        />
       )}
     </div>
   );

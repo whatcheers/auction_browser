@@ -396,7 +396,16 @@ const App = () => {
           <DataLoadingProgress isLoading={isLoading} progress={loadingProgress} status={loadingStatus} />
           <Box sx={{ flexGrow: 1, display: 'flex', minHeight: 0 }}>
             <Paper elevation={3} sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', mr: showCategories ? 2 : 0 }}>
-              <MapComponent data={mapData} selectedEndpoint={selectedEndpoint} onClusterClick={handleClusterClick} onRowSelect={handleRowSelect} selectedRows={selectedRows} handleFavorite={handleFavorite} updateTrigger={updateTrigger} darkMode={darkMode} />
+              <MapComponent 
+                data={mapData.filter(item => item.latitude && item.longitude)} 
+                selectedEndpoint={selectedEndpoint} 
+                onClusterClick={handleClusterClick} 
+                onRowSelect={handleRowSelect} 
+                selectedRows={selectedRows} 
+                handleFavorite={handleFavorite} 
+                updateTrigger={updateTrigger} 
+                darkMode={darkMode} 
+              />
             </Paper>
             {showCategories && (
               <Paper elevation={3} sx={{ width: 300, p: 2, overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
