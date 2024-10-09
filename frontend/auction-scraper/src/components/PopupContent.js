@@ -46,7 +46,7 @@ const PopupItem = memo(({ item, isSelected, onFavorite, onRowClick }) => {
   );
 });
 
-const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selectedRows = [], popupState = {}, onPopupChange, darkMode }) => {
+const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selectedRows = [], popupState = {}, onPopupChange, darkMode, type }) => {
   const { position = { x: 0, y: 0 }, size = { width: 300, height: 400 } } = popupState;
   const isDragging = useRef(false);
   const isResizing = useRef(false);
@@ -115,28 +115,40 @@ const PopupContent = memo(({ features, onClose, onFavorite, onRowClick, selected
       >
         <div style={{ height: '100%', overflowY: 'auto' }}>
           <Typography variant="h6" gutterBottom>
-            Details
+            {type === 'categories' ? 'Categories' : 'Cluster Items'}
           </Typography>
-          {features.map((f) => {
-            const item = f.get ? f.get('itemData') : f.itemData || f;
-            const isSelected = selectedRows.includes(item.url);
-            return (
-              <PopupItem
-                key={item.id || item.url}
-                item={item}
-                isSelected={isSelected}
-                onFavorite={onFavorite}
-                onRowClick={onRowClick}
-              />
-            );
-          })}
-          <div>
-            <Tooltip title="More Info">
-              <IconButton>
-                <InfoIcon />
-              </IconButton>
-            </Tooltip>
-          </div>
+          {type === 'categories' ? (
+            features.map(({ category, itemCount }) => (
+              <div
+                key={category}
+                style={{ 
+                  marginBottom: '10px', 
+                  padding: '8px',
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}
+                onClick={() => onRowClick(category)}
+              >
+                <Typography variant="body1">
+                  {category} ({itemCount})
+                </Typography>
+              </div>
+            ))
+          ) : (
+            features.map((f) => {
+              const item = f.get ? f.get('itemData') : f.itemData || f;
+              const isSelected = selectedRows.includes(item.url);
+              return (
+                <PopupItem
+                  key={item.id || item.url}
+                  item={item}
+                  isSelected={isSelected}
+                  onFavorite={onFavorite}
+                  onRowClick={onRowClick}
+                />
+              );
+            })
+          )}
         </div>
         <IconButton
           sx={{ position: 'absolute', top: 8, right: 8 }}

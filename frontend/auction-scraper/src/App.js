@@ -23,7 +23,7 @@ import EndpointSelector from './components/EndpointSelector';
 import DateRangeSelector from './components/DateRangeSelector';
 import { exportCSV } from './components/dataExport';
 import { tableNames, getCategoryFromUrl } from './components/utils';
-import { categorizeItems as categorizationFunction } from './components/categorizeItems';
+import { categorizeItems } from './components/categorizeItems';
 import CategorizedCounts from './components/CategorizedCounts';
 import CategoryDetails from './components/CategoryDetails';
 import DailyAverages from './components/DailyAverages';
@@ -33,6 +33,8 @@ import Alerts from './components/Alerts';
 import AddAlert from './components/AddAlert';
 import NewItemsPopup from './components/NewItemsPopup';
 import debounce from 'lodash/debounce';
+import CategorySidebar from './components/CategorySidebar';
+import PopupContent from './components/PopupContent';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
@@ -55,6 +57,9 @@ const App = () => {
   const [mapData, setMapData] = useState([]);
   const [addAlertOpen, setAddAlertOpen] = useState(false);
   const isLoadingRef = useRef(false);
+  const [showCategorySidebar, setShowCategorySidebar] = useState(false);
+  const [popupContent, setPopupContent] = useState(null);
+  const [popupState, setPopupState] = useState({ position: { x: 0, y: 0 }, size: { width: 0, height: 0 } });
 
   const lightTheme = createTheme({
     palette: {
@@ -83,18 +88,24 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
-  const categorizeItems = useCallback((data) => {
-    if (data.length === 0) return;
+  const handleCategorization = useCallback((data) => {
+    if (!Array.isArray(data) || data.length === 0) {
+      console.log("No data to categorize in handleCategorization");
+      return {};
+    }
 
-    const categorizedResults = categorizationFunction(data);
+    const categorizedResults = categorizeItems(data);
     const formattedResults = {};
+    
     categorizedResults.forEach(item => {
       if (!formattedResults[item.category]) {
         formattedResults[item.category] = [];
       }
       formattedResults[item.category].push(item);
     });
-    setCategorizedData(formattedResults);
+    
+    console.log("Formatted results in handleCategorization:", formattedResults);
+    return formattedResults;
   }, []);
 
   const handleAddAlertClick = () => {
@@ -106,17 +117,39 @@ const App = () => {
   }, []);
 
   const handleCategorizeClick = useCallback(() => {
-    categorizeItems(rawDataRef.current);
-    setShowCategories(true);
-  }, [categorizeItems]);
+    if (rawDataRef.current.length === 0) {
+      console.log("No data to categorize");
+      return;
+    }
+    
+    console.log("Raw data:", rawDataRef.current); // Log raw data
+    
+    const categorizedResults = handleCategorization(rawDataRef.current);
+    
+    console.log("Categorized results:", categorizedResults); // Log categorized results
+    
+    if (!categorizedResults || typeof categorizedResults !== 'object') {
+      console.error("Categorization failed: invalid result", categorizedResults);
+      return;
+    }
+    
+    const categoryCounts = Object.entries(categorizedResults).map(([category, items]) => ({ 
+      category, 
+      itemCount: Array.isArray(items) ? items.length : 0 
+    }));
+    
+    console.log("Category counts:", categoryCounts); // Log category counts
+
+    setPopupContent({
+      features: categoryCounts,
+      type: 'categories'
+    });
+    setPopupState({ position: { x: 100, y: 100 }, size: { width: 300, height: 400 } });
+  }, [handleCategorization]);
 
   const handleCloseCategorization = useCallback(() => {
     setShowCategories(false);
     setSelectedCategory(null);
-  }, []);
-
-  const handleCategoryClick = useCallback((category) => {
-    setSelectedCategory(category);
   }, []);
 
   const handleBackToCategories = useCallback(() => {
@@ -342,7 +375,7 @@ const App = () => {
       console.log('Favorites data loaded:', favoritesData);
       rawDataRef.current = favoritesData;
       setMapData(favoritesData);
-      categorizeItems(favoritesData);
+      handleCategorization(favoritesData);
       setUpdateTrigger(prev => prev + 1);
       setLoadingStatus('Favorites loaded successfully');
     } catch (err) {
@@ -353,12 +386,24 @@ const App = () => {
       setIsLoading(false);
     }
     
-  }, [apiUrl, categorizeItems]);
+  }, [apiUrl, handleCategorization]);
   useEffect(() => {
     console.log('Current state:', { selectedEndpoint, startDate, endDate });
   }, [selectedEndpoint, startDate, endDate]);
 
   const isGetDataDisabled = !selectedEndpoint || !startDate || !endDate;
+
+  const handleCloseCategorySidebar = useCallback(() => {
+    setShowCategorySidebar(false);
+  }, []);
+
+  const handleCategoryClick = useCallback((category) => {
+    const categorizedItems = categorizeItems(rawDataRef.current).filter(item => item.category === category);
+    setPopupContent({
+      features: categorizedItems,
+      type: 'items'
+    });
+  }, []);
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -424,6 +469,26 @@ const App = () => {
       <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError(null)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>{error}</Alert>
       </Snackbar>
+      {showCategorySidebar && (
+        <CategorySidebar 
+          categorizedData={categorizedData}
+          onClose={handleCloseCategorySidebar}
+          onCategoryClick={handleCategoryClick}
+        />
+      )}
+      {popupContent && (
+        <PopupContent
+          features={popupContent.features}
+          onClose={() => setPopupContent(null)}
+          onFavorite={handleFavorite}
+          onRowClick={popupContent.type === 'categories' ? handleCategoryClick : handleRowSelect}
+          selectedRows={selectedRows}
+          popupState={popupState}
+          onPopupChange={setPopupState}
+          darkMode={darkMode}
+          type={popupContent.type}
+        />
+      )}
     </ThemeProvider>
   );
 }
