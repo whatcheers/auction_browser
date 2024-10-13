@@ -6,6 +6,7 @@ const auctionRoutes = require('./routes/auctionRoutes');
 const favoriteRoutes = require('./routes/favoriteRoutes');
 const dailyAveragesRoutes = require('./routes/dailyAveragesRoutes');
 const alertRoutes = require('./routes/alertRoutes');
+
 const app = express();
 
 app.use(cors({

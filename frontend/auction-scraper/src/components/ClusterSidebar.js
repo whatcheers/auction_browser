@@ -39,7 +39,7 @@ const ClusterSidebar = ({ data, onClose, onFavorite, onRowClick, selectedRows, d
       <List sx={{ flexGrow: 1, overflowY: 'auto', padding: 0 }}>
         {data.map((item, index) => (
           <ListItem
-            key={item.id || item.url || index}
+            key={item.id || item.url || `item-${index}`}
             onClick={() => onRowClick(item)}
             selected={selectedRows.includes(item.url)}
             sx={{ 

@@ -38,7 +38,6 @@ router.post('/alerts/search', async (req, res) => {
 
     try {
         const connection = await getDbConnection();
-        const tables = ['backes', 'bidspotter', 'govdeals', 'gsa', 'hibid', 'proxibid', 'publicsurplus', 'smc', 'wiscosurp_auctions'];
         let searchResults = [];
 
         for (const table of tables) {
@@ -78,24 +77,37 @@ router.post('/alerts', async (req, res) => {
 
 router.get('/alerts/new', async (req, res) => {
     try {
+        const { startDate, endDate } = req.query;
+        if (!startDate || !endDate) {
+            return res.status(400).json({ message: 'Start date and end date are required' });
+        }
+
         const connection = await getDbConnection();
-        const lastCheckTime = req.query.lastCheck || new Date(0).toISOString();
         const [results] = await connection.execute(`
-            SELECT a.keyword, i.item_name, i.url, i.date_added
+            SELECT a.id, a.keyword, i.item_name, i.url, i.time_left, i.latitude, i.longitude, i.location, 
+                   i.lot_number, i.table_name
             FROM alerts a
             JOIN (
-                SELECT item_name, url, date_added
-                FROM (${tables.map(t => `SELECT item_name, url, date_added FROM ${t}`).join(' UNION ALL ')})
-                AS all_items
-                WHERE date_added > ?
+                ${tables.map(t => `
+                    SELECT item_name, url, time_left, latitude, longitude, location, 
+                           lot_number, '${t}' AS table_name
+                    FROM ${t}
+                    WHERE time_left > NOW() AND DATE(time_left) BETWEEN ? AND ?
+                `).join(' UNION ALL ')}
             ) i ON i.item_name LIKE CONCAT('%', a.keyword, '%')
-            ORDER BY i.date_added DESC
-        `, [lastCheckTime]);
+            WHERE i.time_left > NOW() AND DATE(i.time_left) BETWEEN ? AND ?
+            ORDER BY i.time_left ASC
+        `, [...Array(tables.length * 2).fill(startDate, endDate).flat(), startDate, endDate]);
         await connection.end();
+        
+        if (results.length === 0) {
+            return res.status(404).json({ message: 'No data found for the specified date range' });
+        }
+        
         res.json(results);
     } catch (error) {
         console.error('Error fetching new alerts:', error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json({ message: 'Internal server error', error: error.message });
     }
 });
 
@@ -112,13 +124,13 @@ router.delete('/alerts/:id', async (req, res) => {
         await connection.end();
         
         if (result.affectedRows > 0) {
-            res.json({ message: 'Alert deleted successfully' });
+            res.json({ success: true, message: 'Alert dismissed successfully' });
         } else {
-            res.status(404).json({ message: 'Alert not found' });
+            res.status(404).json({ success: false, message: 'Alert not found' });
         }
     } catch (error) {
-        console.error('Error deleting alert:', error);
-        res.status(500).json({ message: 'Internal server error' });
+        console.error('Error dismissing alert:', error);
+        res.status(500).json({ success: false, message: 'Internal server error' });
     }
 });
 

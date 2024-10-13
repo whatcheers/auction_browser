@@ -6,7 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFwczJtYXB3aXRoIiwiYSI6ImNtMXhkY2ZuZzA1aDcyanB6cTlwcGR4Y2IifQ.aFQgruBVDzb2fmF112BhMw';
 
-const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger, darkMode }) => {
+const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRowSelect, selectedRows, handleFavorite, updateTrigger, darkMode, center, zoom }) => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -15,15 +15,29 @@ const MapComponent = React.memo(({ data, selectedEndpoint, onClusterClick, onRow
   const initializeMap = useCallback(() => {
     if (mapRef.current) return;
 
+    // Disable telemetry to prevent CORS issues
+    mapboxgl.config.SEND_ANONYMOUS_USAGE_STATS = false;
+
+    // Check if center is valid
+    const validCenter = Array.isArray(center) && center.length === 2 && 
+                        !isNaN(center[0]) && !isNaN(center[1]) ? 
+                        center : [-93.2140, 42.0046]; // Default to Iowa if invalid
+
     mapRef.current = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: darkMode ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11',
-      center: [-93.2140, 42.0046], // Centered on Iowa
-      zoom: 6 // Adjusted zoom level to show most of Iowa
+      center: validCenter,
+      zoom: zoom || 6, // Provide a default zoom if not specified
     });
 
     mapRef.current.on('load', setupMapLayers);
-  }, [darkMode]);
+    
+    // Add error handling for map load
+    mapRef.current.on('error', (e) => {
+      console.error('Mapbox GL JS error:', e);
+    });
+
+  }, [darkMode, center, zoom]);
 
   const setupMapLayers = useCallback(() => {
     const map = mapRef.current;

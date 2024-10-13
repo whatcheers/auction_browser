@@ -12,7 +12,11 @@ const Alerts = () => {
   useEffect(() => {
     const fetchAlerts = async () => {
       try {
-        const response = await fetch(`${apiUrl}/api/alerts`);
+        const currentDate = new Date();
+        const startDate = currentDate.toISOString().split('T')[0];
+        const endDate = new Date(currentDate.setDate(currentDate.getDate() + 90)).toISOString().split('T')[0];
+        
+        const response = await fetch(`${apiUrl}/api/alerts/new?startDate=${startDate}&endDate=${endDate}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -28,16 +32,12 @@ const Alerts = () => {
     };
 
     fetchAlerts();
-
-    const intervalId = setInterval(fetchAlerts, 60000); // Fetch every 60 seconds
-
-    return () => clearInterval(intervalId);
   }, []);
 
   const handleDismiss = useCallback(async (alertId) => {
     try {
-      const response = await fetch(`${apiUrl}/api/dismiss-alert/${alertId}`, {
-        method: 'POST',
+      const response = await fetch(`${apiUrl}/api/alerts/${alertId}`, {
+        method: 'DELETE',
         credentials: 'include',
       });
 

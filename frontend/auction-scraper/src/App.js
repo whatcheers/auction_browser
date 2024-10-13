@@ -330,37 +330,50 @@ const App = () => {
       return;
     }
 
+    setIsLoading(true);
+    setError(null);
+
     try {
+      const currentDate = new Date();
+      const startDate = currentDate.toISOString().split('T')[0];
+      const endDate = new Date(currentDate.setDate(currentDate.getDate() + 90)).toISOString().split('T')[0];
+
       const params = new URLSearchParams({
         tableName: selectedEndpoint,
-        searchTerm: searchQuery,
         startDate: startDate,
-        endDate: endDate
+        endDate: endDate,
+        searchTerm: searchQuery
       });
 
-      const url = `${apiUrl}/api/search-auction-data?${params.toString()}`;
+      const url = `${apiUrl}/api/get-auction-data?${params.toString()}`;
 
       console.log('Fetching search results from URL:', url);
 
       const response = await fetch(url);
-      const result = await response.json();
 
-      if (response.ok) {
+      if (response.status === 404) {
+        console.log(`No items found for "${searchQuery}" in the next 90 days.`);
+        rawDataRef.current = [];
+        setMapData([]);
+        setError(`No items found for "${searchQuery}" in the next 90 days.`);
+      } else if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      } else {
+        const result = await response.json();
         console.log('Search results loaded:', result);
         rawDataRef.current = result;
         setMapData(result);
-        setError(null);
-        setUpdateTrigger((prev) => prev + 1);
-      } else {
-        throw new Error(result.error || 'Failed to fetch search results');
       }
+      setUpdateTrigger((prev) => prev + 1);
     } catch (error) {
       console.error('Failed to fetch search results:', error);
-      setError(error.message);
+      setError(`Error: ${error.message}`);
       rawDataRef.current = [];
       setMapData([]);
+    } finally {
+      setIsLoading(false);
     }
-  }, [selectedEndpoint, startDate, endDate]);
+  }, [selectedEndpoint, apiUrl]);
 
   const loadFavoritesData = useCallback(async () => {
     console.log('Loading favorites data');
@@ -405,6 +418,32 @@ const App = () => {
     });
   }, []);
 
+  const handleAlertClick = useCallback(async (data, keyword) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      console.log('Alert data loaded:', data);
+      if (Array.isArray(data) && data.length > 0) {
+        rawDataRef.current = data;
+        setMapData(data);
+        setUpdateTrigger(prev => prev + 1);
+        const categorizedResults = handleCategorization(data);
+        setCategorizedData(categorizedResults);
+      } else {
+        console.log(`No items found for "${keyword}" in the next 90 days.`);
+        rawDataRef.current = [];
+        setMapData([]);
+        setCategorizedData({});
+        setError(`No items found for "${keyword}" in the next 90 days.`);
+      }
+    } catch (err) {
+      console.error('Error processing alert data:', err);
+      setError(`Error: ${err.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [handleCategorization]);
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
@@ -415,7 +454,7 @@ const App = () => {
               Auction Data Viewer
             </Typography>
             <DailyAverages apiUrl={apiUrl} />
-            <NewItemsPopup onAddAlertClick={handleAddAlertClick} />
+            <NewItemsPopup onAlertClick={handleAlertClick} onAddAlertClick={handleAddAlertClick} startDate={startDate} endDate={endDate} />
             <IconButton onClick={toggleDarkMode} color="inherit">
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
