@@ -8,6 +8,7 @@ const Alerts = () => {
   const [alerts, setAlerts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [debugInfo, setDebugInfo] = useState('');
 
   useEffect(() => {
     const fetchAlerts = async () => {
@@ -16,16 +17,20 @@ const Alerts = () => {
         const startDate = currentDate.toISOString().split('T')[0];
         const endDate = new Date(currentDate.setDate(currentDate.getDate() + 90)).toISOString().split('T')[0];
         
-        const response = await fetch(`${apiUrl}/api/alerts/new?startDate=${startDate}&endDate=${endDate}`);
+        const url = `${apiUrl}/api/alerts/?startDate=${startDate}&endDate=${endDate}`;
+        setDebugInfo(`Fetching from: ${url}`);
+        
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        setDebugInfo(prev => `${prev}\nReceived data: ${JSON.stringify(data)}`);
         setAlerts(data);
         setError('');
       } catch (err) {
         console.error('Error fetching alerts:', err);
-        setError('Failed to fetch alerts');
+        setError(`Failed to fetch alerts: ${err.message}`);
       } finally {
         setLoading(false);
       }
@@ -71,6 +76,10 @@ const Alerts = () => {
     <Box>
       <Typography variant="h6">Alerts</Typography>
       {error && <MuiAlert severity="error">{error}</MuiAlert>}
+      {debugInfo && <MuiAlert severity="info">{debugInfo}</MuiAlert>}
+      {alerts.length === 0 && !loading && !error && (
+        <MuiAlert severity="info">No new alerts found.</MuiAlert>
+      )}
       {alerts.map((alert, index) => (
         <MuiAlert
           key={index}
