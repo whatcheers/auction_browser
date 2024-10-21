@@ -29,13 +29,11 @@ import CategoryDetails from './components/CategoryDetails';
 import DailyAverages from './components/DailyAverages';
 import SearchBox from './components/SearchBox';
 import DataLoadingProgress from './components/DataLoadingProgress';
-import Alerts from './components/Alerts';
-import AddAlert from './components/AddAlert';
-import NewItemsPopup from './components/NewItemsPopup';
-import debounce from 'lodash/debounce';
+import AlertManager from './components/AlertManager';
 import CategorySidebar from './components/CategorySidebar';
 import PopupContent from './components/PopupContent';
 import Link from '@mui/material/Link';
+import debounce from 'lodash/debounce';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
@@ -464,7 +462,7 @@ const App = () => {
               Auction Research
             </Link>
             <DailyAverages apiUrl={apiUrl} />
-            <NewItemsPopup onAlertClick={handleAlertClick} onAddAlertClick={handleAddAlertClick} startDate={startDate} endDate={endDate} />
+            <AlertManager onAlertClick={handleAlertClick} />
             <IconButton onClick={toggleDarkMode} color="inherit">
               {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
@@ -511,10 +509,8 @@ const App = () => {
               </Paper>
             )}
           </Box>
-          <Alerts />
         </Container>
       </Box>
-      <AddAlert open={addAlertOpen} onClose={() => setAddAlertOpen(false)} />
       <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError(null)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>{error}</Alert>
       </Snackbar>

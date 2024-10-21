@@ -54,9 +54,9 @@ router.post('/alerts/search', async (req, res) => {
 });
 
 router.post('/alerts', async (req, res) => {
-    const { keyword, item } = req.body;
+    const { item } = req.body;
 
-    if (!keyword || !item || !item.name) {
+    if (!item || !item.name) {
         return res.status(400).json({ message: 'Invalid alert data' });
     }
 
@@ -64,11 +64,11 @@ router.post('/alerts', async (req, res) => {
         const connection = await getDbConnection();
         const [result] = await connection.execute(
             'INSERT INTO alerts (item_name, keyword) VALUES (?, ?)',
-            [item.name, keyword]
+            [item.name, item.name] // Using item_name as keyword
         );
         await connection.end();
 
-        res.status(201).json({ id: result.insertId, item_name: item.name, keyword });
+        res.status(201).json({ id: result.insertId, item_name: item.name, keyword: item.name });
     } catch (error) {
         console.error('Error adding alert:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -84,7 +84,7 @@ router.get('/alerts/new', async (req, res) => {
 
         const connection = await getDbConnection();
         const [results] = await connection.execute(`
-            SELECT a.id, a.keyword, i.item_name, i.url, i.time_left, i.latitude, i.longitude, i.location, 
+            SELECT a.id, a.item_name, i.url, i.time_left, i.latitude, i.longitude, i.location, 
                    i.lot_number, i.table_name
             FROM alerts a
             JOIN (
@@ -94,7 +94,7 @@ router.get('/alerts/new', async (req, res) => {
                     FROM ${t}
                     WHERE time_left > NOW() AND DATE(time_left) BETWEEN ? AND ?
                 `).join(' UNION ALL ')}
-            ) i ON i.item_name LIKE CONCAT('%', a.keyword, '%')
+            ) i ON i.item_name LIKE CONCAT('%', a.item_name, '%')
             WHERE i.time_left > NOW() AND DATE(i.time_left) BETWEEN ? AND ?
             ORDER BY i.time_left ASC
         `, [...Array(tables.length * 2).fill(startDate, endDate).flat(), startDate, endDate]);
