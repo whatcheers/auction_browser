@@ -35,6 +35,7 @@ import NewItemsPopup from './components/NewItemsPopup';
 import debounce from 'lodash/debounce';
 import CategorySidebar from './components/CategorySidebar';
 import PopupContent from './components/PopupContent';
+import Link from '@mui/material/Link';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'https://hashbrowns:3002';
 
@@ -453,6 +454,15 @@ const App = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Auction Data Viewer
             </Typography>
+            <Link
+              href="http://hashbrowns:3001/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="inherit"
+              sx={{ mr: 2, textDecoration: 'none' }}
+            >
+              Auction Research
+            </Link>
             <DailyAverages apiUrl={apiUrl} />
             <NewItemsPopup onAlertClick={handleAlertClick} onAddAlertClick={handleAddAlertClick} startDate={startDate} endDate={endDate} />
             <IconButton onClick={toggleDarkMode} color="inherit">
