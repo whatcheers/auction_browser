@@ -9,9 +9,7 @@ import {
   Button, 
   Container, 
   Paper, 
-  Switch,
   CssBaseline,
-  FormControlLabel,
   Snackbar,
   Alert,
   IconButton
@@ -54,9 +52,7 @@ const App = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingStatus, setLoadingStatus] = useState('');
   const [mapData, setMapData] = useState([]);
-  const [addAlertOpen, setAddAlertOpen] = useState(false);
   const isLoadingRef = useRef(false);
-  const [showCategorySidebar, setShowCategorySidebar] = useState(false);
   const [popupContent, setPopupContent] = useState(null);
   const [popupState, setPopupState] = useState({ position: { x: 0, y: 0 }, size: { width: 0, height: 0 } });
 
@@ -106,10 +102,6 @@ const App = () => {
     console.log("Formatted results in handleCategorization:", formattedResults);
     return formattedResults;
   }, []);
-
-  const handleAddAlertClick = () => {
-    setAddAlertOpen(true);
-  };
 
   const handleClusterClick = useCallback((clusterItems) => {
     console.log('Cluster clicked, items:', clusterItems);
@@ -232,12 +224,16 @@ const App = () => {
     loadAuctionDataRef.current = loadAuctionData;
   }, [loadAuctionData]);
 
-  const debouncedLoadAuctionData = useCallback(
-    debounce(() => {
-      loadAuctionDataRef.current();
-    }, 300),
-    []
-  );
+  const debouncedLoadAuctionData = useCallback(() => {
+    const debouncedFunction = debounce(() => {
+      loadAuctionData();
+    }, 300);
+    
+    debouncedFunction();
+    
+    // Cleanup function to cancel the debounce if the component unmounts or the callback changes
+    return () => debouncedFunction.cancel();
+  }, [loadAuctionData]);
 
   const loadDefaultData = useCallback(() => {
     if (selectedEndpoint === 'ending_today') {
@@ -372,7 +368,7 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [selectedEndpoint, apiUrl]);
+  }, [selectedEndpoint]); // Removed apiUrl from the dependency array
 
   const loadFavoritesData = useCallback(async () => {
     console.log('Loading favorites data');
@@ -398,7 +394,7 @@ const App = () => {
       setIsLoading(false);
     }
     
-  }, [apiUrl, handleCategorization]);
+  }, [handleCategorization]); // Removed apiUrl from the dependency array
   useEffect(() => {
     console.log('Current state:', { selectedEndpoint, startDate, endDate });
   }, [selectedEndpoint, startDate, endDate]);
@@ -406,7 +402,7 @@ const App = () => {
   const isGetDataDisabled = !selectedEndpoint || !startDate || !endDate;
 
   const handleCloseCategorySidebar = useCallback(() => {
-    setShowCategorySidebar(false);
+    setShowCategories(false);
   }, []);
 
   const handleCategoryClick = useCallback((category) => {
@@ -514,7 +510,7 @@ const App = () => {
       <Snackbar open={!!error} autoHideDuration={6000} onClose={() => setError(null)} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
         <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>{error}</Alert>
       </Snackbar>
-      {showCategorySidebar && (
+      {showCategories && (
         <CategorySidebar 
           categorizedData={categorizedData}
           onClose={handleCloseCategorySidebar}
